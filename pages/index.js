@@ -5,13 +5,13 @@ export default function Home() {
   return (
     <>
       <div className="container-w-full bg-no-repeat bg-center bg-cover bg-hero h-[388px] flex items-stretch">
-        <div className="self-center w-7/12 container mx-[14.375rem] pt-28">
+        <div className="self-center mx-auto w-8/12 container pt-28">
           <p className="md:text-[2.5rem] sm:text-[2rem] tracking-wide lg:text-[2.875rem] font-sans text-white mx-auto font-bold">
             Hey, I'm Galih Putra. A struggling Digital Product Designer.
           </p>
         </div>
       </div>
-      <div className="container mx-[14.375rem] pt-[58px] self-center w-8/12">
+      <div className="container mx-auto pt-[58px] self-center w-8/12">
         <p className="text-2xl font-sans font-light text-[#282828] leading-[3rem]">
           Currently a UX Designer working within amazing team at Digital Product
           Agency{" "}
