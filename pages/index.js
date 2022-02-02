@@ -5,14 +5,14 @@ export default function Home() {
   return (
     <>
       <div className="container-w-full bg-no-repeat bg-center bg-cover bg-hero h-[388px] flex items-stretch">
-        <div className="self-center mx-auto w-8/12 container pt-28">
-          <p className="md:text-[2.5rem] sm:text-[2rem] tracking-wide lg:text-[2.875rem] font-sans text-white mx-auto font-bold">
+        <div className="w-11/12 self-center mx-auto container pt-28 md:10/12 lg:w-9/12 xl:w-8/12">
+          <p className="text-[1.5rem] font-sans text-white mx-auto font-bold sm:text-[1.8rem] md:text-[2rem] lg:text-[2.5rem] tracking-wide xl:text-[2.875rem]">
             Hey, I'm Galih Putra. A struggling Digital Product Designer.
           </p>
         </div>
       </div>
-      <div className="container mx-auto pt-[58px] self-center w-8/12">
-        <p className="text-2xl font-sans font-light text-[#282828] leading-[3rem]">
+      <div className="w-11/12 container mx-auto pt-[58px] self-center md:10/12 lg:w-9/12 xl:w-8/12">
+        <p className="text-[1.1rem] leading-[2.3rem] font-sans font-light text-[#282828] sm:text-[1.2rem] sm:leading-[2.4rem] md:text-[1.3rem] md:leading-[2.6rem] lg:text-[1.4rem] lg:leading-[2.8rem] xl:text-[1.5rem] xl:leading-[3rem]">
           Currently a UX Designer working within amazing team at Digital Product
           Agency{" "}
           <span className="border-b-[3px] font-semibold border-blue-600 duration-200 hover:text-[#01549F] cursor-pointer">
@@ -21,7 +21,7 @@ export default function Home() {
           Day-to-day, I'm contributing on Digital Product Interface, and Design
           System.
         </p>
-        <p className="text-2xl mt-[38px] w-11/12 font-sans font-light text-[#282828] leading-[3rem]">
+        <p className="mt-[38px] text-[1.1rem] leading-[2.3rem] font-sans font-light text-[#282828] sm:text-[1.2rem] sm:leading-[2.4rem] md:text-[1.3rem] md:leading-[2.6rem] lg:text-[1.4rem] lg:leading-[2.8rem] xl:text-[1.5rem] xl:leading-[3rem]">
           Read my{" "}
           <span className="border-b-[3px] font-semibold border-blue-600 duration-200 hover:text-[#01549F] cursor-pointer">
             <Link href="/WritingJourney">thoughts</Link>
@@ -35,7 +35,7 @@ export default function Home() {
             about me.
           </span>
         </p>
-        <div className="my-20 font-medium w-auto flex text-lg text-[#969696]">
+        <div className="my-20 font-medium w-auto flex text-[#969696] text-[0.9rem] sm:text-[1rem] md:text-[1.63] lg:tex-[1.125]">
           <div className="mr-1 hover:underline hover:text-[#01549F]">
             <Link href={"/"}>Linkedin,</Link>
           </div>
