@@ -24,7 +24,7 @@ export default function Home() {
         <p className="text-2xl mt-[38px] w-11/12 font-sans font-light text-[#282828] leading-[3rem]">
           Read my{" "}
           <span className="border-b-[3px] font-semibold border-blue-600 duration-200 hover:text-[#01549F] cursor-pointer">
-            <Link href="/blog">thoughts</Link>
+            <Link href="/WritingJourney">thoughts</Link>
           </span>{" "}
           or my{" "}
           <span className="border-b-[3px] font-semibold border-blue-600 duration-200 hover:text-[#01549F] cursor-pointer">

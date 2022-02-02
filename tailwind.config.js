@@ -19,6 +19,12 @@ module.exports = {
         ".bg-hero": {
           "background-image": "url(/bg-hero.png)",
         },
+        ".icon-down": {
+          background: "url(/icon-down.png) 90% / 10% no-repeat ",
+        },
+        ".icon-up": {
+          background: "url(/icon-down.png) 90% / 10% no-repeat ",
+        },
       };
       addUtilities(utilities);
     }),
