@@ -23,7 +23,7 @@ module.exports = {
           background: "url(/icon-down.png) 90% / 10% no-repeat ",
         },
         ".icon-up": {
-          background: "url(/icon-down.png) 90% / 10% no-repeat ",
+          background: "url(/icon-up.png) 90% / 10% no-repeat ",
         },
       };
       addUtilities(utilities);
