@@ -102,23 +102,19 @@ const WritingJourney = () => {
           )}
         </div>
       </div>
-      <div className="container-w-full mx-auto w-8/12 container pt-14">
+      <div className="container mx-auto w-8/12 container pt-14">
         <p className="text-lg font-light text-[#282828] mb-6">Januari 2022</p>
-        <div>
-          <table className="text-lg font-semibold text-[#282828]">
-            <tr className="cursor-pointer">
-              <div className="bg-gray-400 hover:border-b-2 border-[#2B9EDE] mb-3 ">
-                <td>Senin 24</td>
-                <td>:</td>
-                <td>The Element of Surprise on UX Design</td>
-              </div>
+        <div className="text-lg font-semibold text-[#282828]">
+          <table>
+            <tr className="cursor-pointer hover:border-b-2 border-[#2B9EDE] mb-3">
+              <td>24</td>
+              <td>: The Element of Surprise on UX Design</td>
             </tr>
-            <tr className="cursor-pointer">
-              <div className="hover:border-b-2 border-[#2B9EDE] mb-3">
-                <td>Minggu 23</td>
-                <td>:</td>
-                <td>UX Design bukan hanya untuk product digital?</td>
-              </div>
+          </table>
+          <table>
+            <tr className="cursor-pointer hover:border-b-2 border-[#2B9EDE] mb-3">
+              <td>23</td>
+              <td>: UX Design bukan hanya untuk product digital?</td>
             </tr>
           </table>
         </div>
