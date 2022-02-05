@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <div className="container-w-full bg-no-repeat bg-center bg-cover bg-hero h-60 sm:h-72 md:h-84 lg:h-96 flex items-stretch">
+      <div className="container-w-full bg-no-repeat bg-center bg-cover bg-hero h-60 sm:h-64 md:h-72 lg:h-80 xl:h-96 flex items-stretch">
         <div className="w-11/12 self-center mx-auto container pt-20 md:pt-24 lg:pt-28 md:w-10/12 lg:w-9/12 xl:w-8/12">
           <p className="text-[1.5rem] font-sans text-white mx-auto font-bold sm:text-[1.8rem] md:text-[2rem] lg:text-[2.5rem] tracking-wide xl:text-[2.875rem]">
             Hey, I'm Galih Putra. A struggling Digital Product Designer.
