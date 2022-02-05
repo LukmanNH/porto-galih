@@ -28,7 +28,7 @@ const WritingJourney = () => {
             {
               node: {
                 author: {
-                  bio: "Aku cantik banget lohh",
+                  bio: "Aku kayes",
                   name: "Kayes Onic",
                   id: "ckwp5gtlc2u200c86nymojb3d",
                   photo: {
@@ -83,40 +83,59 @@ const WritingJourney = () => {
     },
   ];
 
-  console.log(
-    moment(post.data.postsConnection.edges.node.createdAt).format("MMMM YYYY")
-  );
-
   return (
     <>
-      <div className="bg-hero bg-no-repeat bg-cover bg-center h-[388px]">
-        <div className="h-[388px] w-full justify-items-center grid content-between">
-          <div className="flex justify-between pt-6 mx-auto w-8/12 container">
-            <p className="text-white">👈 Back to homepage</p>
-            <ul className="flex text-white space-x-[3.75rem]">
-              <li>Home</li>
+      <div className="bg-hero bg-no-repeat bg-cover bg-center h-60 sm:h-72 md:h-84 lg:h-96">
+        <div className="h-60 sm:h-72 md:h-84 lg:h-96 w-full justify-items-center grid content-between">
+          <div className="flex justify-between pt-6 mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 container">
+            <p className="text-white text-sm lg:text-lg hover:border-b-[3px] border-[#2B9EDE]">
+              👈 Back to homepage
+            </p>
+            <ul className="hidden text-opacity-50 text-white text-sm md:space-x-[2rem] md:flex lg:space-x-[2.5rem] lg:text-base xl:space-x-[3.75rem] xl:text-lg ">
+              <li className="cursor-pointer active:text-opacity-100">
+                <a>Home</a>
+              </li>
               <li>Project</li>
               <li>Blog</li>
               <li>About</li>
             </ul>
+            <div class="md:hidden flex items-center justify-end">
+              <button class="outline-none mobile-menu-button">
+                <svg
+                  class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+                  x-show="!showMenu"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </button>
+            </div>
           </div>
-          <div className="flex w-8/12">
-            <div className="w-auto self-end pb-9">
-              <h1 className="text-white text-5xl font-bold">
+          <div className="flex w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12">
+            <div className="w-full md:w-8/12 lg:w-8/12 self-end pb-9 lg:mr-3">
+              <h1 className="text-white font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl ">
                 ✏️ Writing Journey
               </h1>
-              <p className="mt-10 text-white font-light text-lg tracking-wider">
+              <p className="mt-4 lg:mt-8 text-white font-light text-sm sm:text-sm md:text-base lg:text-lg tracking-wider">
                 Something new I'm starting for 2021 — every week or two I write
                 about what I've been working on, problems I've solved.
               </p>
             </div>
-            <div className="w-7/12">
-              <img src="blog-img.png" className="translate-y-5 mx-auto" />
+            <div className="hidden md:flex md:w-4/12 lg:w-4/12">
+              <img
+                src="blog-img.png"
+                className="md:translate-y-6 lg:translate-y-5 mx-auto"
+              />
             </div>
           </div>
         </div>
       </div>
-      <div className="container-w-full mx-auto w-8/12 container pt-6 text-sm text-[#282828] flex">
+      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 container pt-6 text-sm text-[#282828] flex">
         <div className="w-[10rem] relative mr-5 cursor-pointer">
           <div
             className={`border-2 border-[#01549F] p-3 ${
@@ -170,8 +189,30 @@ const WritingJourney = () => {
           )}
         </div>
       </div>
+      <div className="container mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 container pt-14">
+        <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828] mb-6">
+          Januari 2022
+        </p>
 
-      {post.map((data) => (
+        <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828]">
+          <table>
+            <tr className="cursor-pointer hover:border-b-2 border-[#2B9EDE] mb-3">
+              <td>24</td>
+              <td>:</td>
+              <td>The Element of Surprise on UX Design</td>
+            </tr>
+          </table>
+          <table>
+            <tr className="cursor-pointer hover:border-b-2 border-[#2B9EDE] mb-3">
+              <td>23</td>
+              <td>:</td>
+              <td>UX Design bukan hanya untuk product digital?</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      {/* {post.map((data) => (
         <div
           key={data.title}
           className="container mx-auto w-8/12 container pt-14"
@@ -180,8 +221,8 @@ const WritingJourney = () => {
             {moment(data.data.postsConnection.edges.createdAt).format(
               "MMMM YYYY"
             )}
-          </p>
-          {post.map((content) => {
+          </p> */}
+      {/* {post.map((content) => {
             if (moment(data.date).format("MMMM") == "January") {
               return (
                 <div className="text-lg font-semibold text-[#282828]">
@@ -195,9 +236,9 @@ const WritingJourney = () => {
                 </div>
               );
             }
-          })}
-        </div>
-      ))}
+          })} */}
+      {/* </div>
+      ))} */}
     </>
   );
 };
