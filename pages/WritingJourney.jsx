@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import moment from "moment";
 
 const WritingJourney = () => {
   const [dropDownCategories, setDropdownCategories] = useState(false);
@@ -18,6 +19,73 @@ const WritingJourney = () => {
     setDropdownTime(!dropDownTime);
     setDropStyleTime(!dropStyleTime);
   };
+
+  const post = [
+    {
+      data: {
+        postsConnection: {
+          edges: [
+            {
+              node: {
+                author: {
+                  bio: "Aku cantik banget lohh",
+                  name: "Kayes Onic",
+                  id: "ckwp5gtlc2u200c86nymojb3d",
+                  photo: {
+                    url: "https://media.graphcms.com/3EnHv5yTxipQiPofntvK",
+                  },
+                },
+                createdAt: "2021-12-02T16:12:09.443809+00:00",
+                slug: "the-element-of-surprise-on-ux-design",
+                title: "The Element of Surprise on UX Design",
+                excerpt:
+                  "The Element of Surprise, keadaan dimana kita gak bisa ngatur apa yang sedang kita nikmati, dan otak lebih milih untuk mengikuti dan menikmati keadaan yang sedang terjadi.",
+                featureImage: {
+                  url: "https://media.graphcms.com/waETOQNiShedAwMtcJAs",
+                },
+                categories: [
+                  {
+                    name: "Web Development",
+                    slug: "webdev",
+                  },
+                ],
+              },
+            },
+            {
+              node: {
+                author: {
+                  bio: "Aku cantik banget lohh",
+                  name: "Kayes Onic",
+                  id: "ckwp5gtlc2u200c86nymojb3d",
+                  photo: {
+                    url: "https://media.graphcms.com/3EnHv5yTxipQiPofntvK",
+                  },
+                },
+                createdAt: "2021-12-03T00:15:58.679385+00:00",
+                slug: "next-js",
+                title: "Next.js is the Future of Web",
+                excerpt:
+                  "The Element of Surprise, keadaan dimana kita gak bisa ngatur apa yang sedang kita nikmati, dan otak lebih milih untuk mengikuti dan menikmati keadaan yang sedang terjadi.",
+                featureImage: {
+                  url: "https://media.graphcms.com/5dD2NEY4TUi5oBgJcf2u",
+                },
+                categories: [
+                  {
+                    name: "Web Development",
+                    slug: "webdev",
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      },
+    },
+  ];
+
+  console.log(
+    moment(post.data.postsConnection.edges.node.createdAt).format("MMMM YYYY")
+  );
 
   return (
     <>
@@ -102,23 +170,34 @@ const WritingJourney = () => {
           )}
         </div>
       </div>
-      <div className="container mx-auto w-8/12 container pt-14">
-        <p className="text-lg font-light text-[#282828] mb-6">Januari 2022</p>
-        <div className="text-lg font-semibold text-[#282828]">
-          <table>
-            <tr className="cursor-pointer hover:border-b-2 border-[#2B9EDE] mb-3">
-              <td>24</td>
-              <td>: The Element of Surprise on UX Design</td>
-            </tr>
-          </table>
-          <table>
-            <tr className="cursor-pointer hover:border-b-2 border-[#2B9EDE] mb-3">
-              <td>23</td>
-              <td>: UX Design bukan hanya untuk product digital?</td>
-            </tr>
-          </table>
+
+      {post.map((data) => (
+        <div
+          key={data.title}
+          className="container mx-auto w-8/12 container pt-14"
+        >
+          <p className="text-lg font-light text-[#282828] mb-6">
+            {moment(data.data.postsConnection.edges.createdAt).format(
+              "MMMM YYYY"
+            )}
+          </p>
+          {post.map((content) => {
+            if (moment(data.date).format("MMMM") == "January") {
+              return (
+                <div className="text-lg font-semibold text-[#282828]">
+                  <table>
+                    <tr className="cursor-pointer hover:border-b-2 border-[#2B9EDE] mb-3">
+                      <td>{moment(content.date).format("DD")}</td>
+                      <td>:</td>
+                      <td>{content.title}</td>
+                    </tr>
+                  </table>
+                </div>
+              );
+            }
+          })}
         </div>
-      </div>
+      ))}
     </>
   );
 };
