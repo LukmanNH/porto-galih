@@ -28,7 +28,7 @@ export default function Home() {
           </span>{" "}
           or my{" "}
           <span className="border-b-[3px] font-semibold border-blue-600 duration-200 hover:text-[#01549F] cursor-pointer">
-            projects
+            <Link href="/NotableWorks">projects</Link>
           </span>{" "}
           if you want to know more{" "}
           <span className="border-b-[3px] font-semibold border-blue-600 duration-200 hover:text-[#01549F] cursor-pointer">
