@@ -27,7 +27,7 @@ const WritingJourney = ({ posts }) => {
     createdAt: moment(x.node.createdAt).format("MMMM YYYY").toString(),
     data: {
       title: x.node.title,
-      day: moment(x.node.createdAt).format("dddd d"),
+      day: moment(x.node.createdAt).format("dddd D"),
       slug: x.node.slug,
     },
     slug: x.node.categories,
