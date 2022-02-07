@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import moment from "moment";
 import NavBar from "../components/NavBar";
 import Link from "next/link";
+import { getPosts } from "../services";
 
-const WritingJourney = () => {
+const WritingJourney = ({ posts }) => {
   const [dropDownCategories, setDropdownCategories] = useState(false);
   const [dropStyleCategories, setDropStyleCategories] = useState(false);
   const [valueDropDownCategories, setValueDropDownCategories] =
@@ -22,92 +23,7 @@ const WritingJourney = () => {
     setDropStyleTime(!dropStyleTime);
   };
 
-  const post = {
-    postsConnection: {
-      edges: [
-        {
-          node: {
-            author: {
-              bio: "Aku cantik banget lohh",
-              name: "Kayes Onic",
-              id: "ckwp5gtlc2u200c86nymojb3d",
-              photo: {
-                url: "https://media.graphcms.com/3EnHv5yTxipQiPofntvK",
-              },
-            },
-            createdAt: "2021-12-02T16:12:09.443809+00:00",
-            slug: "the-element-of-surprise-on-ux-design",
-            title: "The Element of Surprise on UX Design",
-            excerpt:
-              "The Element of Surprise, keadaan dimana kita gak bisa ngatur apa yang sedang kita nikmati, dan otak lebih milih untuk mengikuti dan menikmati keadaan yang sedang terjadi.",
-            featureImage: {
-              url: "https://media.graphcms.com/waETOQNiShedAwMtcJAs",
-            },
-            categories: [
-              {
-                name: "Web Development",
-                slug: "webdev",
-              },
-            ],
-          },
-        },
-        {
-          node: {
-            author: {
-              bio: "Aku cantik banget lohh",
-              name: "Kayes Onic",
-              id: "ckwp5gtlc2u200c86nymojb3d",
-              photo: {
-                url: "https://media.graphcms.com/3EnHv5yTxipQiPofntvK",
-              },
-            },
-            createdAt: "2021-12-03T00:15:58.679385+00:00",
-            slug: "next-js",
-            title: "Next.js is the Future of Web",
-            excerpt:
-              "The Element of Surprise, keadaan dimana kita gak bisa ngatur apa yang sedang kita nikmati, dan otak lebih milih untuk mengikuti dan menikmati keadaan yang sedang terjadi.",
-            featureImage: {
-              url: "https://media.graphcms.com/5dD2NEY4TUi5oBgJcf2u",
-            },
-            categories: [
-              {
-                name: "Web Development",
-                slug: "webdev",
-              },
-            ],
-          },
-        },
-        {
-          node: {
-            author: {
-              bio: "Aku cantik banget lohh",
-              name: "Kayes Onic",
-              id: "ckwp5gtlc2u200c86nymojb3d",
-              photo: {
-                url: "https://media.graphcms.com/3EnHv5yTxipQiPofntvK",
-              },
-            },
-            createdAt: "2021-11-03T00:15:58.679385+00:00",
-            slug: "next-js",
-            title: "Next.js is the Future of Web",
-            excerpt:
-              "The Element of Surprise, keadaan dimana kita gak bisa ngatur apa yang sedang kita nikmati, dan otak lebih milih untuk mengikuti dan menikmati keadaan yang sedang terjadi.",
-            featureImage: {
-              url: "https://media.graphcms.com/5dD2NEY4TUi5oBgJcf2u",
-            },
-            categories: [
-              {
-                name: "Web Development",
-                slug: "webdev",
-              },
-            ],
-          },
-        },
-      ],
-    },
-  };
-
-  const mappedData = post.postsConnection.edges.map((x) => ({
+  const mappedData = posts.blogPostsConnection.edges.map((x) => ({
     createdAt: moment(x.node.createdAt).format("MMMM YYYY").toString(),
     data: {
       title: x.node.title,
@@ -208,13 +124,13 @@ const WritingJourney = () => {
       </div>
       <div className="container mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 container pt-14">
         {key.map((item) => (
-          <>
+          <div key={item}>
             <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
               {item}
             </p>
             <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
               {bismillah[item].map((items) => (
-                <table>
+                <table key={items.info.slug}>
                   <Link href={`/post/${items.info.slug}`}>
                     <tr className="cursor-pointer hover:border-b-2 border-[#2B9EDE]">
                       <td>{items.info.day}</td>
@@ -225,7 +141,7 @@ const WritingJourney = () => {
                 </table>
               ))}
             </div>
-          </>
+          </div>
         ))}
       </div>
     </>
@@ -233,3 +149,10 @@ const WritingJourney = () => {
 };
 
 export default WritingJourney;
+
+export async function getStaticProps() {
+  const posts = (await getPosts()) || [];
+  return {
+    props: { posts },
+  };
+}

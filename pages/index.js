@@ -32,7 +32,7 @@ export default function Home() {
           </span>{" "}
           if you want to know more{" "}
           <span className="border-b-[3px] font-semibold border-blue-600 duration-200 hover:text-[#01549F] cursor-pointer">
-            about me.
+            <Link href="/AboutMe">about me.</Link>
           </span>
         </p>
         <div className="my-20 font-medium w-auto flex text-[#969696] text-[0.9rem] sm:text-[1rem] md:text-[1.63] lg:tex-[1.125]">

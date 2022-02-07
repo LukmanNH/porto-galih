@@ -19,15 +19,15 @@ const NavBar = ({ isNavItem }) => {
             <li>Blog</li>
             <li>About</li>
           </ul>
-          <div class="md:hidden flex items-center justify-end">
-            <button class="outline-none mobile-menu-button">
+          <div className="md:hidden flex items-center justify-end">
+            <button className="outline-none mobile-menu-button">
               <svg
-                class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+                className=" w-6 h-6 text-gray-500 hover:text-green-500 "
                 x-show="!showMenu"
                 fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
