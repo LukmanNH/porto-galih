@@ -9,6 +9,162 @@ const NotableWorks = () => {
   };
   const [valueDropDownCategories, setValueDropDownCategories] =
     useState("All Categories");
+
+  const createPattern = (length) => {
+    const pattern = [];
+    let x = true;
+    for (let y = 1; y <= length; y++) {
+      if (x) pattern.push(y);
+      if (y % 2 == 0) x = !x;
+    }
+    return pattern;
+  };
+
+  const project = {
+    data: {
+      postsConnection: {
+        edges: [
+          {
+            node: {
+              createdAt: "2021-12-02T16:12:09.443809+00:00",
+              slug: "the-element-of-surprise-on-ux-design",
+              title: "Revamp the Telkomsel B2B Platform Client Dashboard",
+              excerpt:
+                "Merge multiple adivpplication dashboards into one with seamless user experiences.",
+              featureImage: {
+                url: "https://media.graphcms.com/waETOQNiShedAwMtcJAs",
+              },
+              categories: [
+                {
+                  name: "Website",
+                  slug: "webdev",
+                },
+                {
+                  name: "B2B Service",
+                  slug: "webdev",
+                },
+              ],
+            },
+          },
+          {
+            node: {
+              createdAt: "2021-12-02T16:12:09.443809+00:00",
+              slug: "the-element-of-surprise-on-ux-design",
+              title: "Jenius App Re—design Concept for Competition",
+              excerpt:
+                "Improve the User interface and user flow of using the Jenius mobile banking application",
+              featureImage: {
+                url: "https://media.graphcms.com/waETOQNiShedAwMtcJAs",
+              },
+              categories: [
+                {
+                  name: "Mobile",
+                  slug: "webdev",
+                },
+                {
+                  name: "Mobile Banking",
+                  slug: "webdev",
+                },
+              ],
+            },
+          },
+          {
+            node: {
+              createdAt: "2021-12-02T16:12:09.443809+00:00",
+              slug: "the-element-of-surprise-on-ux-design",
+              title: "Jenius App Re—design Concept for Competition",
+              excerpt:
+                "Improve the User interface and user flow of using the Jenius mobile banking application",
+              featureImage: {
+                url: "https://media.graphcms.com/waETOQNiShedAwMtcJAs",
+              },
+              categories: [
+                {
+                  name: "Mobile",
+                  slug: "webdev",
+                },
+                {
+                  name: "Mobile Banking",
+                  slug: "webdev",
+                },
+              ],
+            },
+          },
+          {
+            node: {
+              createdAt: "2021-12-02T16:12:09.443809+00:00",
+              slug: "the-element-of-surprise-on-ux-design",
+              title: "Jenius App Re—design Concept for Competition",
+              excerpt:
+                "Improve the User interface and user flow of using the Jenius mobile banking application",
+              featureImage: {
+                url: "https://media.graphcms.com/waETOQNiShedAwMtcJAs",
+              },
+              categories: [
+                {
+                  name: "Mobile",
+                  slug: "webdev",
+                },
+                {
+                  name: "Mobile Banking",
+                  slug: "webdev",
+                },
+              ],
+            },
+          },
+          {
+            node: {
+              createdAt: "2021-12-02T16:12:09.443809+00:00",
+              slug: "the-element-of-surprise-on-ux-design",
+              title: "Jenius App Re—design Concept for Competition",
+              excerpt:
+                "Improve the User interface and user flow of using the Jenius mobile banking application",
+              featureImage: {
+                url: "https://media.graphcms.com/waETOQNiShedAwMtcJAs",
+              },
+              categories: [
+                {
+                  name: "Mobile",
+                  slug: "webdev",
+                },
+                {
+                  name: "Mobile Banking",
+                  slug: "webdev",
+                },
+              ],
+            },
+          },
+          {
+            node: {
+              createdAt: "2021-12-02T16:12:09.443809+00:00",
+              slug: "the-element-of-surprise-on-ux-design",
+              title: "Jenius App Re—design Concept for Competition",
+              excerpt:
+                "Improve the User interface and user flow of using the Jenius mobile banking application",
+              featureImage: {
+                url: "https://media.graphcms.com/waETOQNiShedAwMtcJAs",
+              },
+              categories: [
+                {
+                  name: "Mobile",
+                  slug: "webdev",
+                },
+                {
+                  name: "Mobile Banking",
+                  slug: "webdev",
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  };
+  const pattern = useState(
+    createPattern(project.data.postsConnection.edges.length)
+  )[0];
+  const dataProject = project.data.postsConnection.edges;
+
   return (
     <>
       <div className="bg-hero bg-no-repeat bg-cover bg-center h-60 sm:h-72 md:h-84 lg:h-96">
@@ -88,163 +244,56 @@ const NotableWorks = () => {
           )}
         </div>
       </div>
-      <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 mx-auto mb-28">
-        {/* <-- START Telkomsel B2B Platform SECTION --> */}
-        <div className="bg-card h-[19.375rem] rounded-md px-12 py-[2.375rem] flex hover:shadow-custom-card transition duration-0 hover:duration-500 mb-[38px]">
-          <div className="lg:w-6/12 order-last">
-            <img src="../b2b-img.png" className="blur-[1px]" alt="" />
-          </div>
-          <div className="lg:w-6/12">
-            <h1 className="text-[1.75rem] font-bold">
-              Revamp the Telkomsel B2B Platform Client Dashboard
-            </h1>
-            <div className="flex text-sm font-light text-[#808080] my-2">
-              <p>Website</p>
-              <span className="h-[5px] w-[5px] bg-[#808080] rounded-full inline-block mx-3 self-center"></span>
-              <p>B2B Service</p>
-            </div>
-            <p className="text-sm font-normal text-[#282828] mb-[1.438rem]">
-              Merge multiple adivpplication dashboards into one with seamless
-              user experiences.
-            </p>
-            <div className="cursor-pointer flex justify-center bg-white hover:bg-[#282828] hover:text-white shadow-custom-button py-[0.625rem] w-[9.125rem] rounded-[5px] font-medium text-sm text-[#01549F]">
-              <p className="mr-[10px]">View Project</p>
-              <img width={18} height={18} src="../lock-icon.png" alt="" />
-            </div>
-          </div>
-        </div>
-        {/* <-- END Telkomsel B2B Platform SECTION --> */}
-
+      <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 mx-auto mb-28 container">
         {/* <-- START Jenius App Re—design SECTION --> */}
-        <div className="bg-card h-[19.375rem] rounded-md px-12 py-[2.375rem] flex hover:shadow-custom-card mb-[38px]">
-          <div className="lg:w-6/12 order-last">
-            <img src="../jenius-img.png" className="" alt="" />
-          </div>
-          <div className="lg:w-6/12">
-            <h1 className="text-[1.75rem] font-bold">
-              Jenius App Re—design Concept for Competition
-            </h1>
-            <div className="flex text-sm font-light text-[#808080] my-2">
-              <p>Mobile</p>
-              <span className="h-[5px] w-[5px] bg-[#808080] rounded-full inline-block mx-3 self-center"></span>
-              <p>Mobile Banking</p>
-            </div>
-            <p className="text-sm font-normal text-[#282828] mb-[1.438rem]">
-              Improve the User interface and user flow of using the Jenius
-              mobile banking application
-            </p>
-            <div className="cursor-pointer flex justify-center bg-white hover:bg-[#282828] hover:text-white shadow-custom-button py-[0.625rem] w-[9.125rem] rounded-[5px] font-medium text-sm text-[#01549F]">
-              <p className="mr-[10px]">View Project</p>
-              {/* <img width={18} height={18} src="../lock-icon.png" alt="" /> */}
-            </div>
-          </div>
-        </div>
-        {/* <-- END Jenius App Re—design SECTION --> */}
-
-        <div className="grid gap-[38px] grid-cols-2 h-[599px] mb-[38px]">
-          {/* <-- START B2B Platform Design System SECTION --> */}
-          <div className="container rounded-md bg-[#EEF2F5] px-11 py-[2.375rem] hover:shadow-custom-card mb-[38px]">
-            <div className="w-full mb-10">
-              <img src="../desys-img.png" className="blur-[1px]" alt="" />
-            </div>
-            <div className="w-full">
-              <h1 className="text-[1.75rem] font-bold">
-                Telkomsel B2B Platform Design System
-              </h1>
-              <div className="flex text-sm font-light text-[#808080] my-2">
-                <p>Website</p>
-                <span className="h-[5px] w-[5px] bg-[#808080] rounded-full inline-block mx-3 self-center"></span>
-                <p>Design Systems</p>
-              </div>
-              <p className="text-sm font-normal text-[#282828] mb-[1.438rem]">
-                To make it easier for developers to use the available components
-              </p>
-              <div className="cursor-pointer flex justify-center bg-white hover:bg-[#282828] hover:text-white shadow-custom-button py-[0.625rem] w-[9.125rem] rounded-[5px] font-medium text-sm text-[#01549F]">
-                <p className="mr-[10px]">View Project</p>
-                <img width={18} height={18} src="../lock-icon.png" alt="" />
+        <div className="grid grid-cols-2 gap-[38px]">
+          {dataProject.map((value, index) => (
+            <div
+              className={`grid ${pattern.includes(index + 1) && "col-span-2"}`}
+              key={index}
+            >
+              <div
+                className={`rounded-md py-[2.375rem] hover:shadow-custom-card ${
+                  pattern.includes(index + 1)
+                    ? " flex bg-card px-12 "
+                    : " bg-halfcard container px-11 h-[599px] "
+                }`}
+              >
+                <div
+                  className={`${
+                    pattern.includes(index + 1)
+                      ? " lg:w-6/12 order-last "
+                      : " w-full mb-10 "
+                  }`}
+                >
+                  <img src="../jenius-img.png" className="" alt="" />
+                </div>
+                <div
+                  className={`${
+                    pattern.includes(index + 1) ? " lg:w-6/12 " : " w-full "
+                  }`}
+                >
+                  <h1 className="text-[1.75rem] font-bold">
+                    {value.node.title}
+                  </h1>
+                  <div className="flex text-sm font-light text-[#808080] my-2">
+                    <p>{value.node.categories[0].name}</p>
+                    <span className="h-[5px] w-[5px] bg-[#808080] rounded-full inline-block mx-3 self-center"></span>
+                    <p>{value.node.categories[1].name}</p>
+                  </div>
+                  <p className="text-sm font-normal text-[#282828] mb-[1.438rem]">
+                    Improve the User interface and user flow of using the Jenius
+                    mobile banking application
+                  </p>
+                  <div className="cursor-pointer flex justify-center bg-white hover:bg-[#282828] hover:text-white shadow-custom-button py-[0.625rem] w-[9.125rem] rounded-[5px] font-medium text-sm text-[#01549F]">
+                    <p className="mr-[10px]">View Project</p>
+                    {/* <img width={18} height={18} src="../lock-icon.png" alt="" /> */}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          {/* <-- END B2B Platform Design System SECTION --> */}
-
-          {/* <-- START DigiHub API Marketplace SECTION --> */}
-          <div className="container rounded-md bg-[#EEF2F5] px-11 py-[2.375rem] hover:shadow-custom-card mb-[38px]">
-            <div className="w-full mb-10">
-              <img src="../digihub-img.png" className="blur-[1px]" alt="" />
-            </div>
-            <div className="w-full">
-              <h1 className="text-[1.75rem] font-bold">
-                Telkomsel DigiHub API Marketplace Revamp
-              </h1>
-              <div className="flex text-sm font-light text-[#808080] my-2">
-                <p>Website</p>
-                <span className="h-[5px] w-[5px] bg-[#808080] rounded-full inline-block mx-3 self-center"></span>
-                <p>Marketplace</p>
-              </div>
-              <p className="text-sm font-normal text-[#282828] mb-[1.438rem]">
-                Build and develop an e-commerce platform that sells Telkomsel's
-                Application Programming Interface (API)
-              </p>
-              <div className="cursor-pointer flex justify-center bg-white hover:bg-[#282828] hover:text-white shadow-custom-button py-[0.625rem] w-[9.125rem] rounded-[5px] font-medium text-sm text-[#01549F]">
-                <p className="mr-[10px]">View Project</p>
-                <img width={18} height={18} src="../lock-icon.png" alt="" />
-              </div>
-            </div>
-          </div>
-          {/* <-- END DigiHub API Marketplace SECTION --> */}
+          ))}
         </div>
-
-        {/* <-- START Barbershop Booking SECTION --> */}
-        <div className="bg-card h-[19.375rem] rounded-md px-12 py-[2.375rem] flex hover:shadow-custom-card mb-[38px]">
-          <div className="lg:w-6/12 order-last">
-            <img src="../barber-img.png" className="" alt="" />
-          </div>
-          <div className="lg:w-6/12">
-            <h1 className="text-[1.75rem] font-bold">
-              UX Case Study — Barbershop Booking
-            </h1>
-            <div className="flex text-sm font-light text-[#808080] my-2">
-              <p>Mobile</p>
-              <span className="h-[5px] w-[5px] bg-[#808080] rounded-full inline-block mx-3 self-center"></span>
-              <p>Service App</p>
-            </div>
-            <p className="text-sm font-normal text-[#282828] mb-[1.438rem]">
-              Create an app that can be used to find, order, and pay for
-              barbershop services
-            </p>
-            <div className="cursor-pointer flex justify-center bg-white hover:bg-[#282828] hover:text-white shadow-custom-button py-[0.625rem] w-[9.125rem] rounded-[5px] font-medium text-sm text-[#01549F]">
-              <p className="mr-[10px]">View Project</p>
-              {/* <img width={18} height={18} src="../lock-icon.png" alt="" /> */}
-            </div>
-          </div>
-        </div>
-        {/* <-- END Barbershop Booking SECTION --> */}
-
-        {/* <-- START Barbershop Booking SECTION --> */}
-        <div className="bg-card h-[19.375rem] rounded-md px-12 py-[2.375rem] flex hover:shadow-custom-card mb-[38px]">
-          <div className="lg:w-6/12 order-last">
-            <img src="../barber-img.png" className="" alt="" />
-          </div>
-          <div className="lg:w-6/12">
-            <h1 className="text-[1.75rem] font-bold">
-              My Visual Design Gallery Exploration
-            </h1>
-            <div className="flex text-sm font-light text-[#808080] my-2">
-              <p>Website</p>
-              <span className="h-[5px] w-[5px] bg-[#808080] rounded-full inline-block mx-3 self-center"></span>
-              <p>Mobile</p>
-            </div>
-            <p className="text-sm font-normal text-[#282828] mb-[1.438rem]">
-              A collection of visual design explorations that I do, usually
-              uploaded on dribbble.com
-            </p>
-            <div className="cursor-pointer flex justify-center bg-white hover:bg-[#282828] hover:text-white shadow-custom-button py-[0.625rem] w-[9.125rem] rounded-[5px] font-medium text-sm text-[#01549F]">
-              <p className="mr-[10px]">View Project</p>
-              {/* <img width={18} height={18} src="../lock-icon.png" alt="" /> */}
-            </div>
-          </div>
-        </div>
-        {/* <-- END Barbershop Booking SECTION --> */}
       </div>
     </>
   );

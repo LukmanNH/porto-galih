@@ -22,6 +22,9 @@ module.exports = {
         ".bg-card": {
           "background-image": "url(/bg-card.png)",
         },
+        ".bg-halfcard": {
+          "background-image": "url(/bg-halfcard.png)",
+        },
         ".icon-down": {
           background: "url(/icon-down.png) 90% / 10% no-repeat ",
         },
