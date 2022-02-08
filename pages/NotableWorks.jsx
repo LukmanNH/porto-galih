@@ -156,6 +156,28 @@ const NotableWorks = () => {
               ],
             },
           },
+          {
+            node: {
+              createdAt: "2021-12-02T16:12:09.443809+00:00",
+              slug: "the-element-of-surprise-on-ux-design",
+              title: "Jenius App Re—design Concept for Competition",
+              excerpt:
+                "Improve the User interface and user flow of using the Jenius mobile banking application",
+              featureImage: {
+                url: "https://media.graphcms.com/waETOQNiShedAwMtcJAs",
+              },
+              categories: [
+                {
+                  name: "Mobile",
+                  slug: "webdev",
+                },
+                {
+                  name: "Mobile Banking",
+                  slug: "webdev",
+                },
+              ],
+            },
+          },
         ],
       },
     },
@@ -246,46 +268,53 @@ const NotableWorks = () => {
       </div>
       <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 mx-auto mb-28 container">
         {/* <-- START Jenius App Re—design SECTION --> */}
-        <div className="grid grid-cols-2 gap-[38px]">
+        <div className="grid grid-cols-2 gap-6 sm:gap-7 md:gap-8 lg:gap-[38px]">
           {dataProject.map((value, index) => (
             <div
-              className={`grid ${pattern.includes(index + 1) && "col-span-2"}`}
+              className={`grid ${
+                pattern.includes(index + 1)
+                  ? " col-span-2 md:col-span-1 lg:col-span-2"
+                  : "col-span-2 md:col-span-1"
+              }`}
               key={index}
             >
               <div
-                className={`rounded-md py-[2.375rem] hover:shadow-custom-card ${
+                className={`rounded-md hover:shadow-custom-card py-[1.5rem] md:py-[2rem] lg:py-[2.375rem] ${
                   pattern.includes(index + 1)
-                    ? " flex bg-card px-12 "
-                    : " bg-halfcard container px-11 h-[599px] "
+                    ? " bg-halfcard px-7 lg:bg-card sm:px-10 lg:px-12 lg:flex  "
+                    : " bg-halfcard container px-11 "
                 }`}
               >
                 <div
-                  className={`${
+                  className={` ${
                     pattern.includes(index + 1)
-                      ? " lg:w-6/12 order-last "
-                      : " w-full mb-10 "
+                      ? " order-last mb-5 md:mb-0 lg:w-6/12  "
+                      : " w-full mb-5 "
                   }`}
                 >
-                  <img src="../jenius-img.png" className="" alt="" />
+                  <img
+                    src="../jenius-img.png"
+                    className="mx-auto md:se"
+                    alt=""
+                  />
                 </div>
                 <div
                   className={`${
                     pattern.includes(index + 1) ? " lg:w-6/12 " : " w-full "
                   }`}
                 >
-                  <h1 className="text-[1.75rem] font-bold">
+                  <h1 className="font-bold text-[1.3rem] sm:text-[1.5rem] md:text-[1.625rem] lg:text-[1.75rem]">
                     {value.node.title}
                   </h1>
-                  <div className="flex text-sm font-light text-[#808080] my-2">
+                  <div className="flex font-light text-[#808080] my-2 text-xs sm:text-sm">
                     <p>{value.node.categories[0].name}</p>
                     <span className="h-[5px] w-[5px] bg-[#808080] rounded-full inline-block mx-3 self-center"></span>
                     <p>{value.node.categories[1].name}</p>
                   </div>
-                  <p className="text-sm font-normal text-[#282828] mb-[1.438rem]">
-                    Improve the User interface and user flow of using the Jenius
-                    mobile banking application
+                  <p className="font-normal text-[#282828] mb-[1.438rem] text-xs sm:text-sm">
+                    {value.node.excerpt}
                   </p>
-                  <div className="cursor-pointer flex justify-center bg-white hover:bg-[#282828] hover:text-white shadow-custom-button py-[0.625rem] w-[9.125rem] rounded-[5px] font-medium text-sm text-[#01549F]">
+                  <div className="cursor-pointer flex justify-center bg-white hover:bg-[#282828] hover:text-white shadow-custom-button py-[0.625rem] w-[9.125rem] rounded-[5px] font-medium text-sm text-[#01549F] mb-3">
                     <p className="mr-[10px]">View Project</p>
                     {/* <img width={18} height={18} src="../lock-icon.png" alt="" /> */}
                   </div>
