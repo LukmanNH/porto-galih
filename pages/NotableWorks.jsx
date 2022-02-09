@@ -10,15 +10,15 @@ const NotableWorks = () => {
   const [valueDropDownCategories, setValueDropDownCategories] =
     useState("All Categories");
 
-  const createPattern = (length) => {
-    const pattern = [];
-    let x = true;
-    for (let y = 1; y <= length; y++) {
-      if (x) pattern.push(y);
-      if (y % 2 == 0) x = !x;
-    }
-    return pattern;
-  };
+  // const createPattern = (length) => {
+  //   const pattern = [];
+  //   let x = true;
+  //   for (let y = 1; y <= length; y++) {
+  //     if (x) pattern.push(y);
+  //     if (y % 2 == 0) x = !x;
+  //   }
+  //   return pattern;
+  // };
 
   const project = {
     data: {
@@ -44,6 +44,7 @@ const NotableWorks = () => {
                   slug: "webdev",
                 },
               ],
+              lock: true,
             },
           },
           {
@@ -66,6 +67,7 @@ const NotableWorks = () => {
                   slug: "webdev",
                 },
               ],
+              lock: true,
             },
           },
           {
@@ -88,6 +90,7 @@ const NotableWorks = () => {
                   slug: "webdev",
                 },
               ],
+              lock: false,
             },
           },
           {
@@ -110,6 +113,7 @@ const NotableWorks = () => {
                   slug: "webdev",
                 },
               ],
+              lock: true,
             },
           },
           {
@@ -132,6 +136,7 @@ const NotableWorks = () => {
                   slug: "webdev",
                 },
               ],
+              lock: false,
             },
           },
           {
@@ -154,6 +159,7 @@ const NotableWorks = () => {
                   slug: "webdev",
                 },
               ],
+              lock: true,
             },
           },
           {
@@ -176,15 +182,25 @@ const NotableWorks = () => {
                   slug: "webdev",
                 },
               ],
+              lock: false,
             },
           },
         ],
       },
     },
   };
-  const pattern = useState(
-    createPattern(project.data.postsConnection.edges.length)
-  )[0];
+
+  // const pattern = useState(
+  //   createPattern(project.data.postsConnection.edges.length)
+  // )[0];
+
+  function truncateString(str, num) {
+    if (str.length <= num) {
+      return str;
+    }
+    return str.slice(0, num) + "...";
+  }
+
   const dataProject = project.data.postsConnection.edges;
 
   return (
@@ -272,38 +288,39 @@ const NotableWorks = () => {
           {dataProject.map((value, index) => (
             <div
               className={`grid ${
-                pattern.includes(index + 1)
+                index != 2 && index != 3
                   ? " col-span-2 md:col-span-1 lg:col-span-2"
                   : "col-span-2 md:col-span-1"
               }`}
               key={index}
             >
               <div
-                className={`rounded-md hover:shadow-custom-card py-[1.5rem] md:py-[2rem] lg:py-[2.375rem] ${
-                  pattern.includes(index + 1)
-                    ? " bg-halfcard px-7 lg:bg-card sm:px-10 lg:px-12 lg:flex  "
-                    : " bg-halfcard container px-11 "
+                className={`rounded-md hover:shadow-custom-card bg-[#EEF2F5] ${
+                  index != 2 && index != 3 ? " lg:flex  " : " container "
                 }`}
               >
                 <div
-                  className={` ${
-                    pattern.includes(index + 1)
-                      ? " order-last mb-5 md:mb-0 lg:w-6/12  "
-                      : " w-full mb-5 "
+                  className={`h-[280px] my-4 ${
+                    index != 2 && index != 3
+                      ? " order-last lg:w-6/12 mx-4 "
+                      : " mx-4 "
                   }`}
                 >
                   <img
-                    src="../jenius-img.png"
-                    className="mx-auto md:se"
+                    src="../imgPost.png"
+                    className="w-full h-full rounded-md"
                     alt=""
                   />
                 </div>
                 <div
-                  className={`${
-                    pattern.includes(index + 1) ? " lg:w-6/12 " : " w-full "
+                  className={`mx-4 my-[38px] lg:mx-10 ${
+                    index != 2 && index != 3
+                      ? " lg:w-6/12 "
+                      : "  lg:mb-[38px] mt[17px] "
                   }`}
                 >
-                  <h1 className="font-bold text-[1.3rem] sm:text-[1.5rem] md:text-[1.625rem] lg:text-[1.75rem]">
+                  <h1 className="font-bold text-[1.3rem] sm:text-[1.5rem] lg:text-[1.625rem] xl:text-[1.75rem]">
+                    {/* {truncateString(`${value.node.title}`, 4)} */}
                     {value.node.title}
                   </h1>
                   <div className="flex font-light text-[#808080] my-2 text-xs sm:text-sm">
@@ -314,9 +331,18 @@ const NotableWorks = () => {
                   <p className="font-normal text-[#282828] mb-[1.438rem] text-xs sm:text-sm">
                     {value.node.excerpt}
                   </p>
-                  <div className="cursor-pointer flex justify-center bg-white hover:bg-[#282828] hover:text-white shadow-custom-button py-[0.625rem] w-[9.125rem] rounded-[5px] font-medium text-sm text-[#01549F] mb-3">
+                  <div className="cursor-pointer flex justify-center bg-white hover:bg-[#282828] hover:text-white shadow-custom-button py-[0.625rem] w-[9.125rem] rounded-[5px] font-medium text-sm text-[#01549F]">
                     <p className="mr-[10px]">View Project</p>
-                    {/* <img width={18} height={18} src="../lock-icon.png" alt="" /> */}
+                    {value.node.lock ? (
+                      <img
+                        width={18}
+                        height={18}
+                        src="../lock-icon.png"
+                        alt=""
+                      />
+                    ) : (
+                      ""
+                    )}
                   </div>
                 </div>
               </div>
