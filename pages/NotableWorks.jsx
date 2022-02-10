@@ -219,8 +219,8 @@ const NotableWorks = () => {
           <div
             className={`border-2 border-[#01549F] p-3 ${
               dropStyleCategories
-                ? " icon-up rounded-lg border-b-0 rounded-b-none"
-                : " icon-down rounded-lg "
+                ? " icon-up rounded-md border-b-0 rounded-b-none"
+                : " icon-down rounded-md "
             }`}
           >
             <ul onClick={() => onClickDropDownCategories()}>
@@ -228,7 +228,7 @@ const NotableWorks = () => {
             </ul>
           </div>
           {dropDownCategories && (
-            <ul className="absolute border-2 border-[#01549F] border-t-0 rounded-lg rounded-t-none w-[10rem] bg-white">
+            <ul className="absolute border-2 border-[#01549F] border-t-0 rounded-md rounded-t-none w-[10rem] bg-white">
               <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
                 <p onClick={() => setValueDropDownCategories("Mobile")}>
                   Mobile

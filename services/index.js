@@ -76,3 +76,7 @@ export const getPostDetails = async (slug) => {
   const result = await request(graphqlAPI, query, { slug });
   return result.blogPost;
 };
+
+// export const getPostByCategories = async (category) => {
+//   const query
+// }

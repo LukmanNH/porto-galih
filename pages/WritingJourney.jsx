@@ -73,8 +73,8 @@ const WritingJourney = ({ posts }) => {
           <div
             className={`border-2 border-[#01549F] p-3 ${
               dropStyleCategories
-                ? " icon-up rounded-lg border-b-0 rounded-b-none"
-                : " icon-down rounded-lg "
+                ? " icon-up rounded-[0.313rem] border-b-0 rounded-b-none"
+                : " icon-down rounded-[0.313rem]"
             }`}
           >
             <ul onClick={() => onClickDropDownCategories()}>
@@ -82,13 +82,37 @@ const WritingJourney = ({ posts }) => {
             </ul>
           </div>
           {dropDownCategories && (
-            <ul className="absolute border-2 border-[#01549F] border-t-0 rounded-lg rounded-t-none w-[10rem] bg-white">
+            <ul className="absolute border-2 border-[#01549F] border-t-0 rounded-[0.313rem] rounded-t-none w-[10rem] bg-white">
+              {valueDropDownCategories != "All Categories" ? (
+                <li>
+                  <p
+                    onClick={function () {
+                      setValueDropDownCategories("All Categories");
+                      onClickDropDownCategories();
+                    }}
+                    className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white"
+                  >
+                    All Categories
+                  </p>
+                </li>
+              ) : null}
+
               <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
-                <p onClick={() => setValueDropDownCategories("Life")}>Life</p>
+                <p
+                  onClick={function () {
+                    setValueDropDownCategories("Life");
+                    onClickDropDownCategories();
+                  }}
+                >
+                  Life
+                </p>
               </li>
               <li>
                 <p
-                  onClick={() => setValueDropDownCategories("Career")}
+                  onClick={function () {
+                    setValueDropDownCategories("Career");
+                    onClickDropDownCategories();
+                  }}
                   className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white"
                 >
                   Career
@@ -104,19 +128,35 @@ const WritingJourney = ({ posts }) => {
           <div
             className={`border-2 border-[#01549F] p-3 ${
               dropStyleTime
-                ? " icon-up rounded-lg border-b-0 rounded-b-none"
-                : " icon-down rounded-lg "
+                ? " icon-up rounded-[0.313rem] border-b-0 rounded-b-none"
+                : " icon-down rounded-[0.313rem]"
             }`}
           >
             {valueDropDownTime}
           </div>
           {dropDownTime && (
-            <ul className="absolute border-2 border-[#01549F] border-t-0 rounded-lg rounded-t-none w-[10rem] bg-white">
+            <ul className="absolute border-2 border-[#01549F] border-t-0 rounded-[0.313rem] rounded-t-none w-[10rem] bg-white">
               <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
-                <p onClick={() => setValueDropDownTime("Newest")}>Newest</p>
+                <p
+                  onClick={function () {
+                    setValueDropDownTime("Newest");
+                    onClickDropDownTime();
+                    // fungsi memanggil query yang mengurutkan berdasarkan waktu
+                  }}
+                >
+                  Newest
+                </p>
               </li>
               <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
-                <p onClick={() => setValueDropDownTime("Oldest")}>Oldest</p>
+                <p
+                  onClick={function () {
+                    setValueDropDownTime("Oldest");
+                    onClickDropDownTime();
+                    // fungsi memanggil query yang mengurutkan berdasarkan waktu
+                  }}
+                >
+                  Oldest
+                </p>
               </li>
             </ul>
           )}

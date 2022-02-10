@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const NavBar = ({ isNavItem }) => {
   return (
-    <div className="flex justify-between pt-6 mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 container">
+    <div className="flex justify-between pt-[2.375rem] mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 container">
       <Link href={"/"}>
         <p className="text-white cursor-pointer text-sm lg:text-lg hover:border-b-[3px] border-[#2B9EDE] float-left">
           👈 Back to homepage

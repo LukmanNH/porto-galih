@@ -14,7 +14,7 @@ const ProjectDetails = ({ post }) => {
               <p className="text-white font-semibold text-2xl sm:text-2xl md:text-3xl lg:text-4xl">
                 Revamp the Telkomsel B2B Platform Client Dashboard
               </p>
-              <div class="grid grid-flow-col auto-cols-max">
+              <div clasNames="grid grid-flow-col auto-cols-max">
                 <div>
                   <p>Role</p>
                   <p>UI/UX Designer</p>
