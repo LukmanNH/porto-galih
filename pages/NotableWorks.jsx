@@ -246,33 +246,55 @@ const NotableWorks = () => {
           {dropDownCategories && (
             <ul className="absolute border-2 border-[#01549F] border-t-0 rounded-md rounded-t-none w-[10rem] bg-white">
               <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
-                <p onClick={() => setValueDropDownCategories("Mobile")}>
+                <p
+                  onClick={function () {
+                    setValueDropDownCategories("Mobile");
+                  }}
+                >
                   Mobile
                 </p>
               </li>
               <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
-                <p onClick={() => setValueDropDownCategories("Website")}>
+                <p
+                  onClick={function () {
+                    setValueDropDownCategories("Website");
+                  }}
+                >
                   Website
                 </p>
               </li>
               <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
-                <p onClick={() => setValueDropDownCategories("B2B Service")}>
+                <p
+                  onClick={function () {
+                    setValueDropDownCategories("B2B Service");
+                  }}
+                >
                   B2B Service
                 </p>
               </li>
               <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
-                <p onClick={() => setValueDropDownCategories("Mobile Banking")}>
+                <p
+                  onClick={function () {
+                    setValueDropDownCategories("Mobile Banking");
+                  }}
+                >
                   Mobile Banking
                 </p>
               </li>
               <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
-                <p onClick={() => setValueDropDownCategories("Design System")}>
+                <p
+                  onClick={function () {
+                    setValueDropDownCategories("Design System");
+                  }}
+                >
                   Design System
                 </p>
               </li>
               <li>
                 <p
-                  onClick={() => setValueDropDownCategories("Service App")}
+                  onClick={function () {
+                    setValueDropDownCategories("Service App");
+                  }}
                   className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white"
                 >
                   Service App

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
 import NavBar from "../components/NavBar";
 import Link from "next/link";
-import { getPosts } from "../services";
+import { getPosts, getBlogCategories, getPostsOrderASC } from "../services";
 
-const WritingJourney = ({ posts }) => {
+const WritingJourney = ({ posts, postsASC }) => {
   const [dropDownCategories, setDropdownCategories] = useState(false);
   const [dropStyleCategories, setDropStyleCategories] = useState(false);
   const [valueDropDownCategories, setValueDropDownCategories] =
@@ -43,6 +43,62 @@ const WritingJourney = ({ posts }) => {
   }, {});
 
   const key = Object.keys(bismillah);
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    getBlogCategories().then((newCategories) => setCategories(newCategories));
+  }, []);
+
+  const data = posts.blogPostsConnection.edges.filter((item) =>
+    item.node.blogCategories.some(
+      (items) => items.name === valueDropDownCategories
+    )
+  );
+
+  const mappedData2 = data.map((x) => ({
+    createdAt: moment(x.node.createdAt).format("MMMM YYYY").toString(),
+    data: {
+      title: x.node.title,
+      day: moment(x.node.createdAt).format("dddd D"),
+      slug: x.node.slug,
+    },
+    slug: x.node.categories,
+  }));
+
+  const bismillah2 = mappedData2.reduce((postContent, { createdAt, data }) => {
+    if (!postContent[createdAt]) postContent[createdAt] = [];
+    postContent[createdAt].push({
+      info: { title: data.title, day: data.day, slug: data.slug },
+    });
+
+    return postContent;
+  }, {});
+
+  const key2 = Object.keys(bismillah2);
+
+  const conditionalRendering = () => {
+    if (valueDropDownCategories === "All Categories") {
+      key.map((item) => (
+        <div key={item}>
+          <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
+            {item}
+          </p>
+          <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
+            {bismillah[item].map((items) => (
+              <table key={items.info.slug}>
+                <Link href={`/post/${items.info.slug}`}>
+                  <tr className="cursor-pointer hover:border-b-2 border-[#2B9EDE]">
+                    <td>{items.info.day}</td>
+                    <td>:</td>
+                    <td>{items.info.title}</td>
+                  </tr>
+                </Link>
+              </table>
+            ))}
+          </div>
+        </div>
+      ));
+    }
+  };
 
   return (
     <>
@@ -96,28 +152,18 @@ const WritingJourney = ({ posts }) => {
                   </p>
                 </li>
               ) : null}
-
-              <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
-                <p
-                  onClick={function () {
-                    setValueDropDownCategories("Life");
-                    onClickDropDownCategories();
-                  }}
-                >
-                  Life
-                </p>
-              </li>
-              <li>
-                <p
-                  onClick={function () {
-                    setValueDropDownCategories("Career");
-                    onClickDropDownCategories();
-                  }}
-                  className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white"
-                >
-                  Career
-                </p>
-              </li>
+              {categories.map((item) => (
+                <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
+                  <p
+                    onClick={function () {
+                      setValueDropDownCategories(item.name);
+                      onClickDropDownCategories();
+                    }}
+                  >
+                    {item.name}
+                  </p>
+                </li>
+              ))}
             </ul>
           )}
         </div>
@@ -163,26 +209,47 @@ const WritingJourney = ({ posts }) => {
         </div>
       </div>
       <div className="container mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 container pt-14">
-        {key.map((item) => (
-          <div key={item}>
-            <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
-              {item}
-            </p>
-            <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
-              {bismillah[item].map((items) => (
-                <table key={items.info.slug}>
-                  <Link href={`/post/${items.info.slug}`}>
-                    <tr className="cursor-pointer hover:border-b-2 border-[#2B9EDE]">
-                      <td>{items.info.day}</td>
-                      <td>:</td>
-                      <td>{items.info.title}</td>
-                    </tr>
-                  </Link>
-                </table>
-              ))}
-            </div>
-          </div>
-        ))}
+        {valueDropDownCategories === "All Categories"
+          ? key.map((item) => (
+              <div key={item}>
+                <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
+                  {item}
+                </p>
+                <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
+                  {bismillah[item].map((items) => (
+                    <table key={items.info.slug}>
+                      <Link href={`/post/${items.info.slug}`}>
+                        <tr className="cursor-pointer hover:border-b-2 border-[#2B9EDE]">
+                          <td>{items.info.day}</td>
+                          <td>:</td>
+                          <td>{items.info.title}</td>
+                        </tr>
+                      </Link>
+                    </table>
+                  ))}
+                </div>
+              </div>
+            ))
+          : key2.map((item) => (
+              <div key={item + 1}>
+                <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
+                  {item}
+                </p>
+                <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
+                  {bismillah2[item].map((items) => (
+                    <table key={items.info.slug}>
+                      <Link href={`/post/${items.info.slug}`}>
+                        <tr className="cursor-pointer hover:border-b-2 border-[#2B9EDE]">
+                          <td>{items.info.day}</td>
+                          <td>:</td>
+                          <td>{items.info.title}</td>
+                        </tr>
+                      </Link>
+                    </table>
+                  ))}
+                </div>
+              </div>
+            ))}
       </div>
     </>
   );
@@ -192,7 +259,8 @@ export default WritingJourney;
 
 export async function getStaticProps() {
   const posts = (await getPosts()) || [];
+  const postsASC = (await getPostsOrderASC()) || [];
   return {
-    props: { posts },
+    props: { posts, postsASC },
   };
 }

@@ -6,6 +6,31 @@ const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 export const getPosts = async () => {
   const query = gql`
     query MyQuery {
+      blogPostsConnection(orderBy: createdAt_DESC) {
+        edges {
+          node {
+            createdAt
+            slug
+            title
+            featuredImage {
+              url
+            }
+            blogCategories {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result;
+};
+
+export const getPostsOrderASC = async () => {
+  const query = gql`
+    query MyQuery {
       blogPostsConnection {
         edges {
           node {
@@ -77,6 +102,15 @@ export const getPostDetails = async (slug) => {
   return result.blogPost;
 };
 
-// export const getPostByCategories = async (category) => {
-//   const query
-// }
+export const getBlogCategories = async () => {
+  const query = gql`
+    query GetCategories {
+      blogCategories {
+        name
+        slug
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result.blogCategories;
+};

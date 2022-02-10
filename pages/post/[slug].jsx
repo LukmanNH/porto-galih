@@ -25,7 +25,9 @@ const PostDetails = ({ post }) => {
       </div>
       <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 mx-auto md:pr-36 sm:pr-28 pb-[6.25rem]">
         <div className="py-[3.625rem]">
-          <img src={post.featuredImage.url} alt="" />
+          {post.featuredImage ? (
+            <img src={post.featuredImage.url} alt="" />
+          ) : null}
         </div>
         <PostDetail post={post} />
         <div>
