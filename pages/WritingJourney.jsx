@@ -43,6 +43,7 @@ const WritingJourney = ({ posts, postsASC }) => {
   }, {});
 
   const key = Object.keys(bismillah);
+
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     getBlogCategories().then((newCategories) => setCategories(newCategories));
@@ -75,30 +76,53 @@ const WritingJourney = ({ posts, postsASC }) => {
 
   const key2 = Object.keys(bismillah2);
 
-  const conditionalRendering = () => {
-    if (valueDropDownCategories === "All Categories") {
-      key.map((item) => (
-        <div key={item}>
-          <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
-            {item}
-          </p>
-          <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
-            {bismillah[item].map((items) => (
-              <table key={items.info.slug}>
-                <Link href={`/post/${items.info.slug}`}>
-                  <tr className="cursor-pointer hover:border-b-2 border-[#2B9EDE]">
-                    <td>{items.info.day}</td>
-                    <td>:</td>
-                    <td>{items.info.title}</td>
-                  </tr>
-                </Link>
-              </table>
-            ))}
-          </div>
-        </div>
-      ));
-    }
-  };
+  const mappedData3 = postsASC.blogPostsConnection.edges.map((x) => ({
+    createdAt: moment(x.node.createdAt).format("MMMM YYYY").toString(),
+    data: {
+      title: x.node.title,
+      day: moment(x.node.createdAt).format("dddd D"),
+      slug: x.node.slug,
+    },
+    slug: x.node.categories,
+  }));
+
+  const bismillah3 = mappedData3.reduce((postContent, { createdAt, data }) => {
+    if (!postContent[createdAt]) postContent[createdAt] = [];
+    postContent[createdAt].push({
+      info: { title: data.title, day: data.day, slug: data.slug },
+    });
+
+    return postContent;
+  }, {});
+
+  const key3 = Object.keys(bismillah3);
+
+  const data2 = postsASC.blogPostsConnection.edges.filter((item) =>
+    item.node.blogCategories.some(
+      (items) => items.name === valueDropDownCategories
+    )
+  );
+
+  const mappedData4 = data2.map((x) => ({
+    createdAt: moment(x.node.createdAt).format("MMMM YYYY").toString(),
+    data: {
+      title: x.node.title,
+      day: moment(x.node.createdAt).format("dddd D"),
+      slug: x.node.slug,
+    },
+    slug: x.node.categories,
+  }));
+
+  const bismillah4 = mappedData4.reduce((postContent, { createdAt, data }) => {
+    if (!postContent[createdAt]) postContent[createdAt] = [];
+    postContent[createdAt].push({
+      info: { title: data.title, day: data.day, slug: data.slug },
+    });
+
+    return postContent;
+  }, {});
+
+  const key4 = Object.keys(bismillah4);
 
   return (
     <>
@@ -187,7 +211,6 @@ const WritingJourney = ({ posts, postsASC }) => {
                   onClick={function () {
                     setValueDropDownTime("Newest");
                     onClickDropDownTime();
-                    // fungsi memanggil query yang mengurutkan berdasarkan waktu
                   }}
                 >
                   Newest
@@ -198,7 +221,6 @@ const WritingJourney = ({ posts, postsASC }) => {
                   onClick={function () {
                     setValueDropDownTime("Oldest");
                     onClickDropDownTime();
-                    // fungsi memanggil query yang mengurutkan berdasarkan waktu
                   }}
                 >
                   Oldest
@@ -209,17 +231,59 @@ const WritingJourney = ({ posts, postsASC }) => {
         </div>
       </div>
       <div className="container mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 container pt-14">
-        {valueDropDownCategories === "All Categories"
-          ? key.map((item) => (
+        {valueDropDownTime !== "Oldest"
+          ? valueDropDownCategories === "All Categories"
+            ? key.map((item) => (
+                <div key={item}>
+                  <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
+                    {item}
+                  </p>
+                  <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-5">
+                    {bismillah[item].map((items) => (
+                      <table key={items.info.slug} className="mb-[0.875rem]">
+                        <Link href={`/post/${items.info.slug}`}>
+                          <tr className="cursor-pointer inline hover:border-b-[3px] border-[#2B9EDE]">
+                            <td>{items.info.day}</td>
+                            <td>:</td>
+                            <td>{items.info.title}</td>
+                          </tr>
+                        </Link>
+                      </table>
+                    ))}
+                  </div>
+                </div>
+              ))
+            : key2.map((item) => (
+                <div key={item + 1}>
+                  <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
+                    {item}
+                  </p>
+                  <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
+                    {bismillah2[item].map((items) => (
+                      <table key={items.info.slug}>
+                        <Link href={`/post/${items.info.slug}`}>
+                          <tr className="cursor-pointer inline hover:border-b-[3px] border-[#2B9EDE]">
+                            <td>{items.info.day}</td>
+                            <td>:</td>
+                            <td>{items.info.title}</td>
+                          </tr>
+                        </Link>
+                      </table>
+                    ))}
+                  </div>
+                </div>
+              ))
+          : valueDropDownCategories === "All Categories"
+          ? key3.map((item) => (
               <div key={item}>
                 <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
                   {item}
                 </p>
                 <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
-                  {bismillah[item].map((items) => (
+                  {bismillah3[item].map((items) => (
                     <table key={items.info.slug}>
                       <Link href={`/post/${items.info.slug}`}>
-                        <tr className="cursor-pointer hover:border-b-2 border-[#2B9EDE]">
+                        <tr className="cursor-pointer inline hover:border-b-[3px] border-[#2B9EDE]">
                           <td>{items.info.day}</td>
                           <td>:</td>
                           <td>{items.info.title}</td>
@@ -230,16 +294,16 @@ const WritingJourney = ({ posts, postsASC }) => {
                 </div>
               </div>
             ))
-          : key2.map((item) => (
+          : key4.map((item) => (
               <div key={item + 1}>
                 <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
                   {item}
                 </p>
                 <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
-                  {bismillah2[item].map((items) => (
+                  {bismillah4[item].map((items) => (
                     <table key={items.info.slug}>
                       <Link href={`/post/${items.info.slug}`}>
-                        <tr className="cursor-pointer hover:border-b-2 border-[#2B9EDE]">
+                        <tr className="cursor-pointer inline hover:border-b-[3px] border-[#2B9EDE]">
                           <td>{items.info.day}</td>
                           <td>:</td>
                           <td>{items.info.title}</td>
@@ -250,6 +314,13 @@ const WritingJourney = ({ posts, postsASC }) => {
                 </div>
               </div>
             ))}
+      </div>
+      <div className="container mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 container mt-[5.5rem] mb-[6.25rem]">
+        <div className="cursor-pointer justify-center bg-[#01549F] hover:bg-[#282828] mx-auto hover:text-white shadow-custom-button py-[0.875rem] w-[11.25rem] rounded-[5px] font-medium text-sm text-[#01549F]">
+          <p className="text-center text-base font-medium text-white">
+            See more article 👇
+          </p>
+        </div>
       </div>
     </>
   );
