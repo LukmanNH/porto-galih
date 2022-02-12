@@ -3,6 +3,31 @@ import { request, gql } from "graphql-request";
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
+export const get5FirstPost = async () => {
+  const query = gql`
+    query MyQuery {
+      blogPostsConnection(first: 5) {
+        edges {
+          node {
+            createdAt
+            slug
+            title
+            featuredImage {
+              url
+            }
+            blogCategories {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result;
+};
+
 export const getPosts = async () => {
   const query = gql`
     query MyQuery {
