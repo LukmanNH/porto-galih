@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import moment from "moment";
 import NavBar from "../components/NavBar";
 import Link from "next/link";
@@ -18,16 +18,52 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
   const [dropDownTime, setDropdownTime] = useState(false);
   const [dropStyleTime, setDropStyleTime] = useState(false);
   const [buttonValue, setbuttonValue] = useState(true);
-  let buttonSeeMore = "See more article 👇";
+  const dropdown = useRef(null);
+  const downTime = useRef(null);
+
+  useEffect(() => {
+    // only add the event listener when the dropdown is opened
+    if (!dropDownCategories) return;
+    function handleClick(event) {
+      if (dropdown.current && !dropdown.current.contains(event.target)) {
+        setDropStyleCategories(false);
+        setDropdownCategories(false);
+      }
+    }
+    // if (!dropDownTime) return;
+    // function handleClick(event) {
+    //   if (downTime.current && !downTime.current.contains(event.target)) {
+    //     setDropStyleTime(false);
+    //     setDropdownTime(false);
+    //   }
+    // }
+    window.addEventListener("click", handleClick);
+    // clean up
+    return () => window.removeEventListener("click", handleClick);
+  }, [dropDownCategories]);
+
+  useEffect(() => {
+    // only add the event listener when the dropdown is opened
+    if (!dropDownTime) return;
+    function handleClick(event) {
+      if (downTime.current && !downTime.current.contains(event.target)) {
+        setDropStyleTime(false);
+        setDropdownTime(false);
+      }
+    }
+    window.addEventListener("click", handleClick);
+    // clean up
+    return () => window.removeEventListener("click", handleClick);
+  }, [dropDownTime]);
 
   const onClickDropDownCategories = () => {
-    setDropdownCategories(!dropDownCategories);
-    setDropStyleCategories(!dropStyleCategories);
+    setDropdownCategories((b) => !b);
+    setDropStyleCategories((b) => !b);
   };
 
   const onClickDropDownTime = () => {
-    setDropdownTime(!dropDownTime);
-    setDropStyleTime(!dropStyleTime);
+    setDropdownTime((b) => !b);
+    setDropStyleTime((b) => !b);
   };
 
   const mappedData = posts.blogPostsConnection.edges.map((x) => ({
@@ -178,7 +214,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
         </div>
       </div>
       <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 container pt-6 text-sm text-[#282828] flex">
-        <div className="w-[10rem] relative mr-5 cursor-pointer">
+        <div className="w-[10rem] relative mr-5 cursor-pointer" ref={dropdown}>
           <div
             className={`border-2 border-[#01549F] p-3 ${
               dropStyleCategories
@@ -198,7 +234,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                     onClick={function () {
                       setValueDropDownCategories("All Categories");
                       onClickDropDownCategories();
-                      setbuttonValue(true);
+                      setbuttonValue(false);
                     }}
                     className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white"
                   >
@@ -212,7 +248,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                     onClick={function () {
                       setValueDropDownCategories(item.name);
                       onClickDropDownCategories();
-                      setbuttonValue(true);
+                      setbuttonValue(false);
                     }}
                   >
                     {item.name}
@@ -222,10 +258,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
             </ul>
           )}
         </div>
-        <div
-          className="w-[10rem] relative cursor-pointer"
-          onClick={() => onClickDropDownTime()}
-        >
+        <div className="w-[10rem] relative cursor-pointer" ref={downTime}>
           <div
             className={`border-2 border-[#01549F] p-3 ${
               dropStyleTime
@@ -233,16 +266,32 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                 : " icon-down rounded-[0.313rem]"
             }`}
           >
-            {valueDropDownTime}
+            <ul onClick={() => onClickDropDownTime()}>
+              <li>{valueDropDownTime}</li>
+            </ul>
           </div>
           {dropDownTime && (
             <ul className="absolute border-2 border-[#01549F] border-t-0 rounded-[0.313rem] rounded-t-none w-[10rem] bg-white">
+              {valueDropDownTime !== "By Newest" ? (
+                <li>
+                  <p
+                    onClick={function () {
+                      setValueDropDownTime("By Newest");
+                      onClickDropDownTime();
+                      setbuttonValue(false);
+                    }}
+                    className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white"
+                  >
+                    By Newest
+                  </p>
+                </li>
+              ) : null}
               <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
                 <p
                   onClick={function () {
                     setValueDropDownTime("Newest");
                     onClickDropDownTime();
-                    setbuttonValue(true);
+                    setbuttonValue(false);
                   }}
                 >
                   Newest
@@ -253,7 +302,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                   onClick={function () {
                     setValueDropDownTime("Oldest");
                     onClickDropDownTime();
-                    setbuttonValue(true);
+                    setbuttonValue(false);
                   }}
                 >
                   Oldest
@@ -274,15 +323,18 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                     </p>
                     <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-5">
                       {bismillah[item].map((items) => (
-                        <table key={items.info.slug} className="mb-[0.875rem]">
+                        <div
+                          key={items.info.slug}
+                          className="w-[fit-content] pb-[0.875rem]"
+                        >
                           <Link href={`/post/${items.info.slug}`}>
-                            <tr className="cursor-pointer inline hover:border-b-[3px] border-[#2B9EDE]">
-                              <td>{items.info.day}</td>
-                              <td>:</td>
-                              <td>{items.info.title}</td>
-                            </tr>
+                            <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
+                              <p>{items.info.day}</p>
+                              <p className="px-2">{" : "}</p>
+                              <p>{items.info.title}</p>
+                            </div>
                           </Link>
-                        </table>
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -294,15 +346,18 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                     </p>
                     <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
                       {bismillah2[item].map((items) => (
-                        <table key={items.info.slug}>
+                        <div
+                          key={items.info.slug}
+                          className="w-[fit-content] pb-[0.875rem]"
+                        >
                           <Link href={`/post/${items.info.slug}`}>
-                            <tr className="cursor-pointer inline hover:border-b-[3px] border-[#2B9EDE]">
-                              <td>{items.info.day}</td>
-                              <td>:</td>
-                              <td>{items.info.title}</td>
-                            </tr>
+                            <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
+                              <p>{items.info.day}</p>
+                              <p className="px-2">{" : "}</p>
+                              <p>{items.info.title}</p>
+                            </div>
                           </Link>
-                        </table>
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -315,15 +370,18 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                   </p>
                   <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
                     {bismillah3[item].map((items) => (
-                      <table key={items.info.slug}>
+                      <div
+                        key={items.info.slug}
+                        className="w-[fit-content] pb-[0.875rem]"
+                      >
                         <Link href={`/post/${items.info.slug}`}>
-                          <tr className="cursor-pointer inline hover:border-b-[3px] border-[#2B9EDE]">
-                            <td>{items.info.day}</td>
-                            <td>:</td>
-                            <td>{items.info.title}</td>
-                          </tr>
+                          <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
+                            <p>{items.info.day}</p>
+                            <p className="px-2">{" : "}</p>
+                            <p>{items.info.title}</p>
+                          </div>
                         </Link>
-                      </table>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -335,15 +393,18 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                   </p>
                   <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
                     {bismillah4[item].map((items) => (
-                      <table key={items.info.slug}>
+                      <div
+                        key={items.info.slug}
+                        className="w-[fit-content] pb-[0.875rem]"
+                      >
                         <Link href={`/post/${items.info.slug}`}>
-                          <tr className="cursor-pointer inline hover:border-b-[3px] border-[#2B9EDE]">
-                            <td>{items.info.day}</td>
-                            <td>:</td>
-                            <td>{items.info.title}</td>
-                          </tr>
+                          <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
+                            <p>{items.info.day}</p>
+                            <p className="px-2">{" : "}</p>
+                            <p>{items.info.title}</p>
+                          </div>
                         </Link>
-                      </table>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -355,28 +416,34 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                 </p>
                 <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
                   {groupedDataPostFirst5[item].map((items) => (
-                    <table key={items.info.slug}>
+                    <div
+                      key={items.info.slug}
+                      className="w-[fit-content] pb-[0.875rem]"
+                    >
                       <Link href={`/post/${items.info.slug}`}>
-                        <tr className="cursor-pointer inline hover:border-b-[3px] border-[#2B9EDE]">
-                          <td>{items.info.day}</td>
-                          <td>:</td>
-                          <td>{items.info.title}</td>
-                        </tr>
+                        <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
+                          <p>{items.info.day}</p>
+                          <p className="px-2">{" : "}</p>
+                          <p>{items.info.title}</p>
+                        </div>
                       </Link>
-                    </table>
+                    </div>
                   ))}
                 </div>
               </div>
             ))}
       </div>
       <div className="container mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 container mt-[5.5rem] mb-[6.25rem]">
-        <div className="cursor-pointer text-center">
-          <button
-            className="text-base font-medium text-white bg-[#01549F] hover:bg-[#282828] transition duration-200 mx-auto hover:text-white shadow-custom-button py-[0.875rem] w-[11.25rem] rounded-[5px]"
-            onClick={() => setbuttonValue(!buttonValue)}
-          >
-            {buttonValue ? "See more article 👇" : "See less article 👆"}
-          </button>
+        <div className="text-center">
+          {valueDropDownCategories !== "All Categories" ||
+          valueDropDownTime !== "By Newest" ? null : (
+            <button
+              className="cursor-pointer text-base font-medium text-white bg-[#01549F] hover:bg-[#282828] transition duration-200 mx-auto hover:text-white shadow-custom-button py-[0.875rem] w-[11.25rem] rounded-[5px]"
+              onClick={() => setbuttonValue(!buttonValue)}
+            >
+              {buttonValue ? "See more article 👇" : "See less article 👆"}
+            </button>
+          )}
         </div>
       </div>
     </>
