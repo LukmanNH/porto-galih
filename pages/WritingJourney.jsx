@@ -18,6 +18,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
   const [dropDownTime, setDropdownTime] = useState(false);
   const [dropStyleTime, setDropStyleTime] = useState(false);
   const [buttonValue, setbuttonValue] = useState(true);
+  const [showButton, setShowButton] = useState(true);
   const dropdown = useRef(null);
   const downTime = useRef(null);
 
@@ -189,6 +190,148 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
   );
   const key5 = Object.keys(groupedDataPostFirst5);
 
+  const renderPost = () => {
+    if (
+      buttonValue &&
+      valueDropDownCategories === "All Categories" &&
+      (valueDropDownTime === "By Newest" || valueDropDownTime === "Newest")
+    ) {
+      return key5.map((item) => (
+        <div key={item + 1}>
+          <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
+            {item}
+          </p>
+          <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
+            {groupedDataPostFirst5[item].map((items) => (
+              <div
+                key={items.info.slug}
+                className="w-[fit-content] pb-[0.875rem]"
+              >
+                <Link href={`/post/${items.info.slug}`}>
+                  <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
+                    <p>{items.info.day}</p>
+                    <p className="px-2">{" : "}</p>
+                    <p>{items.info.title}</p>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      ));
+    } else {
+      if (
+        valueDropDownCategories === "All Categories" &&
+        (valueDropDownTime === "By Newest" || valueDropDownTime === "Newest")
+      ) {
+        return key.map((item) => (
+          <div key={item}>
+            <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
+              {item}
+            </p>
+            <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-5">
+              {bismillah[item].map((items) => (
+                <div
+                  key={items.info.slug}
+                  className="w-[fit-content] pb-[0.875rem]"
+                >
+                  <Link href={`/post/${items.info.slug}`}>
+                    <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
+                      <p>{items.info.day}</p>
+                      <p className="px-2">{" : "}</p>
+                      <p>{items.info.title}</p>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        ));
+      } else if (
+        valueDropDownCategories !== "All Categories" &&
+        (valueDropDownTime === "By Newest" || valueDropDownTime === "Newest")
+      ) {
+        return key2.map((item) => (
+          <div key={item + 1}>
+            <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
+              {item}
+            </p>
+            <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
+              {bismillah2[item].map((items) => (
+                <div
+                  key={items.info.slug}
+                  className="w-[fit-content] pb-[0.875rem]"
+                >
+                  <Link href={`/post/${items.info.slug}`}>
+                    <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
+                      <p>{items.info.day}</p>
+                      <p className="px-2">{" : "}</p>
+                      <p>{items.info.title}</p>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        ));
+      } else if (
+        valueDropDownCategories === "All Categories" &&
+        valueDropDownTime === "Oldest"
+      ) {
+        return key3.map((item) => (
+          <div key={item}>
+            <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
+              {item}
+            </p>
+            <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
+              {bismillah3[item].map((items) => (
+                <div
+                  key={items.info.slug}
+                  className="w-[fit-content] pb-[0.875rem]"
+                >
+                  <Link href={`/post/${items.info.slug}`}>
+                    <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
+                      <p>{items.info.day}</p>
+                      <p className="px-2">{" : "}</p>
+                      <p>{items.info.title}</p>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        ));
+      } else if (
+        valueDropDownCategories !== "All Categories" &&
+        valueDropDownTime === "Oldest"
+      ) {
+        return key4.map((item) => (
+          <div key={item + 1}>
+            <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
+              {item}
+            </p>
+            <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
+              {bismillah4[item].map((items) => (
+                <div
+                  key={items.info.slug}
+                  className="w-[fit-content] pb-[0.875rem]"
+                >
+                  <Link href={`/post/${items.info.slug}`}>
+                    <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
+                      <p>{items.info.day}</p>
+                      <p className="px-2">{" : "}</p>
+                      <p>{items.info.title}</p>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        ));
+      }
+    }
+  };
+
   return (
     <>
       <div className="bg-hero bg-no-repeat bg-cover bg-center h-60 sm:h-64 md:h-72 lg:h-80 xl:h-96">
@@ -234,7 +377,8 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                     onClick={function () {
                       setValueDropDownCategories("All Categories");
                       onClickDropDownCategories();
-                      setbuttonValue(false);
+                      setShowButton(false);
+                      setbuttonValue(true);
                     }}
                     className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white"
                   >
@@ -248,6 +392,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                     onClick={function () {
                       setValueDropDownCategories(item.name);
                       onClickDropDownCategories();
+                      setShowButton(false);
                       setbuttonValue(false);
                     }}
                   >
@@ -278,7 +423,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                     onClick={function () {
                       setValueDropDownTime("By Newest");
                       onClickDropDownTime();
-                      setbuttonValue(false);
+                      setShowButton(true);
                     }}
                     className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white"
                   >
@@ -291,7 +436,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                   onClick={function () {
                     setValueDropDownTime("Newest");
                     onClickDropDownTime();
-                    setbuttonValue(false);
+                    setShowButton(true);
                   }}
                 >
                   Newest
@@ -302,7 +447,13 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                   onClick={function () {
                     setValueDropDownTime("Oldest");
                     onClickDropDownTime();
-                    setbuttonValue(false);
+                    setShowButton(false);
+                    if (valueDropDownCategories === "All Categories") {
+                      buttonValue = true;
+                    } else {
+                      setbuttonValue(false);
+                      setShowButton(false);
+                    }
                   }}
                 >
                   Oldest
@@ -313,137 +464,20 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
         </div>
       </div>
       <div className="container mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 container pt-14">
-        {!buttonValue
-          ? valueDropDownTime !== "Oldest"
-            ? valueDropDownCategories === "All Categories"
-              ? key.map((item) => (
-                  <div key={item}>
-                    <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
-                      {item}
-                    </p>
-                    <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-5">
-                      {bismillah[item].map((items) => (
-                        <div
-                          key={items.info.slug}
-                          className="w-[fit-content] pb-[0.875rem]"
-                        >
-                          <Link href={`/post/${items.info.slug}`}>
-                            <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
-                              <p>{items.info.day}</p>
-                              <p className="px-2">{" : "}</p>
-                              <p>{items.info.title}</p>
-                            </div>
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))
-              : key2.map((item) => (
-                  <div key={item + 1}>
-                    <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
-                      {item}
-                    </p>
-                    <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
-                      {bismillah2[item].map((items) => (
-                        <div
-                          key={items.info.slug}
-                          className="w-[fit-content] pb-[0.875rem]"
-                        >
-                          <Link href={`/post/${items.info.slug}`}>
-                            <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
-                              <p>{items.info.day}</p>
-                              <p className="px-2">{" : "}</p>
-                              <p>{items.info.title}</p>
-                            </div>
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))
-            : valueDropDownCategories === "All Categories"
-            ? key3.map((item) => (
-                <div key={item}>
-                  <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
-                    {item}
-                  </p>
-                  <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
-                    {bismillah3[item].map((items) => (
-                      <div
-                        key={items.info.slug}
-                        className="w-[fit-content] pb-[0.875rem]"
-                      >
-                        <Link href={`/post/${items.info.slug}`}>
-                          <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
-                            <p>{items.info.day}</p>
-                            <p className="px-2">{" : "}</p>
-                            <p>{items.info.title}</p>
-                          </div>
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))
-            : key4.map((item) => (
-                <div key={item + 1}>
-                  <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
-                    {item}
-                  </p>
-                  <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
-                    {bismillah4[item].map((items) => (
-                      <div
-                        key={items.info.slug}
-                        className="w-[fit-content] pb-[0.875rem]"
-                      >
-                        <Link href={`/post/${items.info.slug}`}>
-                          <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
-                            <p>{items.info.day}</p>
-                            <p className="px-2">{" : "}</p>
-                            <p>{items.info.title}</p>
-                          </div>
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))
-          : key5.map((item) => (
-              <div key={item + 1}>
-                <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
-                  {item}
-                </p>
-                <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
-                  {groupedDataPostFirst5[item].map((items) => (
-                    <div
-                      key={items.info.slug}
-                      className="w-[fit-content] pb-[0.875rem]"
-                    >
-                      <Link href={`/post/${items.info.slug}`}>
-                        <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
-                          <p>{items.info.day}</p>
-                          <p className="px-2">{" : "}</p>
-                          <p>{items.info.title}</p>
-                        </div>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+        {renderPost()}
       </div>
       <div className="container mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 container mt-[5.5rem] mb-[6.25rem]">
         <div className="text-center">
-          {valueDropDownCategories !== "All Categories" ||
-          valueDropDownTime !== "By Newest" ? null : (
+          {valueDropDownCategories !== "All Categories" &&
+          valueDropDownTime === "Oldest" ? null : valueDropDownCategories ===
+              "All Categories" && valueDropDownTime !== "Oldest" ? (
             <button
               className="cursor-pointer text-base font-medium text-white bg-[#01549F] hover:bg-[#282828] transition duration-200 mx-auto hover:text-white shadow-custom-button py-[0.875rem] w-[11.25rem] rounded-[5px]"
               onClick={() => setbuttonValue(!buttonValue)}
             >
-              {buttonValue ? "See more article 👇" : "See less article 👆"}
+              {!buttonValue ? "See less article 👆" : "See more article 👇"}
             </button>
-          )}
+          ) : null}
         </div>
       </div>
     </>
