@@ -23,7 +23,6 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
   const downTime = useRef(null);
 
   useEffect(() => {
-    // only add the event listener when the dropdown is opened
     if (!dropDownCategories) return;
     function handleClick(event) {
       if (dropdown.current && !dropdown.current.contains(event.target)) {
@@ -31,20 +30,12 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
         setDropdownCategories(false);
       }
     }
-    // if (!dropDownTime) return;
-    // function handleClick(event) {
-    //   if (downTime.current && !downTime.current.contains(event.target)) {
-    //     setDropStyleTime(false);
-    //     setDropdownTime(false);
-    //   }
-    // }
     window.addEventListener("click", handleClick);
     // clean up
     return () => window.removeEventListener("click", handleClick);
   }, [dropDownCategories]);
 
   useEffect(() => {
-    // only add the event listener when the dropdown is opened
     if (!dropDownTime) return;
     function handleClick(event) {
       if (downTime.current && !downTime.current.contains(event.target)) {
@@ -53,7 +44,6 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
       }
     }
     window.addEventListener("click", handleClick);
-    // clean up
     return () => window.removeEventListener("click", handleClick);
   }, [dropDownTime]);
 
@@ -359,13 +349,14 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
       <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 container pt-6 text-sm text-[#282828] flex">
         <div className="w-[10rem] relative mr-5 cursor-pointer" ref={dropdown}>
           <div
+            onClick={() => onClickDropDownCategories()}
             className={`border-2 border-[#01549F] p-3 ${
               dropStyleCategories
                 ? " icon-up rounded-[0.313rem] border-b-0 rounded-b-none"
                 : " icon-down rounded-[0.313rem]"
             }`}
           >
-            <ul onClick={() => onClickDropDownCategories()}>
+            <ul>
               <li>{valueDropDownCategories}</li>
             </ul>
           </div>
@@ -405,13 +396,14 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
         </div>
         <div className="w-[10rem] relative cursor-pointer" ref={downTime}>
           <div
+            onClick={() => onClickDropDownTime()}
             className={`border-2 border-[#01549F] p-3 ${
               dropStyleTime
                 ? " icon-up rounded-[0.313rem] border-b-0 rounded-b-none"
                 : " icon-down rounded-[0.313rem]"
             }`}
           >
-            <ul onClick={() => onClickDropDownTime()}>
+            <ul>
               <li>{valueDropDownTime}</li>
             </ul>
           </div>

@@ -43,6 +43,9 @@ module.exports = {
         ".blueHover": {
           background: "rgba(3, 135, 255, 0.08)",
         },
+        ".activeNav": {
+          color: "#FFFFFF",
+        },
       };
       addUtilities(utilities);
     }),

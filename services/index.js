@@ -139,3 +139,121 @@ export const getBlogCategories = async () => {
   const result = await request(graphqlAPI, query);
   return result.blogCategories;
 };
+
+export const getPartOfProjects = async () => {
+  const query = gql`
+    query getAllProject {
+      projectPostsConnection(first: 2) {
+        edges {
+          node {
+            title
+            slug
+            isPremium
+            platform
+            thumbnail {
+              url
+            }
+            projectCategories {
+              name
+            }
+            excerpt
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result.projectPostsConnection.edges;
+};
+
+export const getAllProjects = async () => {
+  const query = gql`
+    query getAllProject {
+      projectPostsConnection {
+        edges {
+          node {
+            title
+            slug
+            isPremium
+            platform
+            thumbnail {
+              url
+            }
+            projectCategories {
+              name
+            }
+            excerpt
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result.projectPostsConnection.edges;
+};
+
+export const getSlugOfProjects = async () => {
+  const query = gql`
+    query getAllProject {
+      projectPostsConnection() {
+        edges {
+          node {
+            title
+            slug
+            isPremium
+            platform
+            thumbnail {
+              url
+            }
+            projectCategories {
+              name
+            }
+            excerpt
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  return result.projectPostsConnection.edges;
+};
+
+export const getDetailProject = async (slug) => {
+  const query = gql`
+    query getDetailProject($slug: String!) {
+      projectPost(where: { slug: $slug }) {
+        title
+        role
+        period
+        slug
+        company
+        goals
+        isPremium
+        featuredImage {
+          url
+        }
+        projectCategories {
+          name
+        }
+        content {
+          raw
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query, { slug });
+  return result.projectPost;
+};
+
+export const getProjectCategories = async () => {
+  const query = gql`
+    query getProjectCategories {
+      projectCategories {
+        name
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+  console.log(result);
+  return result.projectCategories;
+};
