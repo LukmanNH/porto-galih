@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import NavBar from "../components/NavBar";
 import {
   getAllProjects,
@@ -9,13 +9,28 @@ import {
 const NotableWorks = ({ getFirst2Project, getProject }) => {
   const [dropDownCategories, setDropdownCategories] = useState(false);
   const [dropStyleCategories, setDropStyleCategories] = useState(false);
-  const onClickDropDownCategories = () => {
-    setDropdownCategories(!dropDownCategories);
-    setDropStyleCategories(!dropStyleCategories);
-  };
   const [buttonValue, setButtonValue] = useState(false);
   const [valueDropDownCategories, setValueDropDownCategories] =
     useState("All Categories");
+  const dropdown = useRef(null);
+
+  useEffect(() => {
+    if (!dropDownCategories) return;
+    function handleClick(event) {
+      if (dropdown.current && !dropdown.current.contains(event.target)) {
+        setDropStyleCategories(false);
+        setDropdownCategories(false);
+      }
+    }
+    window.addEventListener("click", handleClick);
+    // clean up
+    return () => window.removeEventListener("click", handleClick);
+  }, [dropDownCategories]);
+
+  const onClickDropDownCategories = () => {
+    setDropdownCategories((b) => !b);
+    setDropStyleCategories((b) => !b);
+  };
 
   const [categories, setCategories] = useState([]);
   useEffect(() => {
@@ -98,12 +113,11 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
       (items) => items.name === valueDropDownCategories
     )
   );
-  console.log(filterProjectByCategories);
 
   return (
     <>
-      <div className="bg-hero bg-no-repeat bg-cover bg-center h-60 sm:h-72 md:h-84 lg:h-96">
-        <div className="h-60 sm:h-72 md:h-84 lg:h-96 w-full justify-items-center grid content-between">
+      <div className="bg-hero bg-no-repeat bg-cover bg-center h-60 sm:h-72 md:h-80 lg:h-96">
+        <div className="h-60 sm:h-72 md:h-80 lg:h-96 w-full justify-items-center grid content-between">
           <NavBar isNavItem={true} />
           <div className="flex w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12">
             <div className="w-full md:w-8/12 lg:w-8/12 self-end pb-9 lg:mr-3">
@@ -128,15 +142,16 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
         </div>
       </div>
       <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 container pt-6 text-sm text-[#282828] flex mb-14">
-        <div className="w-[10rem] relative mr-5 cursor-pointer">
+        <div className="absolute w-[10rem] mr-5 cursor-pointer" ref={dropdown}>
           <div
+            onClick={() => onClickDropDownCategories()}
             className={`border-2 border-[#01549F] p-3 ${
               dropStyleCategories
                 ? " icon-up rounded-md border-b-0 rounded-b-none"
                 : " icon-down rounded-md "
             }`}
           >
-            <ul onClick={() => onClickDropDownCategories()}>
+            <ul>
               <li>{valueDropDownCategories}</li>
             </ul>
           </div>
@@ -171,7 +186,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
           )}
         </div>
       </div>
-      <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 mx-auto mb-28 container">
+      <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 pt-[3.625rem] mx-auto mb-28 container">
         {/* <-- START Jenius App Re—design SECTION --> */}
         <div className="grid grid-cols-2 gap-6 sm:gap-7 md:gap-8 lg:gap-[38px]">
           {/* //buttonValue ? valueCategories === "All Categories" ? 'getAll' :
