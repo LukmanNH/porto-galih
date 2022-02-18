@@ -8,6 +8,7 @@ import {
 import ProjectDetail from "../ProjectDetail";
 
 const ProjectDetails = ({ projects }) => {
+  console.log(projects);
   return (
     <>
       <div className="bg-hero bg-no-repeat bg-cover bg-center h-60 sm:h-72 md:h-80 lg:h-96 xl:h-[388px]">

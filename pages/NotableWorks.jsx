@@ -39,6 +39,12 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
     );
   }, []);
 
+  const goToDetailProject = (successRouter) => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("prevUrl", successRouter);
+    }
+  };
+
   const renderContent = (value, index) => {
     return (
       <div
@@ -75,7 +81,6 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
             }`}
           >
             <h1 className="font-bold text-[1.3rem] sm:text-[1.5rem] lg:text-[1.625rem] xl:text-[1.75rem]">
-              {/* {truncateString(`${value.node.title}`, 40)} */}
               {value.node.title}
             </h1>
             <div className="flex font-light text-[#808080] my-2 text-xs sm:text-sm">
@@ -86,10 +91,17 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
             <p className="font-normal text-[#282828] mb-[1.438rem] text-xs sm:text-sm">
               {value.node.excerpt}
             </p>
-            <Link href={`/project/${value.node.slug}`}>
-              <div className="cursor-pointer flex justify-center bg-white hover:bg-[#282828] hover:text-white shadow-custom-button py-[0.625rem] w-[9.125rem] rounded-[5px] font-medium text-sm text-[#01549F]">
+            <Link
+              href={`/project/${
+                value.node.isPremium ? "ProtectedContent" : value.node.slug
+              }`}
+            >
+              <div
+                className="cursor-pointer flex justify-center bg-white hover:bg-[#282828] hover:text-white shadow-custom-button py-[0.625rem] w-[9.125rem] rounded-[5px] font-medium text-sm text-[#01549F]"
+                onClick={() => goToDetailProject(value.node.slug)}
+              >
                 <p className="mr-[10px]">View Project</p>
-                {value.node.lock ? (
+                {value.node.isPremium ? (
                   <img width={18} height={18} src="../lock-icon.png" alt="" />
                 ) : (
                   ""

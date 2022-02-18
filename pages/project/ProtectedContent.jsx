@@ -1,10 +1,30 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 
 const ProtectedContent = () => {
+  const router = useRouter();
   const [password, setPassword] = useState();
+  const credentials = process.env.NEXT_PUBLIC_PASSWORD_CONTENT;
+  const [alert, setalert] = useState(false);
+  const [classHidden, setclassHidden] = useState("");
+  const alertWrongPassword = "";
+  let urlFromLastPage = "";
+  if (typeof window !== "undefined") {
+    urlFromLastPage = localStorage.getItem("prevUrl").toString() || "";
+  }
 
-  const onSubmit = () => {};
+  const onSubmit = () => {
+    if (password === credentials) {
+      router.push(urlFromLastPage);
+    } else {
+      setalert(true);
+      setTimeout(function () {
+        return setclassHidden("hidden");
+      }, 5000);
+    }
+  };
+
   return (
     <>
       <div className="pt-6 mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12">
@@ -26,19 +46,32 @@ const ProtectedContent = () => {
               to gain access to the project, — Only selected cases granted.
             </p>
             <input
-              class="placeholder:text-[#C0C0C0] block bg-white w-full border border-[#282828] rounded-md p-3 lg:w-[25rem] mx-auto mb-7"
+              className="placeholder:text-[#C0C0C0] block bg-white w-full border border-[#282828] rounded-md p-3 lg:w-[25rem] mx-auto mb-7"
               placeholder="Enter the password"
               type="password"
+              value={password}
               name="password"
               id="password"
               onChange={(e) => setPassword(e.target.value)}
             />
+            {alert ? (
+              <p
+                className={
+                  `${classHidden}` +
+                  "text-[#FF4E4E] font-normal lg:text-sm mt-[0.875rem] mb-[1.75rem]"
+                }
+              >
+                Password lu salah! goblok
+              </p>
+            ) : (
+              <div></div>
+            )}
 
             <div
-              onClick={onSubmit}
+              onClick={() => onSubmit()}
               className="cursor-pointer mx-auto bg-[#01549F] hover:bg-[#282828] hover:text-white shadow-custom-button py-[0.625rem] px-12 w-[9.125rem] rounded-[5px] font-medium text-sm text-white"
             >
-              <p>Submit</p>
+              Submit
             </div>
           </div>
         </div>

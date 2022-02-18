@@ -254,6 +254,5 @@ export const getProjectCategories = async () => {
     }
   `;
   const result = await request(graphqlAPI, query);
-  console.log(result);
   return result.projectCategories;
 };
