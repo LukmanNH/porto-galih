@@ -7,7 +7,7 @@ const ProtectedContent = () => {
   const [password, setPassword] = useState();
   const credentials = process.env.NEXT_PUBLIC_PASSWORD_CONTENT;
   const [alert, setalert] = useState(false);
-  const [classHidden, setclassHidden] = useState("");
+  const [classHidden, setclassHidden] = useState("hidden");
   const alertWrongPassword = "";
   let urlFromLastPage = "";
   if (typeof window !== "undefined") {
@@ -19,21 +19,23 @@ const ProtectedContent = () => {
       router.push(urlFromLastPage);
     } else {
       setalert(true);
-      setTimeout(function () {
-        return setclassHidden("hidden");
-      }, 5000);
+      setclassHidden("");
     }
   };
 
   return (
     <>
-      <img src="../Gelombang 1.svg" alt="" className="top-0 absolute w-full" />
-      <div className="pt-6 mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12">
+      <img
+        src="../Gelombang 1.svg"
+        alt=""
+        className="top-0 absolute w-full z-0"
+      />
+      <div className="pt-6 mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 z-10 relative">
         <div className="text-[#282828] cursor-pointer text-base lg:text-lg font-medium flex items-center hover:border-b-[3px] border-[#2B9EDE] absolute">
           <img src="../👈.svg" alt="" className="mr-1 md:mr-2 h-4 lg:h-5" />
           <Link href={"/"}>Back to homepage</Link>
         </div>
-        <div className="pt-36 mx-auto sm:w-[32.313rem] lg:w-[42.313rem]">
+        <div className="pt-36 mx-auto sm:w-[32.313rem] lg:w-[42.313rem] z-0">
           <div className="grid text-center">
             <div className="justify-self-center flex items-center mb-[1.375rem] text-4xl lg:text-5xl font-bold">
               <img
@@ -61,10 +63,8 @@ const ProtectedContent = () => {
             />
             {alert ? (
               <p
-                className={
-                  `${classHidden}` +
-                  "text-[#FF4E4E] font-normal lg:text-sm mt-[0.875rem] mb-[1.75rem]"
-                }
+                className={`${classHidden} 
+              text-[#FF4E4E] font-normal lg:text-sm mt-[0.875rem] mb-[1.75rem] block`}
               >
                 Password lu salah! goblok
               </p>
@@ -72,19 +72,19 @@ const ProtectedContent = () => {
               <div></div>
             )}
 
-            <div
+            <button
               onClick={() => onSubmit()}
-              className="cursor-pointer mx-auto bg-[#01549F] hover:bg-[#282828] hover:text-white shadow-custom-button py-[0.625rem] px-12 w-[9.125rem] rounded-[5px] font-medium text-sm text-white"
+              className="cursor-pointer block mx-auto bg-[#01549F] hover:bg-[#282828] hover:text-white shadow-custom-button py-[0.625rem] px-12 w-[9.125rem] rounded-[5px] font-medium text-sm text-white"
             >
               Submit
-            </div>
+            </button>
           </div>
         </div>
       </div>
       <img
         src="../Gelombang 2.svg"
         alt=""
-        className="bottom-0 absolute w-full"
+        className="bottom-0 absolute w-full z-0"
       />
     </>
   );
