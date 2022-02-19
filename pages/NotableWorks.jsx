@@ -102,7 +102,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
               >
                 <p className="mr-[10px]">View Project</p>
                 {value.node.isPremium ? (
-                  <img width={18} height={18} src="../lock-icon.png" alt="" />
+                  <img width={18} height={18} src="../🔒.svg" alt="" />
                 ) : (
                   ""
                 )}
@@ -128,14 +128,19 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
 
   return (
     <>
-      <div className="bg-hero bg-no-repeat bg-cover bg-center h-60 sm:h-72 md:h-80 lg:h-96">
-        <div className="h-60 sm:h-72 md:h-80 lg:h-96 w-full justify-items-center grid content-between">
-          <NavBar isNavItem={true} />
+      <div className="bg-hero bg-no-repeat bg-cover bg-center h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem]">
+        <div className="h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] w-full justify-items-center grid content-between">
+          <NavBar isNavItem={true} isHumberger={true} />
           <div className="flex w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12">
             <div className="w-full md:w-8/12 lg:w-8/12 self-end pb-9 lg:mr-3">
-              <h1 className="text-white font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl">
-                🗃 Notable Works
-              </h1>
+              <div className="flex items-center text-white font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl">
+                <img
+                  src="../🗃.svg"
+                  alt=""
+                  className="pr-1 md:pr-2 h-8 md:h-9 lg:h-12"
+                />
+                Notable Works
+              </div>
               <p className="mt-4 lg:mt-8 text-white font-light text-sm sm:text-sm md:text-base lg:text-lg tracking-wider">
                 Some project need password, contact{" "}
                 <span className="font-medium underline">
@@ -220,14 +225,24 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
         </div>
         <div className="container mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 container mt-[5.5rem] mb-[6.25rem]">
           <div className="text-center">
-            <button
-              className="cursor-pointer text-base font-medium text-white bg-[#01549F] hover:bg-[#282828] transition duration-200 mx-auto hover:text-white shadow-custom-button py-[0.875rem] w-[11.25rem] rounded-[5px]"
+            <div
+              className="cursor-pointer text-base font-medium grid text-white bg-[#01549F] hover:bg-[#282828] transition duration-200 mx-auto hover:text-white shadow-custom-button py-[0.875rem] w-[11.25rem] rounded-[5px]"
               onClick={function () {
                 setButtonValue(!buttonValue);
               }}
             >
-              {!buttonValue ? "See more article 👇" : "See less article 👆"}
-            </button>
+              {buttonValue ? (
+                <div className="flex items-center justify-self-center">
+                  See less article
+                  <img src="../👆.svg" alt="" className="pl-1 h-4" />
+                </div>
+              ) : (
+                <div className="flex items-center justify-self-center">
+                  See more article
+                  <img src="../👇.svg" alt="" className="pl-1 h-4" />
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

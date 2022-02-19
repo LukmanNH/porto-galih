@@ -1,5 +1,6 @@
 import React from "react";
 import { useReducer, useState } from "react";
+import Footer from "../components/Footer";
 
 const AboutMe = () => {
   return (
@@ -110,6 +111,7 @@ const AboutMe = () => {
           </div>
         </div>
       </nav>
+      <Footer />
     </div>
   );
 };

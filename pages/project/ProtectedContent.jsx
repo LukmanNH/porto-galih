@@ -27,18 +27,23 @@ const ProtectedContent = () => {
 
   return (
     <>
+      <img src="../Gelombang 1.svg" alt="" className="top-0 absolute" />
       <div className="pt-6 mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12">
-        <Link href={"/"}>
-          <p className="text-[#282828] cursor-pointer text-sm lg:text-lg hover:border-b-[3px] hover:transition duration-150 border-[#2B9EDE] float-left">
-            👈 Back to homepage
-          </p>
-        </Link>
-        <div className="py-36 mx-auto lg:w-[42.313rem]">
-          <div className="text-center">
-            <p className="mb-[1.375rem] sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-              🗃 Protected Content
-            </p>
-            <p className="font-light sm:text-sm md:text-base lg:text-lg mb-[3.125rem] text-[#282828]">
+        <div className="text-[#282828] cursor-pointer text-base lg:text-lg font-medium flex items-center hover:border-b-[3px] border-[#2B9EDE] absolute">
+          <img src="../👈.svg" alt="" className="mr-1 md:mr-2 h-4 lg:h-5" />
+          <Link href={"/"}>Back to homepage</Link>
+        </div>
+        <div className="pt-36 mx-auto sm:w-[32.313rem] lg:w-[42.313rem]">
+          <div className="grid text-center">
+            <div className="justify-self-center flex items-center mb-[1.375rem] text-4xl lg:text-5xl font-bold">
+              <img
+                src="../🗃.svg"
+                alt=""
+                className="pr-1 md:pr-2 h-8 md:h-9 lg:h-12"
+              />
+              Protected Content
+            </div>
+            <p className="font-light text-sm md:text-base lg:text-lg mb-[3.125rem] text-[#282828]">
               Some project need passwords please contact{" "}
               <span className="underline font-medium">
                 windawan26@gmail.com
@@ -76,6 +81,7 @@ const ProtectedContent = () => {
           </div>
         </div>
       </div>
+      <img src="../Gelombang 2.svg" alt="" className="bottom-0 absolute" />
     </>
   );
 };

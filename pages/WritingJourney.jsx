@@ -198,7 +198,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                 className="w-[fit-content] pb-[0.875rem]"
               >
                 <Link href={`/post/${items.info.slug}`}>
-                  <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
+                  <div className="container flex cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] ">
                     <p>{items.info.day}</p>
                     <p className="px-2">{" : "}</p>
                     <p>{items.info.title}</p>
@@ -226,7 +226,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                   className="w-[fit-content] pb-[0.875rem]"
                 >
                   <Link href={`/post/${items.info.slug}`}>
-                    <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
+                    <div className="container flex cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] ">
                       <p>{items.info.day}</p>
                       <p className="px-2">{" : "}</p>
                       <p>{items.info.title}</p>
@@ -253,7 +253,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                   className="w-[fit-content] pb-[0.875rem]"
                 >
                   <Link href={`/post/${items.info.slug}`}>
-                    <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
+                    <div className="container flex cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] ">
                       <p>{items.info.day}</p>
                       <p className="px-2">{" : "}</p>
                       <p>{items.info.title}</p>
@@ -280,7 +280,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                   className="w-[fit-content] pb-[0.875rem]"
                 >
                   <Link href={`/post/${items.info.slug}`}>
-                    <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
+                    <div className="container flex cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] ">
                       <p>{items.info.day}</p>
                       <p className="px-2">{" : "}</p>
                       <p>{items.info.title}</p>
@@ -307,7 +307,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                   className="w-[fit-content] pb-[0.875rem]"
                 >
                   <Link href={`/post/${items.info.slug}`}>
-                    <div className="container flex cursor-pointer !m-0 border-transparent border-b-[3px] hover:border-[#2B9EDE] ">
+                    <div className="container flex cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] ">
                       <p>{items.info.day}</p>
                       <p className="px-2">{" : "}</p>
                       <p>{items.info.title}</p>
@@ -324,14 +324,19 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
 
   return (
     <>
-      <div className="bg-hero bg-no-repeat bg-cover bg-center h-60 sm:h-64 md:h-72 lg:h-80 xl:h-96">
-        <div className="h-60 sm:h-64 md:h-72 lg:h-80 xl:h-96 w-full justify-items-center grid content-between">
-          <NavBar isNavItem={true} />
+      <div className="bg-hero bg-no-repeat bg-cover bg-center  h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem]">
+        <div className=" h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] w-full justify-items-center grid content-between">
+          <NavBar isNavItem={true} isHumberger={true} />
           <div className="flex w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12">
             <div className="w-full md:w-8/12 lg:w-8/12 self-end pb-9 lg:mr-3">
-              <h1 className="text-white font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl ">
-                ✏️ Writing Journey
-              </h1>
+              <div className="flex items-end text-white font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl">
+                <img
+                  src="../✏️.svg"
+                  alt=""
+                  className="pr-1 md:pr-2 h-8 md:h-9 lg:h-12"
+                />
+                Writing Journey
+              </div>
               <p className="mt-4 lg:mt-8 text-white font-light text-sm sm:text-sm md:text-base lg:text-lg tracking-wider">
                 Something new I'm starting for 2021 — every week or two I write
                 about what I've been working on, problems I've solved.
@@ -463,12 +468,22 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
           {valueDropDownCategories !== "All Categories" &&
           valueDropDownTime === "Oldest" ? null : valueDropDownCategories ===
               "All Categories" && valueDropDownTime !== "Oldest" ? (
-            <button
-              className="cursor-pointer text-base font-medium text-white bg-[#01549F] hover:bg-[#282828] transition duration-200 mx-auto hover:text-white shadow-custom-button py-[0.875rem] w-[11.25rem] rounded-[5px]"
+            <div
+              className="cursor-pointer text-base font-medium grid text-white bg-[#01549F] hover:bg-[#282828] transition duration-200 mx-auto hover:text-white shadow-custom-button py-[0.875rem] w-[11.25rem] rounded-[0.313rem]"
               onClick={() => setbuttonValue(!buttonValue)}
             >
-              {!buttonValue ? "See less article 👆" : "See more article 👇"}
-            </button>
+              {!buttonValue ? (
+                <div className="flex items-center justify-self-center">
+                  See less article
+                  <img src="../👆.svg" alt="" className="pl-1 h-4" />
+                </div>
+              ) : (
+                <div className="flex items-center justify-self-center">
+                  See more article
+                  <img src="../👇.svg" alt="" className="pl-1 h-4" />
+                </div>
+              )}
+            </div>
           ) : null}
         </div>
       </div>

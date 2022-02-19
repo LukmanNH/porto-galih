@@ -42,6 +42,9 @@ module.exports = {
         ".lock-icon": {
           background: "url(/lock-icon.png)",
         },
+        ".icon-pencil": {
+          background: "url(/icon-pencil.png)",
+        },
         ".blueHover": {
           background: "rgba(3, 135, 255, 0.08)",
         },
