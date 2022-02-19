@@ -27,7 +27,7 @@ const ProtectedContent = () => {
 
   return (
     <>
-      <img src="../Gelombang 1.svg" alt="" className="top-0 absolute" />
+      <img src="../Gelombang 1.svg" alt="" className="top-0 absolute w-full" />
       <div className="pt-6 mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12">
         <div className="text-[#282828] cursor-pointer text-base lg:text-lg font-medium flex items-center hover:border-b-[3px] border-[#2B9EDE] absolute">
           <img src="../👈.svg" alt="" className="mr-1 md:mr-2 h-4 lg:h-5" />
@@ -81,7 +81,11 @@ const ProtectedContent = () => {
           </div>
         </div>
       </div>
-      <img src="../Gelombang 2.svg" alt="" className="bottom-0 absolute" />
+      <img
+        src="../Gelombang 2.svg"
+        alt=""
+        className="bottom-0 absolute w-full"
+      />
     </>
   );
 };

@@ -16,7 +16,9 @@ export default function Home() {
           Currently a UX Designer working within amazing team at Digital Product
           Agency{" "}
           <span className="border-b-[0.188rem] font-semibold border-blue-600 duration-200 hover:text-[#01549F] cursor-pointer">
-            <Link href="https://salt.id/">SALT Indonesia.</Link>
+            <a target="_blank" href="https://salt.id/">
+              SALT Indonesia.
+            </a>
           </span>{" "}
           Day-to-day, I'm contributing on Digital Product Interface, and Design
           System.
