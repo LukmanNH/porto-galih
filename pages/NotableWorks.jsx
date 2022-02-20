@@ -61,7 +61,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
           }`}
         >
           <div
-            className={`h-[280px] my-4 ${
+            className={`h-[17.5rem] my-4 ${
               index != 2 && index != 3
                 ? " order-last lg:w-6/12 mx-4 "
                 : " mx-4 "
@@ -77,7 +77,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
             className={`mx-4 my-[38px] lg:mx-10 ${
               index != 2 && index != 3
                 ? " lg:w-6/12 "
-                : "  lg:mb-[38px] mt[17px] "
+                : "  lg:mb-[2.375rem] mt-[1.063rem] "
             }`}
           >
             <h1 className="font-bold text-[1.3rem] sm:text-[1.5rem] lg:text-[1.625rem] xl:text-[1.75rem]">
@@ -85,7 +85,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
             </h1>
             <div className="flex font-light text-[#808080] my-2 text-xs sm:text-sm">
               <p>{value.node.platform}</p>
-              <span className="h-[5px] w-[5px] bg-[#808080] rounded-full inline-block mx-3 self-center"></span>
+              <span className="h-[0.313rem] w-[0.313rem] bg-[#808080] rounded-full inline-block mx-3 self-center"></span>
               <p>{value.node.projectCategories[1].name}</p>
             </div>
             <p className="font-normal text-[#282828] mb-[1.438rem] text-xs sm:text-sm">
@@ -100,7 +100,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
                 className="cursor-pointer flex justify-center bg-white hover:bg-[#282828] hover:text-white shadow-custom-button py-[0.625rem] w-[9.125rem] rounded-[5px] font-medium text-sm text-[#01549F]"
                 onClick={() => goToDetailProject(value.node.slug)}
               >
-                <p className="mr-[10px]">View Project</p>
+                <p className="mr-[0.625rem]">View Project</p>
                 {value.node.isPremium ? (
                   <img width={18} height={18} src="../🔒.svg" alt="" />
                 ) : (
@@ -205,7 +205,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
       </div>
       <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 pt-[3.625rem] mx-auto mb-28 container">
         {/* <-- START Jenius App Re—design SECTION --> */}
-        <div className="grid grid-cols-2 gap-6 sm:gap-7 md:gap-8 lg:gap-[38px]">
+        <div className="grid grid-cols-2 gap-6 sm:gap-7 md:gap-8 lg:gap-[2.375rem]">
           {/* //buttonValue ? valueCategories === "All Categories" ? 'getAll' :
           'filter' : valueCategories === "All Categories ? 'getFirst2Project' :
           'filter' */}

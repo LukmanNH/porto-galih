@@ -9,6 +9,9 @@ import {
   get5FirstPost,
 } from "../services";
 
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 const WritingJourney = ({ posts, postsASC, first5Post }) => {
   const [dropDownCategories, setDropdownCategories] = useState(false);
   const [dropStyleCategories, setDropStyleCategories] = useState(false);
@@ -21,6 +24,15 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
   const [showButton, setShowButton] = useState(true);
   const dropdown = useRef(null);
   const downTime = useRef(null);
+
+  useEffect(() => {
+    Aos.init({
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 50,
+      delay: 50,
+    });
+  });
 
   useEffect(() => {
     if (!dropDownCategories) return;
@@ -187,7 +199,12 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
       (valueDropDownTime === "By Newest" || valueDropDownTime === "Newest")
     ) {
       return key5.map((item) => (
-        <div key={item + 1}>
+        <div
+          key={item + 1}
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="600"
+        >
           <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
             {item}
           </p>
@@ -198,10 +215,12 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                 className="w-[fit-content] pb-[0.875rem]"
               >
                 <Link href={`/post/${items.info.slug}`}>
-                  <div className="container flex cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] ">
-                    <p>{items.info.day}</p>
-                    <p className="px-2">{" : "}</p>
-                    <p>{items.info.title}</p>
+                  <div className="container flex cursor-pointer w-96 sm:w-full ">
+                    <p className="overflow-hidden truncate !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE]">
+                      {items.info.day} : {items.info.title}
+                    </p>
+                    {/* <p className="px-2">{" : "}</p>
+                    <p>{items.info.title}</p> */}
                   </div>
                 </Link>
               </div>
@@ -215,7 +234,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
         (valueDropDownTime === "By Newest" || valueDropDownTime === "Newest")
       ) {
         return key.map((item) => (
-          <div key={item}>
+          <div key={item} data-aos="fade-left">
             <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
               {item}
             </p>
