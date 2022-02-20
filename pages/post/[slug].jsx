@@ -7,21 +7,27 @@ import moment from "moment";
 const PostDetails = ({ post }) => {
   return (
     <>
-      <div className="bg-hero bg-no-repeat bg-cover bg-center h-[14.75rem] sm:h-[15.75rem] md:h-[16.75rem] lg:h-[18.75rem] xl:h-[19.75rem]">
-        <div className="h-[14.75rem] sm:h-[15.75rem] md:h-[16.75rem] lg:h-[18.75rem] xl:h-[19.75rem] w-full justify-items-center grid content-between">
+      <div className="bg-hero bg-cover bg-no-repeat bg-center h-auto">
+        <div className="h-auto w-full justify-items-center grid content-between">
           <NavBar isNavItem={false} isHumberger={false} />
-          <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 pb-6 md:pb-8 lg:pb-12 lg:pr-40 md:pr-36 sm:pr-28">
-            <div className="w-auto justify-center">
+          <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 pt-[2.375rem] pb-7 sm:pb-8 md:pb-9 lg:pb-14 lg:pr-40 md:pr-36 sm:pr-28">
+            <div className="justify-center">
               <p className="text-white font-semibold text-2xl sm:text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem]">
                 {post.title}
               </p>
-              <div className="flex items-center mt-3 lg:mt-7 text-white font-light text-sm sm:text-sm md:text-base lg:text-[1.25rem] tracking-wider">
-                <img
-                  src="../../📅.svg"
-                  alt=""
-                  className="pr-1 md:pr-2 h-[0.875rem] md:h-4 lg:h-[1.125rem]"
-                />
-                {moment(post.createdAt).format("MMM DD, YYYY")} — by Galih Putra
+              <div className="grid grid-cols-2 gap-[96px] text-xs lg:text-sm text-white pt-5 md:pt-7 lg:pt-8 xl:pt-[42px]">
+                <div className="">
+                  <p className="font-light">Date</p>
+                  <p className="font-medium py-[6px]">
+                    {moment(post.createdAt).format("DD MMMM YYYY")}
+                  </p>
+                </div>
+                <div className="">
+                  <p className="font-light">Category</p>
+                  {post.blogCategories.map((item) => (
+                    <p className="font-medium py-[6px]">{item.name}</p>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

@@ -73,7 +73,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
     createdAt: moment(x.node.createdAt).format("MMMM YYYY").toString(),
     data: {
       title: x.node.title,
-      day: moment(x.node.createdAt).format("dddd D"),
+      day: moment(x.node.createdAt).format("DD"),
       slug: x.node.slug,
     },
     slug: x.node.categories,
@@ -105,7 +105,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
     createdAt: moment(x.node.createdAt).format("MMMM YYYY").toString(),
     data: {
       title: x.node.title,
-      day: moment(x.node.createdAt).format("dddd D"),
+      day: moment(x.node.createdAt).format("DD"),
       slug: x.node.slug,
     },
     slug: x.node.categories,
@@ -126,7 +126,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
     createdAt: moment(x.node.createdAt).format("MMMM YYYY").toString(),
     data: {
       title: x.node.title,
-      day: moment(x.node.createdAt).format("dddd D"),
+      day: moment(x.node.createdAt).format("DD"),
       slug: x.node.slug,
     },
     slug: x.node.categories,
@@ -153,7 +153,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
     createdAt: moment(x.node.createdAt).format("MMMM YYYY").toString(),
     data: {
       title: x.node.title,
-      day: moment(x.node.createdAt).format("dddd D"),
+      day: moment(x.node.createdAt).format("DD"),
       slug: x.node.slug,
     },
     slug: x.node.categories,
@@ -174,7 +174,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
     createdAt: moment(x.node.createdAt).format("MMMM YYYY").toString(),
     data: {
       title: x.node.title,
-      day: moment(x.node.createdAt).format("dddd D"),
+      day: moment(x.node.createdAt).format("DD"),
       slug: x.node.slug,
     },
     slug: x.node.categories,

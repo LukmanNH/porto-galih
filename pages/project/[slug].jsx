@@ -12,7 +12,7 @@ const ProjectDetails = ({ projects }) => {
   return (
     <>
       <div className="bg-hero bg-cover bg-no-repeat bg-center h-auto">
-        <div className=" h-auto w-full justify-items-center grid content-between">
+        <div className="h-auto w-full justify-items-center grid content-between">
           <NavBar isNavItem={false} isHumberger={false} />
           <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 pt-[2.375rem] pb-7 sm:pb-8 md:pb-9 lg:pb-14 lg:pr-40 md:pr-36 sm:pr-28">
             <div className="justify-center">
