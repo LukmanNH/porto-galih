@@ -15,8 +15,8 @@ const PostDetails = ({ post }) => {
               <p className="text-white font-semibold text-2xl sm:text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem]">
                 {post.title}
               </p>
-              <div className="grid grid-cols-2 gap-[96px] text-xs lg:text-sm text-white pt-5 md:pt-7 lg:pt-8 xl:pt-[42px]">
-                <div className="">
+              <div className="flex text-xs lg:text-sm text-white pt-5 md:pt-7 lg:pt-8 xl:pt-[42px]">
+                <div className="mr-24">
                   <p className="font-light">Date</p>
                   <p className="font-medium py-[6px]">
                     {moment(post.createdAt).format("DD MMMM YYYY")}
