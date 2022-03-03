@@ -8,7 +8,7 @@ import {
   getSlugOfProjects,
   getDetailProject,
 } from "../../services";
-import ProjectDetail from "../ProjectDetail";
+import ProjectDetail from "../../components/ProjectDetail";
 
 const ProjectDetails = ({ projects }) => {
   const router = useRouter();

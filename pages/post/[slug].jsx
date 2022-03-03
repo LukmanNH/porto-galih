@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "../../components/NavBar";
-import PostDetail from "../PostDetail";
+import PostDetail from "../../components/PostDetail";
 import Loader from "../../components/Loader";
 import { getPosts, getPostDetails, getPosts2 } from "../../services";
 import { useRouter } from "next/router";
@@ -8,6 +8,7 @@ import moment from "moment";
 
 const PostDetails = ({ post }) => {
   const router = useRouter();
+  console.log(router.isFallback);
 
   if (router.isFallback) {
     return <div>Loading...</div>;
