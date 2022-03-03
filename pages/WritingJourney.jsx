@@ -199,12 +199,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
       (valueDropDownTime === "By Newest" || valueDropDownTime === "Newest")
     ) {
       return key5.map((item) => (
-        <div
-          key={item + 1}
-          data-aos="fade-up"
-          data-aos-easing="linear"
-          data-aos-duration="600"
-        >
+        <div key={item + 1}>
           <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
             {item}
           </p>
@@ -219,8 +214,6 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                     <p className="overflow-hidden truncate !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE]">
                       {items.info.day} : {items.info.title}
                     </p>
-                    {/* <p className="px-2">{" : "}</p>
-                    <p>{items.info.title}</p> */}
                   </div>
                 </Link>
               </div>
@@ -234,7 +227,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
         (valueDropDownTime === "By Newest" || valueDropDownTime === "Newest")
       ) {
         return key.map((item) => (
-          <div key={item} data-aos="fade-left">
+          <div key={item}>
             <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
               {item}
             </p>

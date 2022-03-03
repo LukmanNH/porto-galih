@@ -32,7 +32,9 @@ const PostDetails = ({ post }) => {
                 <div className="">
                   <p className="font-light">Category</p>
                   {post.blogCategories.map((item) => (
-                    <p className="font-medium py-[6px]">{item.name}</p>
+                    <p className="font-medium py-[6px]" key={item.name}>
+                      {item.name}
+                    </p>
                   ))}
                 </div>
               </div>
