@@ -14,7 +14,7 @@ const ProjectDetails = ({ projects }) => {
   const router = useRouter();
 
   if (router.isFallback) {
-    return <Loader />;
+    return <div>Loading...</div>;
   }
   return (
     <>
