@@ -1,6 +1,8 @@
 import React from "react";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
+import Loader from "../../components/Loader";
+import { Router, useRouter } from "next/router";
 import {
   getPartOfProjects,
   getSlugOfProjects,
@@ -9,6 +11,11 @@ import {
 import ProjectDetail from "../ProjectDetail";
 
 const ProjectDetails = ({ projects }) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <Loader />;
+  }
   return (
     <>
       <div className="bg-hero bg-cover bg-no-repeat bg-center h-auto">
