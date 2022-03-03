@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "../../components/NavBar";
 import PostDetail from "../PostDetail";
 import { getPosts, getPostDetails, getPosts2 } from "../../services";
+import { useRouter } from "next/router";
 import moment from "moment";
 
 const PostDetails = ({ post }) => {
@@ -99,6 +100,6 @@ export async function getStaticPaths() {
     paths: posts.map(({ node: { slug } }) => ({
       params: { slug },
     })),
-    fallback: false,
+    fallback: true,
   };
 }

@@ -72,6 +72,6 @@ export async function getStaticPaths() {
     paths: projects.map(({ node: { slug } }) => ({
       params: { slug },
     })),
-    fallback: false,
+    fallback: true,
   };
 }
