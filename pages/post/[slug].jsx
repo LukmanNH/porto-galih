@@ -6,6 +6,11 @@ import { useRouter } from "next/router";
 import moment from "moment";
 
 const PostDetails = ({ post }) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <Loader />;
+  }
   return (
     <>
       <div className="bg-hero bg-cover bg-no-repeat bg-center h-auto">
