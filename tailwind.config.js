@@ -13,9 +13,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  content: ["./node_modules/flowbite/**/*.js"],
   plugins: [
-    require("flowbite/plugin"),
     plugin(function ({ addUtilities }) {
       const utilities = {
         ".bg-hero": {
