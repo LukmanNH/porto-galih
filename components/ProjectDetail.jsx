@@ -1,7 +1,9 @@
 import React from "react";
+import Head from "next/head";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 
 const ProjectDetail = ({ projects }) => {
+  console.log(projects);
   const content = projects.content.raw;
   console.log(content);
   const getContentFragment = (index, text, obj, type) => {
@@ -65,28 +67,44 @@ const ProjectDetail = ({ projects }) => {
     }
   };
   return (
-    <div className="mb-[3.625rem] text-justify">
-      {/* {projects.content.raw.children.map((typeObj, index) => {
+    <>
+      <Head>
+        <title>{projects.title}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta property="og:title" content={projects.title} />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:image"
+          content="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.m1oils.com.au%2Fwp-content%2Fuploads%2F2019%2F04%2FMercedesAMG.jpg&f=1&nofb=1"
+        />
+        <meta
+          property="og:url"
+          content={`http://https://porto-galih-lukmannh.vercel.app/${projects.slug}`}
+        />
+      </Head>
+      <div className="mb-[3.625rem] text-justify">
+        {/* {projects.content.raw.children.map((typeObj, index) => {
         const children = typeObj.children.map((item, itemIndex) =>
           getContentFragment(itemIndex, item.text, item)
         );
 
         return getContentFragment(index, children, typeObj, typeObj.type);
       })} */}
-      <RichText
-        content={content}
-        renderers={{
-          p: ({ children }) => (
-            <p className="font-normal text-sm md:text-base lg:text-[1.25rem] text-[#282828] mb-8 lg:leading-10">
-              {children}
-            </p>
-          ),
-          h1: ({ children }) => <h1 className="text-white">{children}</h1>,
-          bold: ({ children }) => <strong>{children}</strong>,
-          table_cell: ({ children }) => <td className="pr-6">{children}</td>,
-        }}
-      />
-    </div>
+        <RichText
+          content={content}
+          renderers={{
+            p: ({ children }) => (
+              <p className="font-normal text-sm md:text-base lg:text-[1.25rem] text-[#282828] mb-8 lg:leading-10">
+                {children}
+              </p>
+            ),
+            h1: ({ children }) => <h1 className="text-white">{children}</h1>,
+            bold: ({ children }) => <strong>{children}</strong>,
+            table_cell: ({ children }) => <td className="pr-6">{children}</td>,
+          }}
+        />
+      </div>
+    </>
   );
 };
 
