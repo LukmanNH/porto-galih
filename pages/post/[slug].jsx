@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import moment from "moment";
 
 const PostDetails = ({ post }) => {
+  const joinCategory = [];
   const router = useRouter();
   console.log(router.isFallback);
 
@@ -32,11 +33,12 @@ const PostDetails = ({ post }) => {
                 </div>
                 <div className="">
                   <p className="font-light">Category</p>
-                  {post.blogCategories.map((item) => (
-                    <p className="font-medium py-[6px]" key={item.name}>
-                      {item.name}
-                    </p>
-                  ))}
+                  {post.blogCategories.map((item, index) => {
+                    joinCategory.push(item.name);
+                  })}
+                  <p className="font-medium py-[6px]">
+                    {joinCategory.join(", ")}
+                  </p>
                 </div>
               </div>
             </div>

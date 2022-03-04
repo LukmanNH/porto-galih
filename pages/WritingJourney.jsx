@@ -238,10 +238,10 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                   className="w-[fit-content] pb-[0.875rem]"
                 >
                   <Link href={`/post/${items.info.slug}`}>
-                    <div className="container flex cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] ">
-                      <p>{items.info.day}</p>
-                      <p className="px-2">{" : "}</p>
-                      <p>{items.info.title}</p>
+                    <div className="container flex cursor-pointer w-96 sm:w-full ">
+                      <p className="overflow-hidden truncate !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE]">
+                        {items.info.day} : {items.info.title}
+                      </p>
                     </div>
                   </Link>
                 </div>
@@ -265,10 +265,10 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                   className="w-[fit-content] pb-[0.875rem]"
                 >
                   <Link href={`/post/${items.info.slug}`}>
-                    <div className="container flex cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] ">
-                      <p>{items.info.day}</p>
-                      <p className="px-2">{" : "}</p>
-                      <p>{items.info.title}</p>
+                    <div className="container flex cursor-pointer w-96 sm:w-full ">
+                      <p className="overflow-hidden truncate !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE]">
+                        {items.info.day} : {items.info.title}
+                      </p>
                     </div>
                   </Link>
                 </div>
@@ -292,10 +292,10 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                   className="w-[fit-content] pb-[0.875rem]"
                 >
                   <Link href={`/post/${items.info.slug}`}>
-                    <div className="container flex cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] ">
-                      <p>{items.info.day}</p>
-                      <p className="px-2">{" : "}</p>
-                      <p>{items.info.title}</p>
+                    <div className="container flex cursor-pointer w-96 sm:w-full ">
+                      <p className="overflow-hidden truncate !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE]">
+                        {items.info.day} : {items.info.title}
+                      </p>
                     </div>
                   </Link>
                 </div>
@@ -319,12 +319,19 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                   className="w-[fit-content] pb-[0.875rem]"
                 >
                   <Link href={`/post/${items.info.slug}`}>
+                    <div className="container flex cursor-pointer w-96 sm:w-full ">
+                      <p className="overflow-hidden truncate !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE]">
+                        {items.info.day} : {items.info.title}
+                      </p>
+                    </div>
+                  </Link>
+                  {/* <Link href={`/post/${items.info.slug}`}>
                     <div className="container flex cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] ">
                       <p>{items.info.day}</p>
                       <p className="px-2">{" : "}</p>
                       <p>{items.info.title}</p>
                     </div>
-                  </Link>
+                  </Link> */}
                 </div>
               ))}
             </div>

@@ -86,7 +86,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
             <div className="flex font-light text-[#808080] my-2 text-xs sm:text-sm">
               <p>{value.node.platform}</p>
               <span className="h-[0.313rem] w-[0.313rem] bg-[#808080] rounded-full inline-block mx-3 self-center"></span>
-              <p>{value.node.projectCategories[1].name}</p>
+              <p>{value.node.projectCategories[0].name}</p>
             </div>
             <p className="font-normal text-[#282828] mb-[1.438rem] text-xs sm:text-sm">
               {value.node.excerpt}
@@ -100,12 +100,12 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
                 className="cursor-pointer flex justify-center bg-white hover:bg-[#282828] hover:text-white shadow-custom-button py-[0.625rem] w-[9.125rem] rounded-[5px] font-medium text-sm text-[#01549F]"
                 onClick={() => goToDetailProject(value.node.slug)}
               >
-                <p className="mr-[0.625rem]">View Project</p>
+                <p className={value.node.isPremium ? "mr-[0.625rem]" : ""}>
+                  View Project
+                </p>
                 {value.node.isPremium ? (
                   <img width={18} height={18} src="../🔒.svg" alt="" />
-                ) : (
-                  ""
-                )}
+                ) : null}
               </div>
             </Link>
           </div>
