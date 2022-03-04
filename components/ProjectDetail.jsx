@@ -81,6 +81,10 @@ const ProjectDetail = ({ projects }) => {
           property="og:url"
           content={`http://https://porto-galih-lukmannh.vercel.app/${projects.slug}`}
         />
+        <meta
+          property="og:site_name"
+          content="Portofolio Galih Putra Windawan"
+        ></meta>
       </Head>
       <div className="mb-[3.625rem] text-justify">
         {/* {projects.content.raw.children.map((typeObj, index) => {
