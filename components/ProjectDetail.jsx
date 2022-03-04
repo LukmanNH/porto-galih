@@ -70,9 +70,9 @@ const ProjectDetail = ({ projects }) => {
     <>
       <Head>
         <title>{projects.title}</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta property="og:title" content={projects.title} />
         <meta property="og:type" content="article" />
+        <meta property="og:description" content={projects.exceprt} />
         <meta
           property="og:image"
           content="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.m1oils.com.au%2Fwp-content%2Fuploads%2F2019%2F04%2FMercedesAMG.jpg&f=1&nofb=1"
