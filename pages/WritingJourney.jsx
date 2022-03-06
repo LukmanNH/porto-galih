@@ -210,7 +210,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                 className="w-[fit-content] pb-[0.875rem]"
               >
                 <Link href={`/post/${items.info.slug}`}>
-                  <div className="container flex cursor-pointer w-96 sm:w-full ">
+                  <div className="container flex cursor-pointer w-[21rem] sm:w-full ">
                     <p className="overflow-hidden truncate !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE]">
                       {items.info.day} : {items.info.title}
                     </p>
@@ -238,7 +238,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                   className="w-[fit-content] pb-[0.875rem]"
                 >
                   <Link href={`/post/${items.info.slug}`}>
-                    <div className="container flex cursor-pointer w-96 sm:w-full ">
+                    <div className="container flex cursor-pointer w-[21rem] sm:w-full">
                       <p className="overflow-hidden truncate !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE]">
                         {items.info.day} : {items.info.title}
                       </p>
@@ -265,7 +265,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                   className="w-[fit-content] pb-[0.875rem]"
                 >
                   <Link href={`/post/${items.info.slug}`}>
-                    <div className="container flex cursor-pointer w-96 sm:w-full ">
+                    <div className="container flex cursor-pointer w-[21rem] sm:w-full">
                       <p className="overflow-hidden truncate !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE]">
                         {items.info.day} : {items.info.title}
                       </p>
@@ -292,7 +292,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                   className="w-[fit-content] pb-[0.875rem]"
                 >
                   <Link href={`/post/${items.info.slug}`}>
-                    <div className="container flex cursor-pointer w-96 sm:w-full ">
+                    <div className="container flex cursor-pointer w-[21rem] sm:w-full">
                       <p className="overflow-hidden truncate !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE]">
                         {items.info.day} : {items.info.title}
                       </p>
@@ -319,7 +319,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                   className="w-[fit-content] pb-[0.875rem]"
                 >
                   <Link href={`/post/${items.info.slug}`}>
-                    <div className="container flex cursor-pointer w-96 sm:w-full ">
+                    <div className="container flex cursor-pointer w-[21rem] sm:w-full">
                       <p className="overflow-hidden truncate !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE]">
                         {items.info.day} : {items.info.title}
                       </p>
@@ -343,8 +343,8 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
 
   return (
     <>
-      <div className="bg-hero bg-no-repeat bg-cover bg-center  h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem]">
-        <div className=" h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] w-full justify-items-center grid content-between">
+      <div className="w-full bg-hero bg-no-repeat bg-cover bg-center h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem]">
+        <div className="h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] w-full justify-items-center grid content-between">
           <NavBar isNavItem={true} isHumberger={true} />
           <div className="flex w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12">
             <div className="w-full md:w-8/12 lg:w-8/12 self-end pb-9 lg:mr-3">
