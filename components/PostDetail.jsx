@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/dist/shared/lib/head";
 
 const PostDetail = ({ post }) => {
   const getContentFragment = (index, text, obj, type) => {
