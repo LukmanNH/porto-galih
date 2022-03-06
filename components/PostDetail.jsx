@@ -67,7 +67,12 @@ const PostDetail = ({ post }) => {
         <title>{post.title}</title>
         <meta property="og:title" content={post.title} />
         <meta property="og:type" content="article" />
-        <meta property="og:image" content={post.featuredImage.url || ""} />
+        {post.featuredImage ? (
+          <meta property="og:image" content={post.featuredImage.url} />
+        ) : (
+          ""
+        )}
+
         <meta
           property="og:url"
           content={`http://https://porto-galih-lukmannh.vercel.app/${post.slug}`}
