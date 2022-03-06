@@ -8,7 +8,6 @@ const ProjectDetail = ({ projects }) => {
   console.log(content);
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
-    // console.log(type);
 
     if (obj) {
       if (obj.bold) {
@@ -72,21 +71,15 @@ const ProjectDetail = ({ projects }) => {
         <title>{projects.title}</title>
         <meta property="og:title" content={projects.title} />
         <meta property="og:type" content="article" />
-        <meta
-          property="og:description"
-          content="Offering tour packages for individuals or groups."
-        />
-        <meta
-          property="og:image"
-          content="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.m1oils.com.au%2Fwp-content%2Fuploads%2F2019%2F04%2FMercedesAMG.jpg&f=1&nofb=1"
-        />
+        <meta property="og:description" content={projects.excerpt} />
+        <meta property="og:image" content={projects.thumbnail.url} />
         <meta
           property="og:url"
           content={`http://https://porto-galih-lukmannh.vercel.app/${projects.slug}`}
         />
         <meta
           property="og:site_name"
-          content="Portofolio Galih Putra Windawan"
+          content={`${projects.title} | Portofolio ueg nihh liat dongg`}
         ></meta>
       </Head>
       <div className="mb-[3.625rem] text-justify">

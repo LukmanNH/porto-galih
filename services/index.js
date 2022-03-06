@@ -110,6 +110,7 @@ export const getPostDetails = async (slug) => {
         createdAt
         slug
         title
+        excerpt
         featuredImage {
           url
         }
@@ -227,8 +228,12 @@ export const getDetailProject = async (slug) => {
         period
         slug
         company
+        excerpt
         goals
         isPremium
+        thumbnail {
+          url
+        }
         featuredImage {
           url
         }

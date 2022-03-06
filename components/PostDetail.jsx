@@ -61,15 +61,32 @@ const PostDetail = ({ post }) => {
     }
   };
   return (
-    <div className="mb-[3.625rem] text-justify">
-      {post.content.raw.children.map((typeObj, index) => {
-        const children = typeObj.children.map((item, itemIndex) =>
-          getContentFragment(itemIndex, item.text, item)
-        );
+    <>
+      <Head>
+        <title>{post.title}</title>
+        <meta property="og:title" content={post.title} />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={post.featuredImage.url} />
+        <meta
+          property="og:url"
+          content={`http://https://porto-galih-lukmannh.vercel.app/${post.slug}`}
+        />
+        <meta
+          property="og:site_name"
+          content={`${post.title} | Galih Putra Windawan`}
+        ></meta>
+      </Head>
+      <div className="mb-[3.625rem] text-justify">
+        {post.content.raw.children.map((typeObj, index) => {
+          const children = typeObj.children.map((item, itemIndex) =>
+            getContentFragment(itemIndex, item.text, item)
+          );
 
-        return getContentFragment(index, children, typeObj, typeObj.type);
-      })}
-    </div>
+          return getContentFragment(index, children, typeObj, typeObj.type);
+        })}
+      </div>
+    </>
   );
 };
 

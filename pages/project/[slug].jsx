@@ -69,7 +69,7 @@ export async function getStaticProps({ params }) {
   const data = await getDetailProject(params.slug);
   return {
     props: { projects: data },
-    revalidate: 60,
+    revalidate: 30,
   };
 }
 

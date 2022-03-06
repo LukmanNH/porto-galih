@@ -518,6 +518,6 @@ export async function getStaticProps() {
   const first5Post = (await get5FirstPost()) || [];
   return {
     props: { posts, postsASC, first5Post },
-    revalidate: 60,
+    revalidate: 30,
   };
 }
