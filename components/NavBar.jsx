@@ -23,8 +23,12 @@ const NavBar = ({ isNavItem, isHumberger }) => {
     <div className="w-full top-0" ref={popUp}>
       <div className="md:flex items-stretch justify-between py-5 md:pt-[2.375rem] mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12">
         <div className="relative w-full">
-          <div className="text-white cursor-pointer text-base lg:text-lg flex items-center hover:border-b-[3px] border-[#2B9EDE] absolute">
-            <img src="../👈.svg" alt="" className="mr-1 md:mr-2 h-4 lg:h-5" />
+          <div className="text-white cursor-pointer text-base lg:text-lg 2xl:text-3xl flex items-center hover:border-b-[3px] border-[#2B9EDE] absolute">
+            <img
+              src="../👈.svg"
+              alt=""
+              className="mr-1 md:mr-2 h-4 lg:h-5 2xl:h-7"
+            />
             <Link href={"/"}>Back to homepage</Link>
           </div>
         </div>
@@ -82,7 +86,7 @@ const NavBar = ({ isNavItem, isHumberger }) => {
         </div>
         {isNavItem ? (
           <ul
-            className={`absolute md:static bg-[#01549F] text-opacity-50 text-white text-sm md:space-x-[2rem] md:flex md:items-center lg:space-x-[2.5rem] lg:text-base xl:space-x-[3.75rem] xl:text-lg md:pl-0 pl-6 md:z-auto left-0 w-full md:w-auto ${
+            className={`absolute md:static bg-[#01549F] text-opacity-50 text-white text-sm md:space-x-[2rem] md:flex md:items-center lg:space-x-[2.5rem] lg:text-base xl:space-x-[3.75rem] xl:text-lg 2xl:text-2xl md:pl-0 pl-6 md:z-auto left-0 w-full md:w-auto ${
               open
                 ? "top-16 opacity-100 transition duration-500 ease-in"
                 : "top-16 opacity-0 md:opacity-100"

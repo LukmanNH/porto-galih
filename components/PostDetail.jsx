@@ -32,7 +32,7 @@ const PostDetail = ({ post }) => {
         return (
           <p
             key={index}
-            className="font-normal text-sm md:text-base lg:text-[1.25rem] text-[#282828] mb-8 lg:leading-10"
+            className="font-normal text-sm md:text-base lg:text-[1.25rem] 2xl:text-3xl text-[#282828] mb-8 lg:leading-10 2xl:leading-[3.5rem]"
           >
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
