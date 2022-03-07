@@ -24,7 +24,7 @@ const PostDetails = ({ post }) => {
               <p className="text-white font-semibold text-2xl sm:text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem]">
                 {post.title}
               </p>
-              <div className="flex text-xs lg:text-sm text-white pt-5 md:pt-7 lg:pt-8 xl:pt-[42px]">
+              <div className="flex text-sm md:text-base lg:text-base text-white pt-5 md:pt-7 lg:pt-8 xl:pt-[42px]">
                 <div className="mr-24">
                   <p className="font-light">Date</p>
                   <p className="font-medium py-[6px]">
@@ -45,12 +45,13 @@ const PostDetails = ({ post }) => {
           </div>
         </div>
       </div>
-      <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 mx-auto md:pr-36 sm:pr-28 pb-[6.25rem]">
-        <div className="py-[3.625rem]">
-          {post.featuredImage ? (
+      <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 mx-auto md:pr-36 sm:pr-28 pb-[6.25rem] pt-12">
+        {post.featuredImage !== null ? (
+          <div className="py-[3.625rem]">
             <img src={post.featuredImage.url} alt="" />
-          ) : null}
-        </div>
+          </div>
+        ) : null}
+
         <PostDetail post={post} />
         <div>
           <a href="https://calendly.com/hellogalih" target="_blank">

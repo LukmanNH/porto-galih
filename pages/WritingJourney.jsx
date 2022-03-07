@@ -231,7 +231,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
             <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
               {item}
             </p>
-            <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-5">
+            <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
               {bismillah[item].map((items) => (
                 <div
                   key={items.info.slug}
@@ -356,7 +356,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                 />
                 Writing Journey
               </div>
-              <p className="mt-4 lg:mt-8 text-white font-light text-sm sm:text-sm md:text-base lg:text-lg tracking-wider">
+              <p className="mt-4 lg:mt-8 text-white font-light text-sm sm:text-sm md:text-base lg:text-lg tracking-wider lg:leading-9">
                 Something new I'm starting for 2021 — every week or two I write
                 about what I've been working on, problems I've solved.
               </p>

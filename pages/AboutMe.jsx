@@ -16,7 +16,7 @@ const AboutMe = () => {
           <img src="../👈.svg" alt="" className="mr-1 md:mr-2 h-4 lg:h-5" />
           <Link href={"/"}>Back to homepage</Link>
         </div>
-        <div className="pt-[3.75rem] w-full z-0">
+        <div className="pt-[6rem] w-full z-0">
           <div className="grid">
             <div className="mb-10 text-4xl lg:text-[2.25rem] font-bold">
               Hay, I'm Galih Putra Windawan

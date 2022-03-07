@@ -32,7 +32,7 @@ export default function Home() {
         <p className="text-[1.1rem] leading-[2.3rem] font-sans font-light text-[#282828] sm:text-[1.2rem] sm:leading-[2.4rem] md:text-[1.3rem] md:leading-[2.6rem] lg:text-[1.4rem] lg:leading-[2.8rem] xl:text-[1.5rem] xl:leading-[3rem]">
           Currently a UX Designer working within amazing team at Digital Product
           Agency{" "}
-          <span className="border-b-[0.188rem] font-semibold border-blue-600 duration-200 hover:text-[#01549F] cursor-pointer">
+          <span className="border-b-[0.188rem] font-semibold border-[#2B9EDE] duration-200 hover:text-[#01549F] cursor-pointer">
             <a target="_blank" href="https://salt.id/">
               SALT Indonesia.
             </a>
@@ -42,19 +42,19 @@ export default function Home() {
         </p>
         <p className="mt-[2.375rem] text-[1.1rem] leading-[2.3rem] font-sans font-light text-[#282828] sm:text-[1.2rem] sm:leading-[2.4rem] md:text-[1.3rem] md:leading-[2.6rem] lg:text-[1.4rem] lg:leading-[2.8rem] xl:text-[1.5rem] xl:leading-[3rem]">
           If you want to know more{" "}
-          <span className="border-b-[0.188rem] font-semibold border-blue-600 duration-200 hover:text-[#01549F] cursor-pointer">
+          <span className="border-b-[0.188rem] font-semibold border-[#2B9EDE] duration-200 hover:text-[#01549F] cursor-pointer">
             <Link href="/AboutMe">about me</Link>
           </span>{" "}
           — Just read my{" "}
-          <span className="border-b-[0.188rem] font-semibold border-blue-600 duration-200 hover:text-[#01549F] cursor-pointer">
+          <span className="border-b-[0.188rem] font-semibold border-[#2B9EDE] duration-200 hover:text-[#01549F] cursor-pointer">
             <Link href="/WritingJourney">thoughts</Link>
           </span>{" "}
           and my{" "}
-          <span className="border-b-[0.188rem] font-semibold border-blue-600 duration-200 hover:text-[#01549F] cursor-pointer">
+          <span className="border-b-[0.188rem] font-semibold border-[#2B9EDE] duration-200 hover:text-[#01549F] cursor-pointer">
             <Link href="/NotableWorks">projects</Link>
           </span>
         </p>
-        <div className="my-20 font-medium w-auto flex text-[#969696] text-[0.9rem] sm:text-[1rem] md:text-[1.63] lg:tex-[1.125]">
+        <div className="my-20 font-normal w-auto flex text-[#969696] text-[0.9rem] sm:text-[1rem] md:text-[1.63] lg:text-[1.125]">
           <div className="mr-1 hover:underline hover:text-[#01549F]">
             <a href="https://www.linkedin.com/in/galihputra26/" target="_blank">
               Linkedin,

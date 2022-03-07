@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -7,22 +8,30 @@ const Footer = () => {
         <p className="font-bold text-[1.75rem] mb-[1.75rem]">
           See other selected projects
         </p>
-        <div className="flex items-center cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] w-[fit-content] !mb-[1.5rem]">
-          <img src="../💰.svg" alt="" className="pr-1 h-4 lg:h-5" />
-          Jenius App Re—design Concept for Competition
-        </div>
-        <div className="flex items-center cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] w-[fit-content] !mb-[1.5rem]">
-          <img src="../🎨.svg" alt="" className="pr-1 h-4 lg:h-5" />
-          Telkomsel B2B Platfoam Design System
-        </div>
-        <div className="flex items-center cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] w-[fit-content] !mb-[1.5rem]">
-          <img src="../⚙.svg" alt="" className="pr-1 h-4 lg:h-5" />
-          Telkomsel DigiHub API Marketplace Revamp
-        </div>
-        <div className="flex items-center cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] w-[fit-content] !mb-[1.5rem]">
-          <img src="../✂.svg" alt="" className="pr-1 h-4 lg:h-5" />
-          UX Case Study — Barbershop Booking
-        </div>
+        <Link href={"/project/my-visual-design-exploration-gallery"}>
+          <div className="flex items-center cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] w-[fit-content] !mb-[1.5rem]">
+            <img src="../💰.svg" alt="" className="pr-1 h-4 lg:h-5" />
+            Jenius App Re—design Concept for Competition
+          </div>
+        </Link>
+        <Link href={"/project/telkomsel-b2b-platfoam-design-system"}>
+          <div className="flex items-center cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] w-[fit-content] !mb-[1.5rem]">
+            <img src="../🎨.svg" alt="" className="pr-1 h-4 lg:h-5" />
+            Telkomsel B2B Platfoam Design System
+          </div>
+        </Link>
+        <Link href={"/project/telkomsel-digihub-api-marketplace-revamp"}>
+          <div className="flex items-center cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] w-[fit-content] !mb-[1.5rem]">
+            <img src="../⚙.svg" alt="" className="pr-1 h-4 lg:h-5" />
+            Telkomsel DigiHub API Marketplace Revamp
+          </div>
+        </Link>
+        <Link href={"/project/ux-case-study-barbershop-booking"}>
+          <div className="flex items-center cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] w-[fit-content] !mb-[1.5rem]">
+            <img src="../✂.svg" alt="" className="pr-1 h-4 lg:h-5" />
+            UX Case Study — Barbershop Booking
+          </div>
+        </Link>
       </div>
     </div>
   );

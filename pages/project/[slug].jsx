@@ -28,7 +28,7 @@ const ProjectDetails = ({ projects }) => {
                   {projects.title}
                 </p>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-5 sm:gap-[28px] md:gap-[38px] lg:gap-11 xl:gap-[52px] text-xs lg:text-sm text-white pt-5 md:pt-7 lg:pt-8 xl:pt-[42px]">
+              <div className="grid grid-cols-2 sm:grid-cols-5 sm:gap-[28px] md:gap-[38px] lg:gap-11 xl:gap-[52px] text-white text-sm md:text-base lg:text-base pt-5 md:pt-7 lg:pt-8 xl:pt-[42px]">
                 <div className="">
                   <p className="font-light">Role</p>
                   <p className="font-medium py-[6px]">{projects.role}</p>
@@ -50,12 +50,13 @@ const ProjectDetails = ({ projects }) => {
           </div>
         </div>
       </div>
-      <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 mx-auto md:pr-36 sm:pr-28 pb-16">
-        <div className="py-[3.625rem]">
-          {projects.featuredImage ? (
+      <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 mx-auto md:pr-36 sm:pr-28 pb-16 pt-12">
+        {projects.featuredImage ? (
+          <div className="">
             <img src={projects.featuredImage.url} alt="" />
-          ) : null}
-        </div>
+          </div>
+        ) : null}
+
         <ProjectDetail projects={projects} />
       </div>
       <Footer />
