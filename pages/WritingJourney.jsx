@@ -336,12 +336,12 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
 
   return (
     <>
-      <div className="w-full bg-hero bg-no-repeat bg-cover bg-center h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] 2xl:h-[24.25rem]">
+      <div className="bg-hero bg-no-repeat bg-cover bg-center h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] 2xl:h-[24.25rem]">
         <div className="h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] 2xl:h-[24.25rem] w-full justify-items-center grid">
           <NavBar isNavItem={true} isHumberger={true} />
           <div className="flex w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%]">
-            <div className="w-auto md:w-8/12 lg:w-8/12 xl:w-8/12 self-end pb-9 2xl:w-9/12 2xl:mx-auto">
-              <div className="flex items-end text-white font-bold text-3xl md:text-3xl lg:text-4xl 2xl:text-4xl">
+            <div className="w-full md:w-8/12 lg:w-8/12 self-end pb-9 lg:mr-3">
+              <div className="flex items-center text-white font-bold text-3xl sm:text-3xl md:text-4xl lg:text-4xl">
                 <img
                   src="../✏️.svg"
                   alt=""
@@ -354,7 +354,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                 about what I've been working on, problems I've solved.
               </p>
             </div>
-            <div className="hidden md:flex md:w-4/12 lg:w-4/12 xl:w-[33%] 2xl:w-[33%]">
+            <div className="hidden md:flex md:w-4/12 lg:w-4/12">
               <img
                 src="blog-img.png"
                 className="md:translate-y-6 lg:translate-y-5 xl:translate-y-7 2xl:translate-y-7"
@@ -363,140 +363,148 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
           </div>
         </div>
       </div>
-      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%] pt-6 text-xs sm:text-sm text-[#282828] flex">
-        <div className="w-[10rem] relative mr-5 cursor-pointer" ref={dropdown}>
+      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%]">
+        <div className="pt-6 text-xs sm:text-sm text-[#282828] flex relative">
           <div
-            onClick={() => onClickDropDownCategories()}
-            className={`border-2 border-[#01549F] p-3 2xl:p-5 ${
-              dropStyleCategories
-                ? " icon-up rounded-[0.313rem] border-b-0 rounded-b-none"
-                : " icon-down rounded-[0.313rem]"
-            }`}
+            className="w-[9rem] sm:w-[10rem] absolute mr-5 cursor-pointer"
+            ref={dropdown}
           >
-            <ul>
-              <li>{valueDropDownCategories}</li>
-            </ul>
+            <div
+              onClick={() => onClickDropDownCategories()}
+              className={`border-2 border-[#01549F] p-3 ${
+                dropStyleCategories
+                  ? " icon-up rounded-[0.313rem] border-b-0 rounded-b-none"
+                  : " icon-down rounded-[0.313rem]"
+              }`}
+            >
+              <ul>
+                <li>{valueDropDownCategories}</li>
+              </ul>
+            </div>
+            {dropDownCategories && (
+              <div className="absolute w-[9rem] sm:w-[10rem]">
+                <ul className="border-2 border-[#01549F] border-t-0 rounded-[0.313rem] rounded-t-none bg-white">
+                  {valueDropDownCategories != "All Categories" ? (
+                    <li>
+                      <p
+                        onClick={function () {
+                          setValueDropDownCategories("All Categories");
+                          onClickDropDownCategories();
+                          setShowButton(false);
+                          setbuttonValue(true);
+                        }}
+                        className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white"
+                      >
+                        All Categories
+                      </p>
+                    </li>
+                  ) : null}
+                  {categories.map((item) => (
+                    <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
+                      <p
+                        onClick={function () {
+                          setValueDropDownCategories(item.name);
+                          onClickDropDownCategories();
+                          setShowButton(false);
+                          setbuttonValue(false);
+                        }}
+                      >
+                        {item.name}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
-          {dropDownCategories && (
-            <ul className="absolute border-2 border-[#01549F] border-t-0 rounded-[0.313rem] rounded-t-none w-[10rem] bg-white">
-              {valueDropDownCategories != "All Categories" ? (
-                <li>
-                  <p
-                    onClick={function () {
-                      setValueDropDownCategories("All Categories");
-                      onClickDropDownCategories();
-                      setShowButton(false);
-                      setbuttonValue(true);
-                    }}
-                    className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white"
-                  >
-                    All Categories
-                  </p>
-                </li>
-              ) : null}
-              {categories.map((item) => (
+          <div
+            className="w-[9rem] sm:w-[10rem] absolute cursor-pointer left-[9.4rem] sm:left-[11.4rem]"
+            ref={downTime}
+          >
+            <div
+              onClick={() => onClickDropDownTime()}
+              className={`border-2 border-[#01549F] p-3 ${
+                dropStyleTime
+                  ? " icon-up rounded-[0.313rem] border-b-0 rounded-b-none"
+                  : " icon-down rounded-[0.313rem]"
+              }`}
+            >
+              <ul>
+                <li>{valueDropDownTime}</li>
+              </ul>
+            </div>
+            {dropDownTime && (
+              <ul className="absolute border-2 border-[#01549F] border-t-0 rounded-[0.313rem] rounded-t-none w-[9rem] sm:w-[10rem] bg-white">
+                {valueDropDownTime !== "By Newest" ? (
+                  <li>
+                    <p
+                      onClick={function () {
+                        setValueDropDownTime("By Newest");
+                        onClickDropDownTime();
+                        setShowButton(true);
+                      }}
+                      className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white"
+                    >
+                      By Newest
+                    </p>
+                  </li>
+                ) : null}
                 <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
                   <p
                     onClick={function () {
-                      setValueDropDownCategories(item.name);
-                      onClickDropDownCategories();
-                      setShowButton(false);
-                      setbuttonValue(false);
-                    }}
-                  >
-                    {item.name}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-        <div className="w-[10rem] relative cursor-pointer" ref={downTime}>
-          <div
-            onClick={() => onClickDropDownTime()}
-            className={`border-2 border-[#01549F] p-3 2xl:p-5 ${
-              dropStyleTime
-                ? " icon-up rounded-[0.313rem] border-b-0 rounded-b-none"
-                : " icon-down rounded-[0.313rem]"
-            }`}
-          >
-            <ul>
-              <li>{valueDropDownTime}</li>
-            </ul>
-          </div>
-          {dropDownTime && (
-            <ul className="absolute border-2 border-[#01549F] border-t-0 rounded-[0.313rem] rounded-t-none w-[10rem] bg-white">
-              {valueDropDownTime !== "By Newest" ? (
-                <li>
-                  <p
-                    onClick={function () {
-                      setValueDropDownTime("By Newest");
+                      setValueDropDownTime("Newest");
                       onClickDropDownTime();
                       setShowButton(true);
                     }}
-                    className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white"
                   >
-                    By Newest
+                    Newest
                   </p>
                 </li>
-              ) : null}
-              <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
-                <p
-                  onClick={function () {
-                    setValueDropDownTime("Newest");
-                    onClickDropDownTime();
-                    setShowButton(true);
-                  }}
-                >
-                  Newest
-                </p>
-              </li>
-              <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
-                <p
-                  onClick={function () {
-                    setValueDropDownTime("Oldest");
-                    onClickDropDownTime();
-                    setShowButton(false);
-                    if (valueDropDownCategories === "All Categories") {
-                      buttonValue = true;
-                    } else {
-                      setbuttonValue(false);
+                <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
+                  <p
+                    onClick={function () {
+                      setValueDropDownTime("Oldest");
+                      onClickDropDownTime();
                       setShowButton(false);
-                    }
-                  }}
-                >
-                  Oldest
-                </p>
-              </li>
-            </ul>
-          )}
+                      if (valueDropDownCategories === "All Categories") {
+                        buttonValue = true;
+                      } else {
+                        setbuttonValue(false);
+                        setShowButton(false);
+                      }
+                    }}
+                  >
+                    Oldest
+                  </p>
+                </li>
+              </ul>
+            )}
+          </div>
         </div>
-      </div>
-      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%] pt-14">
-        {renderPost()}
-      </div>
-      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%] mt-[5.5rem] mb-[6.25rem]">
-        <div className="text-center">
-          {valueDropDownCategories !== "All Categories" &&
-          valueDropDownTime === "Oldest" ? null : valueDropDownCategories ===
-              "All Categories" && valueDropDownTime !== "Oldest" ? (
-            <div
-              className="cursor-pointer text-base font-medium grid text-white bg-[#01549F] hover:bg-[#282828] transition duration-200 mx-auto hover:text-white shadow-custom-button py-[0.875rem] w-[11.25rem] rounded-[0.313rem]"
-              onClick={() => setbuttonValue(!buttonValue)}
-            >
-              {!buttonValue ? (
-                <div className="flex items-center justify-self-center">
-                  See less article
-                  <img src="../👆.svg" alt="" className="pl-1 h-4" />
-                </div>
-              ) : (
-                <div className="flex items-center justify-self-center">
-                  See more article
-                  <img src="../👇.svg" alt="" className="pl-1 h-4" />
-                </div>
-              )}
-            </div>
-          ) : null}
+        <div className="pt-20 md:pt-24">{renderPost()}</div>
+        <div className="mt-[5.5rem] mb-[6.25rem]">
+          <div className="text-center">
+            {valueDropDownCategories !== "All Categories" &&
+            valueDropDownTime === "Oldest" ? null : valueDropDownCategories ===
+                "All Categories" && valueDropDownTime !== "Oldest" ? (
+              <div
+                className="cursor-pointer text-base font-medium grid text-white bg-[#01549F] hover:bg-[#282828] transition duration-200 mx-auto hover:text-white shadow-custom-button py-[0.875rem] w-[11.25rem] rounded-[0.313rem]"
+                onClick={() => setbuttonValue(!buttonValue)}
+              >
+                {!buttonValue ? (
+                  <div className="flex items-center justify-self-center">
+                    See less article
+                    <img src="../👆.svg" alt="" className="pl-1 h-4" />
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-self-center">
+                    See more article
+                    <img src="../👇.svg" alt="" className="pl-1 h-4" />
+                  </div>
+                )}
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
     </>
