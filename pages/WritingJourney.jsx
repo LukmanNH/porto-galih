@@ -200,10 +200,10 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
     ) {
       return key5.map((item) => (
         <div key={item + 1}>
-          <p className="text-sm sm:text-sm md:text-base lg:text-lg 2xl:text-3xl font-light text-[#282828]">
+          <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
             {item}
           </p>
-          <div className="text-sm sm:text-sm md:text-base lg:text-lg 2xl:text-3xl font-semibold text-[#282828] py-4 2xl:py-6">
+          <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
             {groupedDataPostFirst5[item].map((items) => (
               <div
                 key={items.info.slug}
@@ -228,17 +228,17 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
       ) {
         return key.map((item) => (
           <div key={item}>
-            <p className="text-sm sm:text-sm md:text-base lg:text-lg 2xl:text-3xl font-light text-[#282828]">
+            <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
               {item}
             </p>
-            <div className="text-sm sm:text-sm md:text-base lg:text-lg 2xl:text-3xl font-semibold text-[#282828] py-4 2xl:py-6">
+            <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
               {bismillah[item].map((items) => (
                 <div
                   key={items.info.slug}
                   className="w-[fit-content] pb-[0.875rem]"
                 >
                   <Link href={`/post/${items.info.slug}`}>
-                    <div className="container flex cursor-pointer w-[21rem] sm:w-full">
+                    <div className="container flex cursor-pointer sm:w-full">
                       <p className="line-clamp-1 !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE]">
                         {items.info.day} : {items.info.title}
                       </p>
@@ -255,17 +255,17 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
       ) {
         return key2.map((item) => (
           <div key={item + 1}>
-            <p className="text-sm sm:text-sm md:text-base lg:text-lg 2xl:text-3xl font-light text-[#282828]">
+            <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
               {item}
             </p>
-            <div className="text-sm sm:text-sm md:text-base lg:text-lg 2xl:text-3xl font-semibold text-[#282828] py-4 2xl:py-6">
+            <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
               {bismillah2[item].map((items) => (
                 <div
                   key={items.info.slug}
                   className="w-[fit-content] pb-[0.875rem]"
                 >
                   <Link href={`/post/${items.info.slug}`}>
-                    <div className="container flex cursor-pointer w-[21rem] sm:w-full">
+                    <div className="container flex cursor-pointer sm:w-full">
                       <p className="line-clamp-1 !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE]">
                         {items.info.day} : {items.info.title}
                       </p>
@@ -282,17 +282,17 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
       ) {
         return key3.map((item) => (
           <div key={item}>
-            <p className="text-sm sm:text-sm md:text-base lg:text-lg 2xl:text-3xl font-light text-[#282828]">
+            <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
               {item}
             </p>
-            <div className="text-sm sm:text-sm md:text-base lg:text-lg 2xl:text-3xl font-semibold text-[#282828] py-4 2xl:py-6">
+            <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
               {bismillah3[item].map((items) => (
                 <div
                   key={items.info.slug}
                   className="w-[fit-content] pb-[0.875rem]"
                 >
                   <Link href={`/post/${items.info.slug}`}>
-                    <div className="container flex cursor-pointer w-[21rem] sm:w-full">
+                    <div className="container flex cursor-pointer sm:w-full">
                       <p className="line-clamp-1 !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE]">
                         {items.info.day} : {items.info.title}
                       </p>
@@ -309,17 +309,17 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
       ) {
         return key4.map((item) => (
           <div key={item + 1}>
-            <p className="text-sm sm:text-sm md:text-base lg:text-lg 2xl:text-3xl font-light text-[#282828]">
+            <p className="text-sm sm:text-sm md:text-base lg:text-lg font-light text-[#282828]">
               {item}
             </p>
-            <div className="text-sm sm:text-sm md:text-base lg:text-lg 2xl:text-3xl font-semibold text-[#282828] py-4 2xl:py-6">
+            <div className="text-sm sm:text-sm md:text-base lg:text-lg font-semibold text-[#282828] py-4">
               {bismillah4[item].map((items) => (
                 <div
                   key={items.info.slug}
                   className="w-[fit-content] pb-[0.875rem]"
                 >
                   <Link href={`/post/${items.info.slug}`}>
-                    <div className="container flex cursor-pointer w-[21rem] sm:w-full">
+                    <div className="container flex cursor-pointer sm:w-full">
                       <p className="line-clamp-1 !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE]">
                         {items.info.day} : {items.info.title}
                       </p>
@@ -336,44 +336,41 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
 
   return (
     <>
-      <div className="w-full bg-hero bg-no-repeat bg-cover bg-center h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] 2xl:h-[40.25rem]">
-        <div className="h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] 2xl:h-[40.25rem] w-full justify-items-center grid content-between">
+      <div className="w-full bg-hero bg-no-repeat bg-cover bg-center h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] 2xl:h-[24.25rem]">
+        <div className="h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] 2xl:h-[24.25rem] w-full justify-items-center grid">
           <NavBar isNavItem={true} isHumberger={true} />
-          <div className="flex w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12">
-            <div className="w-full md:w-8/12 lg:w-8/12 self-end pb-9 2xl:pb-16 lg:pr-3 2xl:pr-7">
-              <div className="flex items-end text-white font-bold text-3xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-8xl">
+          <div className="flex w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%]">
+            <div className="w-auto md:w-8/12 lg:w-8/12 xl:w-8/12 self-end pb-9 2xl:w-9/12 2xl:mx-auto">
+              <div className="flex items-end text-white font-bold text-3xl md:text-3xl lg:text-4xl 2xl:text-4xl">
                 <img
                   src="../✏️.svg"
                   alt=""
-                  className="pr-1 md:pr-2 h-8 md:h-9 lg:h-12 2xl:h-20"
+                  className="pr-1 md:pr-2 h-8 md:h-9 lg:h-12"
                 />
                 Writing Journey
               </div>
-              <p className="mt-4 lg:mt-8 2xl:mt-20 text-white font-light text-xs sm:text-sm md:text-base lg:text-lg 2xl:text-3xl tracking-wider lg:leading-8 2xl:leading-[3rem]">
+              <p className="mt-4 lg:mt-8 text-white font-light text-xs sm:text-sm md:text-base lg:text-lg tracking-wider lg:leading-8 2xl:w-10/12">
                 Something new I'm starting for 2021 — every week or two I write
                 about what I've been working on, problems I've solved.
               </p>
             </div>
-            <div className="hidden md:flex md:w-4/12 lg:w-4/12">
+            <div className="hidden md:flex md:w-4/12 lg:w-4/12 xl:w-[33%] 2xl:w-[33%]">
               <img
                 src="blog-img.png"
-                className="md:translate-y-6 lg:translate-y-5 2xl:translate-y-10 mx-auto"
+                className="md:translate-y-6 lg:translate-y-5 xl:translate-y-7 2xl:translate-y-7"
               />
             </div>
           </div>
         </div>
       </div>
-      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 pt-6 2xl:pt-16 text-xs sm:text-sm 2xl:text-2xl text-[#282828] flex">
-        <div
-          className="w-[10rem] 2xl:w-[17rem] relative mr-5 cursor-pointer"
-          ref={dropdown}
-        >
+      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%] pt-6 text-xs sm:text-sm text-[#282828] flex">
+        <div className="w-[10rem] relative mr-5 cursor-pointer" ref={dropdown}>
           <div
             onClick={() => onClickDropDownCategories()}
             className={`border-2 border-[#01549F] p-3 2xl:p-5 ${
               dropStyleCategories
-                ? " icon-up rounded-[0.313rem] 2xl:rounded-[0.6rem] border-b-0 rounded-b-none"
-                : " icon-down rounded-[0.313rem] 2xl:rounded-[0.6rem]"
+                ? " icon-up rounded-[0.313rem] border-b-0 rounded-b-none"
+                : " icon-down rounded-[0.313rem]"
             }`}
           >
             <ul>
@@ -414,16 +411,13 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
             </ul>
           )}
         </div>
-        <div
-          className="w-[10rem] 2xl:w-[17rem] relative cursor-pointer"
-          ref={downTime}
-        >
+        <div className="w-[10rem] relative cursor-pointer" ref={downTime}>
           <div
             onClick={() => onClickDropDownTime()}
             className={`border-2 border-[#01549F] p-3 2xl:p-5 ${
               dropStyleTime
-                ? " icon-up rounded-[0.313rem] 2xl:rounded-[0.6rem] border-b-0 rounded-b-none"
-                : " icon-down rounded-[0.313rem] 2xl:rounded-[0.6rem]"
+                ? " icon-up rounded-[0.313rem] border-b-0 rounded-b-none"
+                : " icon-down rounded-[0.313rem]"
             }`}
           >
             <ul>
@@ -478,35 +472,27 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
           )}
         </div>
       </div>
-      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 pt-14">
+      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%] pt-14">
         {renderPost()}
       </div>
-      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 mt-[5.5rem] mb-[6.25rem]">
+      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%] mt-[5.5rem] mb-[6.25rem]">
         <div className="text-center">
           {valueDropDownCategories !== "All Categories" &&
           valueDropDownTime === "Oldest" ? null : valueDropDownCategories ===
               "All Categories" && valueDropDownTime !== "Oldest" ? (
             <div
-              className="cursor-pointer text-base 2xl:text-[1.75rem] font-medium grid text-white bg-[#01549F] hover:bg-[#282828] transition duration-200 mx-auto hover:text-white shadow-custom-button py-[0.875rem] w-[11.25rem] 2xl:py-[2rem] 2xl:w-[19.25rem] rounded-[0.313rem] 2xl:rounded-[0.6rem]"
+              className="cursor-pointer text-base font-medium grid text-white bg-[#01549F] hover:bg-[#282828] transition duration-200 mx-auto hover:text-white shadow-custom-button py-[0.875rem] w-[11.25rem] rounded-[0.313rem]"
               onClick={() => setbuttonValue(!buttonValue)}
             >
               {!buttonValue ? (
                 <div className="flex items-center justify-self-center">
                   See less article
-                  <img
-                    src="../👆.svg"
-                    alt=""
-                    className="pl-1 2xl:pl-2 h-4 2xl:h-8"
-                  />
+                  <img src="../👆.svg" alt="" className="pl-1 h-4" />
                 </div>
               ) : (
                 <div className="flex items-center justify-self-center">
                   See more article
-                  <img
-                    src="../👇.svg"
-                    alt=""
-                    className="pl-1 2xl:pl-2 h-4 2xl:h-8"
-                  />
+                  <img src="../👇.svg" alt="" className="pl-1 h-4" />
                 </div>
               )}
             </div>

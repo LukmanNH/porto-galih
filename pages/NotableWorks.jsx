@@ -133,7 +133,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
           <NavBar isNavItem={true} isHumberger={true} />
           <div className="flex w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12">
             <div className="w-full md:w-8/12 lg:w-8/12 self-end pb-9 lg:mr-3">
-              <div className="flex items-center text-white font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl">
+              <div className="flex items-center text-white font-bold text-3xl sm:text-3xl md:text-4xl lg:text-4xl">
                 <img
                   src="../🗃.svg"
                   alt=""
