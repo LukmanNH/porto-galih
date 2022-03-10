@@ -8,7 +8,7 @@ import {
   getPostsOrderASC,
   get5FirstPost,
 } from "../services";
-
+import Image from "next/image";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -339,9 +339,9 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
       <div className="bg-hero bg-no-repeat bg-cover bg-center h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] 2xl:h-[24.25rem]">
         <div className="h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] 2xl:h-[24.25rem] w-full justify-items-center grid">
           <NavBar isNavItem={true} isHumberger={true} />
-          <div className="flex w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%]">
-            <div className="w-full md:w-8/12 lg:w-8/12 self-end pb-9 lg:mr-3">
-              <div className="flex items-center text-white font-bold text-3xl sm:text-3xl md:text-4xl lg:text-4xl">
+          <div className="flex w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%] 2xl:mx-auto">
+            <div className="w-full md:w-8/12 self-end pb-9 lg:mr-3">
+              <div className="flex items-center text-white font-bold text-3xl md:text-4xl lg:text-5xl">
                 <img
                   src="../✏️.svg"
                   alt=""
@@ -349,22 +349,22 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                 />
                 Writing Journey
               </div>
-              <p className="mt-4 lg:mt-8 text-white font-light text-xs sm:text-sm md:text-base lg:text-lg tracking-wider lg:leading-8 2xl:w-10/12">
+              <p className="mt-4 lg:mt-8 text-white font-light text-xs sm:text-sm md:text-base lg:text-lg tracking-wider lg:leading-8">
                 Something new I'm starting for 2021 — every week or two I write
                 about what I've been working on, problems I've solved.
               </p>
             </div>
-            <div className="hidden md:flex md:w-4/12 lg:w-4/12">
+            <div className="hidden md:flex md:w-4/12 self-end">
               <img
-                src="blog-img.png"
-                className="md:translate-y-6 lg:translate-y-5 xl:translate-y-7 2xl:translate-y-7"
+                src="/blog-img.png"
+                className="md:translate-y-6 lg:translate-y-5 sm:h-[11.25rem] lg:h-[13.125rem] w-[21.563rem]"
               />
             </div>
           </div>
         </div>
       </div>
-      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%]">
-        <div className="pt-6 text-xs sm:text-sm text-[#282828] flex relative">
+      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%] 2xl:mx-auto">
+        <div className="pt-9 text-xs sm:text-sm text-[#282828] flex relative 2xl:mx-auto">
           <div
             className="w-[9rem] sm:w-[10rem] absolute mr-5 cursor-pointer"
             ref={dropdown}
@@ -481,8 +481,8 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
             )}
           </div>
         </div>
-        <div className="pt-20 md:pt-24">{renderPost()}</div>
-        <div className="mt-[5.5rem] mb-[6.25rem]">
+        <div className="pt-20 md:pt-24 2xl:mx-auto">{renderPost()}</div>
+        <div className="mt-[5.5rem] mb-[6.25rem] 2xl:mx-auto">
           <div className="text-center">
             {valueDropDownCategories !== "All Categories" &&
             valueDropDownTime === "Oldest" ? null : valueDropDownCategories ===
