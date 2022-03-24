@@ -21,7 +21,11 @@ const ProjectDetails = ({ projects }) => {
       <div className="bg-hero bg-cover bg-no-repeat bg-center h-auto">
         <div className="h-auto w-full justify-items-center grid content-between">
           <NavBar isNavItem={false} isHumberger={false} />
+<<<<<<< HEAD
           <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 pt-[2.375rem] pb-7 sm:pb-8 md:pb-9 lg:pb-14 lg:pr-40 md:pr-36 sm:pr-28 max-w-screen-lg">
+=======
+          <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%] pt-[2.375rem] pb-7 sm:pb-8 md:pb-9 lg:pb-14 lg:pr-40 md:pr-36 sm:pr-28">
+>>>>>>> b97effbdae692beb91d00107d260bb27ad0208ea
             <div className="justify-center">
               <div>
                 <p className="text-white font-semibold text-2xl md:text-3xl lg:text-4xl xl:leading-[3rem]">
@@ -50,7 +54,11 @@ const ProjectDetails = ({ projects }) => {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 mx-auto md:pr-36 sm:pr-28 pb-16 pt-12 max-w-screen-lg">
+=======
+      <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%] mx-auto md:pr-36 sm:pr-28 pb-16 pt-12">
+>>>>>>> b97effbdae692beb91d00107d260bb27ad0208ea
         {projects.featuredImage ? (
           <div className="">
             <img src={projects.featuredImage.url} alt="" />

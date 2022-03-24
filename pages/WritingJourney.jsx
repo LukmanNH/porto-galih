@@ -8,7 +8,7 @@ import {
   getPostsOrderASC,
   get5FirstPost,
 } from "../services";
-
+import Image from "next/image";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -336,7 +336,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
 
   return (
     <>
-      <div className="w-full bg-hero bg-no-repeat bg-cover bg-center h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] 2xl:h-[24.25rem]">
+      <div className="bg-hero bg-no-repeat bg-cover bg-center h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] 2xl:h-[24.25rem]">
         <div className="h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] 2xl:h-[24.25rem] w-full justify-items-center grid">
           <NavBar isNavItem={true} isHumberger={true} />
           <div className="flex w-11/12 mx-auto md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-8/12 max-w-screen-lg">
@@ -349,7 +349,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                 />
                 Writing Journey
               </div>
-              <p className="mt-4 lg:mt-8 text-white font-light text-xs sm:text-sm md:text-base lg:text-lg tracking-wider lg:leading-8 2xl:w-10/12">
+              <p className="mt-4 lg:mt-8 text-white font-light text-xs sm:text-sm md:text-base lg:text-lg tracking-wider lg:leading-8">
                 Something new I'm starting for 2021 — every week or two I write
                 about what I've been working on, problems I've solved.
               </p>
@@ -363,8 +363,11 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
           </div>
         </div>
       </div>
-      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 max-w-screen-lg pt-6 text-xs sm:text-sm text-[#282828] flex">
-        <div className="w-[10rem] relative mr-5 cursor-pointer" ref={dropdown}>
+      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 max-w-screen-lg pt-6 text-xs sm:text-sm text-[#282828] flex relative">
+        <div
+          className="w-[9rem] sm:w-[10rem] absolute mr-5 cursor-pointer"
+          ref={dropdown}
+        >
           <div
             onClick={() => onClickDropDownCategories()}
             className={`border-2 border-[#01549F] p-3 ${
@@ -378,40 +381,45 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
             </ul>
           </div>
           {dropDownCategories && (
-            <ul className="absolute border-2 border-[#01549F] border-t-0 rounded-[0.313rem] rounded-t-none w-[10rem] bg-white">
-              {valueDropDownCategories != "All Categories" ? (
-                <li>
-                  <p
-                    onClick={function () {
-                      setValueDropDownCategories("All Categories");
-                      onClickDropDownCategories();
-                      setShowButton(false);
-                      setbuttonValue(true);
-                    }}
-                    className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white"
-                  >
-                    All Categories
-                  </p>
-                </li>
-              ) : null}
-              {categories.map((item) => (
-                <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
-                  <p
-                    onClick={function () {
-                      setValueDropDownCategories(item.name);
-                      onClickDropDownCategories();
-                      setShowButton(false);
-                      setbuttonValue(false);
-                    }}
-                  >
-                    {item.name}
-                  </p>
-                </li>
-              ))}
-            </ul>
+            <div className="absolute w-[9rem] sm:w-[10rem]">
+              <ul className="border-2 border-[#01549F] border-t-0 rounded-[0.313rem] rounded-t-none bg-white">
+                {valueDropDownCategories != "All Categories" ? (
+                  <li>
+                    <p
+                      onClick={function () {
+                        setValueDropDownCategories("All Categories");
+                        onClickDropDownCategories();
+                        setShowButton(false);
+                        setbuttonValue(true);
+                      }}
+                      className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white"
+                    >
+                      All Categories
+                    </p>
+                  </li>
+                ) : null}
+                {categories.map((item) => (
+                  <li className="p-2 hover:bg-[#2B9EDE] hover:opacity-70 hover:text-white">
+                    <p
+                      onClick={function () {
+                        setValueDropDownCategories(item.name);
+                        onClickDropDownCategories();
+                        setShowButton(false);
+                        setbuttonValue(false);
+                      }}
+                    >
+                      {item.name}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
         </div>
-        <div className="w-[10rem] relative cursor-pointer" ref={downTime}>
+        <div
+          className="w-[9rem] sm:w-[10rem] absolute cursor-pointer left-[9.4rem] sm:left-[11.4rem]"
+          ref={downTime}
+        >
           <div
             onClick={() => onClickDropDownTime()}
             className={`border-2 border-[#01549F] p-3 ${
@@ -425,7 +433,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
             </ul>
           </div>
           {dropDownTime && (
-            <ul className="absolute border-2 border-[#01549F] border-t-0 rounded-[0.313rem] rounded-t-none w-[10rem] bg-white">
+            <ul className="absolute border-2 border-[#01549F] border-t-0 rounded-[0.313rem] rounded-t-none w-[9rem] sm:w-[10rem] bg-white">
               {valueDropDownTime !== "By Newest" ? (
                 <li>
                   <p

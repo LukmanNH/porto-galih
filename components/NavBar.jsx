@@ -34,52 +34,71 @@ const NavBar = ({ isNavItem, isHumberger }) => {
         </div>
         <div
           onClick={() => setOpen((b) => !b)}
-          className="absolute right-5 top-5 cursor-pointer md:hidden"
+          className="absolute right-5 top-6 cursor-pointer md:hidden"
         >
           {isHumberger ? (
             open ? (
               <svg
-                className=" w-6 h-6 text-gray-500 hover:text-green-500 "
-                viewBox="0 0 24 24"
+                width="16.5"
+                height="16.5"
+                viewBox="0 0 22 22"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M14.3936 9.59473L9.60156 14.3867"
-                  stroke="#130F26"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                <line
+                  x1="2.06066"
+                  y1="1.93934"
+                  x2="20.4454"
+                  y2="20.3241"
+                  stroke="white"
+                  stroke-width="3"
                 />
-                <path
-                  d="M14.3996 14.3928L9.59961 9.59277"
-                  stroke="#130F26"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                <line
+                  x1="2.06066"
+                  y1="1.93934"
+                  x2="11.9602"
+                  y2="11.8388"
+                  stroke="white"
+                  stroke-width="3"
                 />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M2.75 12C2.75 18.937 5.063 21.25 12 21.25C18.937 21.25 21.25 18.937 21.25 12C21.25 5.063 18.937 2.75 12 2.75C5.063 2.75 2.75 5.063 2.75 12Z"
-                  stroke="#130F26"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                <line
+                  x1="1.93934"
+                  y1="20.3241"
+                  x2="20.3241"
+                  y2="1.93933"
+                  stroke="white"
+                  stroke-width="3"
                 />
               </svg>
             ) : (
               <svg
-                className=" w-6 h-6 text-gray-500 hover:text-green-500 "
-                x-show="!showMenu"
+                width="16.5"
+                height="13.5"
+                viewBox="0 0 26 23"
                 fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M4 6h16M4 12h16M4 18h16"></path>
+                <line
+                  y1="1.5"
+                  x2="26"
+                  y2="1.5"
+                  stroke="white"
+                  stroke-width="3"
+                />
+                <line
+                  y1="11.5"
+                  x2="14"
+                  y2="11.5"
+                  stroke="white"
+                  stroke-width="3"
+                />
+                <line
+                  y1="21.5"
+                  x2="26"
+                  y2="21.5"
+                  stroke="white"
+                  stroke-width="3"
+                />
               </svg>
             )
           ) : null}

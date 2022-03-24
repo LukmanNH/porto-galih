@@ -3,9 +3,7 @@ import Head from "next/head";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 
 const ProjectDetail = ({ projects }) => {
-  console.log(projects);
   const content = projects.content.raw;
-  console.log(content);
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
 

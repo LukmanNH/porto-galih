@@ -141,7 +141,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
                 />
                 Notable Works
               </div>
-              <p className="mt-4 lg:mt-8 text-white font-light text-sm sm:text-sm md:text-base lg:text-lg tracking-wider lg:leading-9">
+              <p className="mt-4 lg:mt-8 text-white font-light text-xs sm:text-sm md:text-base lg:text-lg tracking-wider lg:leading-8">
                 Some project need password, contact{" "}
                 <span className="font-medium underline">
                   windawan26@gmail.com
@@ -149,7 +149,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
                 to gain access to the project, — Only selected cases granted.
               </p>
             </div>
-            <div className="hidden md:flex md:w-4/12 lg:w-4/12">
+            <div className="hidden md:flex md:w-4/12 self-end">
               <img
                 src="notableWork-img.svg"
                 className="md:translate-y-9 lg:translate-y-12 xl:translate-y-9 2xl:translate-y-9"

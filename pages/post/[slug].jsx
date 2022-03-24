@@ -9,7 +9,6 @@ import moment from "moment";
 const PostDetails = ({ post }) => {
   const joinCategory = [];
   const router = useRouter();
-  console.log(router.isFallback);
 
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -19,7 +18,11 @@ const PostDetails = ({ post }) => {
       <div className="bg-hero bg-cover bg-no-repeat bg-center h-auto">
         <div className="h-auto w-full justify-items-center grid content-between">
           <NavBar isNavItem={false} isHumberger={false} />
+<<<<<<< HEAD
           <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 pt-[2.375rem] pb-7 sm:pb-8 md:pb-9 lg:pb-14 lg:pr-40 md:pr-36 sm:pr-28 lg:pt-16 max-w-screen-lg">
+=======
+          <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%] pt-[2.375rem] pb-7 sm:pb-8 md:pb-9 lg:pb-14 lg:pr-40 md:pr-36 sm:pr-28 lg:pt-16">
+>>>>>>> b97effbdae692beb91d00107d260bb27ad0208ea
             <div className="justify-center">
               <p className="text-white font-semibold text-2xl sm:text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem]">
                 {post.title}
@@ -45,7 +48,11 @@ const PostDetails = ({ post }) => {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 mx-auto md:pr-36 sm:pr-28 pb-[6.25rem] pt-12 max-w-screen-lg">
+=======
+      <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%] mx-auto md:pr-36 sm:pr-28 pb-[6.25rem] pt-12">
+>>>>>>> b97effbdae692beb91d00107d260bb27ad0208ea
         {post.featuredImage !== null ? (
           <div className="py-[3.625rem]">
             <img src={post.featuredImage.url} alt="" />
@@ -55,7 +62,11 @@ const PostDetails = ({ post }) => {
         <PostDetail post={post} />
         <div>
           <a href="https://calendly.com/hellogalih" target="_blank">
+<<<<<<< HEAD
             <div className="border-t-2 border-b-2 border-dashed border-[#878787] p-5 hover:blueHover">
+=======
+            <div className="border-t-2 border-b-2 border-dashed border-[#878787]  p-5 hover:blueHover">
+>>>>>>> b97effbdae692beb91d00107d260bb27ad0208ea
               <div className="flex items-center font-semibold lg:text-xl md:text-base sm:text-sm pb-2">
                 <img
                   src="../../👋.svg"

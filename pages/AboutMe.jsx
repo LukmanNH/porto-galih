@@ -11,7 +11,11 @@ const AboutMe = () => {
         alt=""
         className="top-0 absolute w-full z-0"
       />
+<<<<<<< HEAD
       <div className="pt-6 mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 z-10 relative">
+=======
+      <div className="pt-6 mx-auto lg:ml-[14.375rem] w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%] 2xl:mx-auto z-10 relative">
+>>>>>>> b97effbdae692beb91d00107d260bb27ad0208ea
         <div className="text-[#282828] cursor-pointer text-base lg:text-lg font-medium flex items-center hover:border-b-[3px] border-[#2B9EDE] absolute">
           <img src="../👈.svg" alt="" className="mr-1 md:mr-2 h-4 lg:h-5" />
           <Link href={"/"}>Back to homepage</Link>
