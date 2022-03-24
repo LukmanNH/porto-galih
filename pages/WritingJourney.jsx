@@ -339,8 +339,8 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
       <div className="w-full bg-hero bg-no-repeat bg-cover bg-center h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] 2xl:h-[24.25rem]">
         <div className="h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] 2xl:h-[24.25rem] w-full justify-items-center grid">
           <NavBar isNavItem={true} isHumberger={true} />
-          <div className="flex w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%]">
-            <div className="w-auto md:w-8/12 lg:w-8/12 xl:w-8/12 self-end pb-9 2xl:w-9/12 2xl:mx-auto">
+          <div className="flex w-11/12 mx-auto md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-8/12 max-w-screen-lg">
+            <div className="w-auto md:w-8/12 lg:w-8/12 xl:w-8/12 self-end pb-9 2xl:w-8/12">
               <div className="flex items-end text-white font-bold text-3xl md:text-3xl lg:text-4xl 2xl:text-4xl">
                 <img
                   src="../✏️.svg"
@@ -354,20 +354,20 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                 about what I've been working on, problems I've solved.
               </p>
             </div>
-            <div className="hidden md:flex md:w-4/12 lg:w-4/12 xl:w-[33%] 2xl:w-[33%]">
+            <div className="hidden md:flex md:w-4/12 lg:w-4/12 xl:w-4/12 2xl:w-4/12">
               <img
-                src="blog-img.png"
-                className="md:translate-y-6 lg:translate-y-5 xl:translate-y-7 2xl:translate-y-7"
+                src="blog-img.svg"
+                className="md:translate-y-9 lg:translate-y-12 xl:translate-y-12 2xl:translate-y-12"
               />
             </div>
           </div>
         </div>
       </div>
-      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%] pt-6 text-xs sm:text-sm text-[#282828] flex">
+      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 max-w-screen-lg pt-6 text-xs sm:text-sm text-[#282828] flex">
         <div className="w-[10rem] relative mr-5 cursor-pointer" ref={dropdown}>
           <div
             onClick={() => onClickDropDownCategories()}
-            className={`border-2 border-[#01549F] p-3 2xl:p-5 ${
+            className={`border-2 border-[#01549F] p-3 ${
               dropStyleCategories
                 ? " icon-up rounded-[0.313rem] border-b-0 rounded-b-none"
                 : " icon-down rounded-[0.313rem]"
@@ -414,7 +414,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
         <div className="w-[10rem] relative cursor-pointer" ref={downTime}>
           <div
             onClick={() => onClickDropDownTime()}
-            className={`border-2 border-[#01549F] p-3 2xl:p-5 ${
+            className={`border-2 border-[#01549F] p-3 ${
               dropStyleTime
                 ? " icon-up rounded-[0.313rem] border-b-0 rounded-b-none"
                 : " icon-down rounded-[0.313rem]"
@@ -472,10 +472,10 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
           )}
         </div>
       </div>
-      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%] pt-14">
+      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 max-w-screen-lg pt-14">
         {renderPost()}
       </div>
-      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%] mt-[5.5rem] mb-[6.25rem]">
+      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 max-w-screen-lg mt-[5.5rem] mb-[6.25rem]">
         <div className="text-center">
           {valueDropDownCategories !== "All Categories" &&
           valueDropDownTime === "Oldest" ? null : valueDropDownCategories ===

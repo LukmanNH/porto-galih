@@ -21,7 +21,7 @@ const NavBar = ({ isNavItem, isHumberger }) => {
 
   return (
     <div className="w-full top-0" ref={popUp}>
-      <div className="md:flex items-stretch justify-between py-5 md:pt-[2.375rem] mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%]">
+      <div className="md:flex items-stretch justify-between py-5 md:pt-[2.375rem] mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 max-w-screen-lg">
         <div className="relative w-full">
           <div className="text-white cursor-pointer text-base lg:text-lg flex items-center hover:border-b-[3px] border-[#2B9EDE] absolute">
             <img

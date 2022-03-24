@@ -131,7 +131,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
       <div className="bg-hero bg-no-repeat bg-cover bg-center h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem]">
         <div className="h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] w-full justify-items-center grid content-between">
           <NavBar isNavItem={true} isHumberger={true} />
-          <div className="flex w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12">
+          <div className="flex w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 max-w-screen-lg">
             <div className="w-full md:w-8/12 lg:w-8/12 self-end pb-9 lg:mr-3">
               <div className="flex items-center text-white font-bold text-3xl sm:text-3xl md:text-4xl lg:text-4xl">
                 <img
@@ -151,14 +151,14 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
             </div>
             <div className="hidden md:flex md:w-4/12 lg:w-4/12">
               <img
-                src="../notableWork-img.png"
-                className="md:translate-y-6 lg:translate-y-5 mx-auto"
+                src="notableWork-img.svg"
+                className="md:translate-y-9 lg:translate-y-12 xl:translate-y-9 2xl:translate-y-9"
               />
             </div>
           </div>
         </div>
       </div>
-      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 container pt-6 text-sm text-[#282828] flex mb-14">
+      <div className="container-w-full mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 container pt-6 text-sm text-[#282828] flex mb-14 max-w-screen-lg">
         <div className="absolute w-[10rem] mr-5 cursor-pointer" ref={dropdown}>
           <div
             onClick={() => onClickDropDownCategories()}
@@ -203,7 +203,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
           )}
         </div>
       </div>
-      <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 pt-[3.625rem] mx-auto mb-28 container">
+      <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 pt-[3.625rem] mx-auto mb-28 container max-w-screen-lg">
         {/* <-- START Jenius App Re—design SECTION --> */}
         <div className="grid grid-cols-2 gap-6 sm:gap-7 md:gap-8 lg:gap-[2.375rem]">
           {/* //buttonValue ? valueCategories === "All Categories" ? 'getAll' :
