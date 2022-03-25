@@ -1,5 +1,4 @@
 import React from "react";
-import { useReducer, useState } from "react";
 import Link from "next/link";
 import Footer from "../components/Footer";
 
@@ -31,7 +30,7 @@ const AboutMe = () => {
               </span>{" "}
               and as a{" "}
               <b className="font-semibold">Software Engineering Student</b> at{" "}
-              <a href="https://binus.ac.id">
+              <a target={"_blank"} href="https://binus.ac.id">
                 <b className="font-semibold text-[#01549F]">BINUS University</b>
               </a>{" "}
               — Day-to-day, I'm contributing on Digital Product Interface,
