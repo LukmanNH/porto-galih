@@ -153,7 +153,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
                 to gain access to the project, — Only selected cases granted.
               </p>
             </div>
-            <div className="hidden md:flex md:w-4/12 self-end">
+            <div className="hidden md:flex md:w-4/12">
               <img
                 src="notableWork-img.svg"
                 className="md:translate-y-5 lg:translate-y-7 xl:translate-y-9 2xl:translate-y-9"

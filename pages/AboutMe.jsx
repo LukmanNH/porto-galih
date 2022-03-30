@@ -50,11 +50,15 @@ const AboutMe = () => {
               development progress, and also what I'm working on — all my
               writing journey can be read{" "}
               <Link href={"/WritingJourney"}>
-                <b className="font-semibold text-[#01549F]">Here 👈</b>
+                <b className="font-semibold cursor-pointer text-[#01549F]">
+                  Here 👈
+                </b>
               </Link>
               , I also write all my career journey so far{" "}
               <Link href={"/NotableWorks"}>
-                <b className="font-semibold text-[#01549F]">Here 👈.</b>
+                <b className="font-semibold cursor-pointer text-[#01549F]">
+                  Here 👈.
+                </b>
               </Link>
             </p>
           </div>

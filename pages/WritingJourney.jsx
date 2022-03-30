@@ -354,7 +354,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                 about what I've been working on, problems I've solved.
               </p>
             </div>
-            <div className="hidden md:flex md:w-4/12 lg:w-4/12 xl:w-4/12 2xl:w-4/12">
+            <div className="hidden md:flex md:w-4/12">
               <img
                 src="blog-img.svg"
                 className="md:translate-y-5 lg:translate-y-7 xl:translate-y-9 2xl:translate-y-9"
