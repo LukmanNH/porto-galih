@@ -35,7 +35,7 @@ const ProtectedContent = () => {
           <img src="../👈.svg" alt="" className="mr-1 md:mr-2 h-4 lg:h-5" />
           <Link href={"/"}>Back to homepage</Link>
         </div>
-        <div className="pt-36 mx-auto sm:w-[32.313rem] lg:w-[42.313rem] z-0">
+        <div className="pt-40 mx-auto sm:w-[32.313rem] lg:w-[42.313rem] z-0">
           <div className="grid text-center">
             <div className="justify-self-center flex items-center mb-[1.375rem] text-4xl lg:text-5xl font-bold min-w-max">
               <img
