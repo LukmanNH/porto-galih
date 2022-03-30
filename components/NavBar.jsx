@@ -115,6 +115,12 @@ const NavBar = ({ isNavItem, isHumberger }) => {
             </li>
             <li
               className={` my-4 md:my-0
+                  ${router.pathname == "/AboutMe" ? "activeNav" : ""}`}
+            >
+              <Link href={"/AboutMe"}>About</Link>
+            </li>
+            <li
+              className={` my-4 md:my-0
                   ${router.pathname == "/NotableWorks" ? "activeNav" : ""}`}
             >
               <Link href={"/NotableWorks"}>Project</Link>
@@ -124,12 +130,6 @@ const NavBar = ({ isNavItem, isHumberger }) => {
                 ${router.pathname == "/WritingJourney" ? "activeNav" : ""}`}
             >
               <Link href={"/WritingJourney"}>Blog</Link>
-            </li>
-            <li
-              className={` my-4 md:my-0
-                  ${router.pathname == "/AboutMe" ? "activeNav" : ""}`}
-            >
-              <Link href={"/AboutMe"}>About</Link>
             </li>
           </ul>
         ) : (

@@ -5,21 +5,13 @@ export default function Home() {
   return (
     <>
       <Head>
-        <meta property="og:title" content="European Travel Destinations" />
+        <meta property="og:title" content="Galih Putra's Personal Website" />
         <meta property="og:type" content="article" />
         <meta
           property="og:description"
-          content="Offering tour packages for individuals or groups."
+          content="Currently a UX Designer working within amazing team at Digital Product Agency SALT Indonesia."
         />
-        <meta
-          property="og:image"
-          content="http://euro-travel-example.com/thumbnail.jpg"
-        />
-        <meta
-          property="og:url"
-          content="http://euro-travel-example.com/index.htm"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:url" content="https://www.hellogalih.com" />
       </Head>
       <div className="container-w-full bg-no-repeat bg-center bg-cover bg-hero h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] 2xl:h-[29.25rem] flex ">
         <div className="w-11/12 self-center mx-auto container pt-20 md:pt-24 lg:pt-28 md:w-8/12 lg:w-8/12 xl:w-8/12 2xl:w-8/12 max-w-screen-lg">

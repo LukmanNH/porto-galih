@@ -88,7 +88,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
               <span className="h-[0.313rem] w-[0.313rem] bg-[#808080] rounded-full inline-block mx-3 self-center"></span>
               <p>{value.node.projectCategories[0].name}</p>
             </div>
-            <p className="font-normal text-[#282828] mb-[1.438rem] text-xs sm:text-sm">
+            <p className="font-normal text-[#282828] mb-[1.438rem] leading-[18px] text-xs sm:text-sm">
               {value.node.excerpt}
             </p>
             <Link
@@ -133,7 +133,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
           <NavBar isNavItem={true} isHumberger={true} />
           <div className="flex w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 max-w-screen-lg">
             <div className="w-full md:w-8/12 lg:w-8/12 self-end pb-9 lg:mr-3">
-              <div className="flex items-center text-white font-bold text-3xl sm:text-3xl md:text-4xl lg:text-4xl">
+              <div className="flex items-center text-white font-bold text-3xl sm:text-3xl md:text-5xl lg:text-5xl">
                 <img
                   src="../🗃.svg"
                   alt=""
@@ -141,7 +141,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
                 />
                 Notable Works
               </div>
-              <p className="mt-4 lg:mt-8 text-white font-light text-xs sm:text-sm md:text-base lg:text-lg tracking-wider lg:leading-8">
+              <p className="mt-4 lg:mt-8 text-white font-light text-xs leading-[18px] sm:text-sm md:text-base lg:text-lg tracking-wider lg:leading-8">
                 Some project need password, contact{" "}
                 <span className="font-medium underline">
                   windawan26@gmail.com
@@ -152,7 +152,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
             <div className="hidden md:flex md:w-4/12 self-end">
               <img
                 src="notableWork-img.svg"
-                className="md:translate-y-9 lg:translate-y-12 xl:translate-y-9 2xl:translate-y-9"
+                className="md:translate-y-5 lg:translate-y-7 xl:translate-y-9 2xl:translate-y-9"
               />
             </div>
           </div>
