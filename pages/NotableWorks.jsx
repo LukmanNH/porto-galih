@@ -146,11 +146,12 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
                 Notable Works
               </div>
               <p className="mt-4 lg:mt-8 text-white font-light text-xs leading-[20px] sm:text-sm md:text-base lg:text-lg tracking-wider lg:leading-8">
-                Some project need password, contact{" "}
+                Some project need password to gain access to the project,
+                contact{" "}
                 <span className="font-medium underline">
                   windawan26@gmail.com
                 </span>{" "}
-                to gain access to the project, — Only selected cases granted.
+                — Only selected cases granted.
               </p>
             </div>
             <div className="hidden md:flex md:w-4/12">
