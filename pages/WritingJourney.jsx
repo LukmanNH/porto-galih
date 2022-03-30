@@ -349,7 +349,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
                 />
                 Writing Journey
               </div>
-              <p className="mt-4 lg:mt-8 text-white font-light text-xs leading-[18px] sm:text-sm md:text-base lg:text-lg tracking-wider lg:leading-8">
+              <p className="mt-4 lg:mt-8 text-white font-light text-xs leading-[20px] sm:text-sm md:text-base lg:text-lg tracking-wider lg:leading-8">
                 Something new I'm starting for 2021 — every week or two I write
                 about what I've been working on, problems I've solved.
               </p>

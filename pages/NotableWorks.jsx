@@ -92,7 +92,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
               <span className="h-[0.313rem] w-[0.313rem] bg-[#808080] rounded-full inline-block mx-3 self-center"></span>
               <p>{value.node.projectCategories[0].name}</p>
             </div>
-            <p className="font-normal text-[#282828] mb-[1.438rem] leading-[18px] text-xs sm:text-sm">
+            <p className="font-normal text-[#282828] mb-[1.438rem] leading-[20px] text-xs sm:text-sm">
               {value.node.excerpt}
             </p>
             <Link
@@ -145,7 +145,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
                 />
                 Notable Works
               </div>
-              <p className="mt-4 lg:mt-8 text-white font-light text-xs leading-[18px] sm:text-sm md:text-base lg:text-lg tracking-wider lg:leading-8">
+              <p className="mt-4 lg:mt-8 text-white font-light text-xs leading-[20px] sm:text-sm md:text-base lg:text-lg tracking-wider lg:leading-8">
                 Some project need password, contact{" "}
                 <span className="font-medium underline">
                   windawan26@gmail.com
