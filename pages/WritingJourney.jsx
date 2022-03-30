@@ -336,7 +336,7 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
 
   return (
     <>
-      <div className="bg-hero bg-no-repeat bg-cover h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem]">
+      <div className="bg-hero bg-no-repeat bg-cover bg-center h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem]">
         <div className="h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] 2xl:h-[24.25rem] w-full justify-items-center grid content-between">
           <NavBar isNavItem={true} isHumberger={true} />
           <div className="flex w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-8/12 max-w-screen-lg">

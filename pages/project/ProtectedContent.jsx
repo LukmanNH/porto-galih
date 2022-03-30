@@ -30,14 +30,14 @@ const ProtectedContent = () => {
         alt=""
         className="top-0 absolute w-full z-0"
       />
-      <div className="pt-6 mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-[40%] z-10 relative">
+      <div className="pt-6 mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 z-10 relative max-w-screen-lg">
         <div className="text-[#282828] cursor-pointer text-base lg:text-lg font-medium flex items-center hover:border-b-[3px] border-[#2B9EDE] absolute">
           <img src="../👈.svg" alt="" className="mr-1 md:mr-2 h-4 lg:h-5" />
           <Link href={"/"}>Back to homepage</Link>
         </div>
         <div className="pt-36 mx-auto sm:w-[32.313rem] lg:w-[42.313rem] z-0">
           <div className="grid text-center">
-            <div className="justify-self-center flex items-center mb-[1.375rem] text-4xl lg:text-5xl font-bold">
+            <div className="justify-self-center flex items-center mb-[1.375rem] text-4xl lg:text-5xl font-bold min-w-max">
               <img
                 src="../🗃.svg"
                 alt=""
@@ -45,7 +45,7 @@ const ProtectedContent = () => {
               />
               Protected Content
             </div>
-            <p className="font-light text-sm md:text-base lg:text-lg mb-[3.125rem] text-[#282828]">
+            <p className="font-light text-sm md:text-base lg:text-lg mb-[3.125rem] text-[#282828] ">
               Some project need passwords please contact{" "}
               <span className="underline font-medium">
                 windawan26@gmail.com
@@ -53,7 +53,7 @@ const ProtectedContent = () => {
               to gain access to the project, — Only selected cases granted.
             </p>
             <input
-              className="placeholder:text-[#C0C0C0] block bg-white w-full border border-[#282828] rounded-md p-3 lg:w-[25rem] mx-auto mb-7"
+              className="placeholder:text-[#C0C0C0] block bg-white  border border-[#282828] rounded-md p-3 w-[19rem] sm:w-[20rem] md:w-[22rem] lg:w-[25rem] mx-auto mb-7"
               placeholder="Enter the password"
               type="password"
               value={password}

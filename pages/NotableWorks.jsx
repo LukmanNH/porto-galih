@@ -69,7 +69,11 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
           >
             <img
               src={value.node.thumbnail.url}
-              className="w-full h-full rounded-md"
+              className={
+                value.node.isPremium
+                  ? "w-full h-full rounded-md blur-[2px]"
+                  : "w-full h-full rounded-md"
+              }
               alt=""
             />
           </div>
