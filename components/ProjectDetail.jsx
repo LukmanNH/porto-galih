@@ -92,7 +92,7 @@ const ProjectDetail = ({ projects }) => {
           content={content}
           renderers={{
             p: ({ children }) => (
-              <p className="font-normal text-sm md:text-base lg:text-[1.25rem] text-[#282828] mb-8 lg:leading-10">
+              <p className="font-normal text-sm md:text-base lg:text-[1.25rem] text-[#282828] lg:leading-10">
                 {children}
               </p>
             ),
