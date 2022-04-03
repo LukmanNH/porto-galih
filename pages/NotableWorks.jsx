@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Head from "next/head";
 import React, { useState, useEffect, useRef } from "react";
 import NavBar from "../components/NavBar";
 import {
@@ -132,6 +133,9 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
 
   return (
     <>
+      <Head>
+        <title>Project</title>
+      </Head>
       <div className="bg-hero bg-no-repeat bg-cover bg-center h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem]">
         <div className="h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] w-full justify-items-center grid content-between">
           <NavBar isNavItem={true} isHumberger={true} />

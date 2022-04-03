@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import moment from "moment";
 import NavBar from "../components/NavBar";
 import Link from "next/link";
+import Head from "next/head";
 import {
   getPosts,
   getBlogCategories,
@@ -336,6 +337,9 @@ const WritingJourney = ({ posts, postsASC, first5Post }) => {
 
   return (
     <>
+      <Head>
+        <title>Blog</title>
+      </Head>
       <div className="bg-hero bg-no-repeat bg-cover bg-center h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem]">
         <div className="h-[15.25rem] sm:h-[18.25rem] md:h-[20.25rem] lg:h-[22.25rem] xl:h-[24.25rem] 2xl:h-[24.25rem] w-full justify-items-center grid content-between">
           <NavBar isNavItem={true} isHumberger={true} />

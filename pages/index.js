@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <meta property="og:title" content="Galih Putra's Personal Website" />
+        <meta property="og:title" content="Galih Putra Windawan" />
         <meta property="og:type" content="article" />
         <meta
           property="og:description"

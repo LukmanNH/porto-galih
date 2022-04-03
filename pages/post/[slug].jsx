@@ -20,7 +20,7 @@ const PostDetails = ({ post }) => {
           <NavBar isNavItem={false} isHumberger={false} />
           <div className="w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 pt-[2.375rem] pb-7 sm:pb-8 md:pb-9 lg:pb-14 lg:pr-40 md:pr-36 sm:pr-28 lg:pt-16 max-w-screen-lg">
             <div className="justify-center">
-              <p className="text-white font-semibold text-2xl sm:text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem]">
+              <p className="text-white font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl lg:leading-[3rem]">
                 {post.title}
               </p>
               <div className="flex text-sm md:text-base text-white pt-5 md:pt-7 lg:pt-8">

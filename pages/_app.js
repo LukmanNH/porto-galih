@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        <title>Galih Putra's Personal Website</title>
+        <title>Galih Putra Windawan</title>
         <link rel="icon" href="/favicon.ico" />
         <meta charSet="UTF-8" />
       </Head>
