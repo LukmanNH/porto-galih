@@ -114,9 +114,7 @@ const PostDetail = ({ post }) => {
               </h3>
             ),
             h4: ({ children }) => (
-              <h4 className="text-[#282828] font-medium text-xl]">
-                {children}
-              </h4>
+              <h4 className="text-[#282828] font-bold text-xl]">{children}</h4>
             ),
             h5: ({ children }) => (
               <h5 className="text-[#8C8C8C] font-medium text-base]">
