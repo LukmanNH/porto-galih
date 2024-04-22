@@ -32,7 +32,11 @@ const ProtectedContent = () => {
       />
       <div className="pt-6 mx-auto w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 z-10 relative max-w-screen-lg">
         <div className="text-[#282828] cursor-pointer text-base lg:text-lg font-medium flex items-center hover:border-b-[3px] border-[#2B9EDE] absolute">
-          <img src="../👈.svg" alt="" className="mr-1 md:mr-2 h-4 lg:h-5" />
+          <img
+            src="/icon_back.svg"
+            alt=""
+            className="mr-1 md:mr-2 h-4 lg:h-5"
+          />
           <Link href={"/"}>Back to homepage</Link>
         </div>
         <div className="pt-40 mx-auto sm:w-[32.313rem] lg:w-[42.313rem] z-0">

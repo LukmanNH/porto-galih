@@ -109,7 +109,7 @@ const NotableWorks = ({ getFirst2Project, getProject }) => {
                   View Project
                 </p>
                 {value.node.isPremium ? (
-                  <img width={18} height={18} src="../🔒.svg" alt="" />
+                  <img width={18} height={18} src="/icon_lock.svg" alt="" />
                 ) : null}
               </div>
             </Link>

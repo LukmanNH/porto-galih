@@ -57,7 +57,7 @@ const PostDetails = ({ post }) => {
             <div className="border-t-2 border-b-2 border-dashed border-[#878787] p-5 hover:blueHover">
               <div className="flex items-center font-semibold lg:text-xl md:text-base sm:text-sm pb-2">
                 <img
-                  src="../../👋.svg"
+                  src="/icon_wave.svg"
                   alt=""
                   className="pr-1 md:pr-2 h-4 md:h-5 lg:h-6"
                 />

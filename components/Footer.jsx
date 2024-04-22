@@ -10,13 +10,13 @@ const Footer = () => {
         </p>
         <Link href={"/project/jenius-app-redesign-concept-for-competition"}>
           <div className="flex items-center font-semibold cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] w-[fit-content] !mb-[1.5rem]">
-            <img src="../💰.svg" alt="" className="pr-1 h-4 lg:h-5" />
+            <img src="/icon_money.svg" alt="" className="pr-1 h-4 lg:h-5" />
             Jenius App Re—design Concept for Competition
           </div>
         </Link>
         <Link href={"/project/telkomsel-b2b-platform-design-system"}>
           <div className="flex items-center font-semibold cursor-pointer !m-0 border-transparent border-b-[0.188rem] hover:border-[#2B9EDE] w-[fit-content] !mb-[1.5rem]">
-            <img src="../🎨.svg" alt="" className="pr-1 h-4 lg:h-5" />
+            <img src="/icon_paint.svg" alt="" className="pr-1 h-4 lg:h-5" />
             Telkomsel B2B Platfoam Design System
           </div>
         </Link>
